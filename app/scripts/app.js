@@ -42,34 +42,12 @@ angular
         controllerAs: 'AuthenticationCtrl',
         animation: 'slide'
       })
-/*
-      .when('/logout', {
-        name: 'logout',
-        templateUrl: 'views/login/login.html',
-        controller: 'LogoutController',
-        controllerAs: 'LogoutCtrl'
-
-      })
-*/
-
       .when('/logout', {
         name: 'logout',
         template: " ",
         controller: 'LogoutController',
         controllerAs: 'LogoutCtrl'
-
       })
-
-/*
-      when('/logout', {
-            resolve: {
-                logout: ['logoutService', function (logoutService) {
-                    logoutService();
-                }]
-            },
-        })*/
-
-
       .when('/item/:id', {
         name: 'itemView',
         templateUrl: 'views/item/item.html',

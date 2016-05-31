@@ -16,16 +16,16 @@ angular.module('projet7AlbumManagerApp')
     $scope.init();
 
 
-/*
-var init = function () {
-   // check if there is query in url
-   // and fire search in case its value is not empty
-   alert("Logout");
-    $location.path(namedRouteService.reverse('login'));
-};
-// and fire it after definition
-init();
-*/
+    /*
+    var init = function () {
+       // check if there is query in url
+       // and fire search in case its value is not empty
+       alert("Logout");
+        $location.path(namedRouteService.reverse('login'));
+    };
+    // and fire it after definition
+    init();
+    */
 
 
 
