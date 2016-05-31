@@ -1,0 +1,43 @@
+
+  
+<div class="card card-container">
+    
+    <img id="profile-img" class="profile-img-card" src="images/yeoman.png" />
+
+    <!--
+    <p id="profile-name" class="profile-name-card"></p>
+    -->
+
+    <form name="loginForm" class="form-signin" novalidate>
+
+        <!--
+        <span id="reauth-email" class="reauth-email"></span>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <div id="remember" class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        -->
+      
+      <input name="login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login" class="form-control" />
+      <div ng-messages="loginForm.login.$error" ng-messages-include="form_error_messages.html"></div>
+
+      <input name="password" type="password" placeholder="Mot de passe"  ng-maxlength="30" ng-minlength="2" class="form-control" />
+      <div ng-messages="loginForm.password.$error" ng-messages-include="form_error_messages.html"></div>
+
+
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Connexion</button>
+
+    </form>
+
+    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">S'enregistrer</button>
+    <!--
+    <a href="#" class="forgot-password">
+        Mot de passe oublié ?
+    </a>
+    -->
+</div>
+
