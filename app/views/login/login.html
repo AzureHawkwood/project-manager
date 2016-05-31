@@ -8,7 +8,7 @@
     <p id="profile-name" class="profile-name-card"></p>
     -->
 
-    <form name="loginForm" class="form-signin" novalidate>
+    <form name="loginForm" class="form-signin" ng-submit="login()" novalidate>
 
         <!--
         <span id="reauth-email" class="reauth-email"></span>
@@ -21,14 +21,14 @@
             </label>
         </div>
         -->
-      
-        <input name="login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login ou Email" class="form-control" />
+        <label>Login ou Email</label>
+        <input name="login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login ou Email" class="form-control" autofocus="" required="" />
         <div class="error-messages" ng-messages="loginForm.login.$error">
             <div ng-messages-include="views/form_error_messages.html"></div>
         </div>
 
-
-        <input name="password" type="password" placeholder="Mot de passe"  ng-maxlength="30" ng-minlength="2" class="form-control" />
+        <label>Mot de passe</label>
+        <input name="password" type="password" placeholder="Mot de passe"  ng-maxlength="30" ng-minlength="2" class="form-control" required="" />
         <div class="error-messages" ng-messages="loginForm.password.$error">
             <div ng-messages-include="views/form_error_messages.html"></div>
         </div>
@@ -38,7 +38,7 @@
 
     </form>
 
-    <button class="btn btn-lg btn-primary btn-block btn-signin"  ng-click="go('registerhu')">S'enregistrer</button>
+    <button class="btn btn-lg btn-primary btn-block btn-signin"  ng-click="go('register')">S'enregistrer</button>
     <!--
     <a href="#" class="forgot-password">
         Mot de passe oublié ?

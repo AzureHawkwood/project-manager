@@ -8,10 +8,7 @@
  * Controller of the projet7AlbumManagerApp
  */
 angular.module('projet7AlbumManagerApp')
-  .controller('RegisterController', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('ManagerController', function ($scope) {
+		
+		
+});
