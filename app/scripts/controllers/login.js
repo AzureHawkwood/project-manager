@@ -8,10 +8,15 @@
  * Controller of the projet7AlbumManagerApp
  */
 angular.module('projet7AlbumManagerApp')
-  .controller('LoginController', function () {
-    this.awesomeThings = [
+  .controller('LoginController', function ($scope, $location) {
+    /*this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
-    ];
+    ];*/
+
+	$scope.go = function ( path ) {
+		$location.path(path)
+	};
+
   });
