@@ -1,0 +1,34 @@
+#managerContainer {
+	display: block;
+	width: 100%;
+}
+
+#managerContainer .table{
+	/*background-color: #464c52;*/
+
+	
+	background-color: transparent;
+
+
+
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+#managerContainer .table th, 
+#managerContainer .table td {
+	text-align:center;
+	border-right: 1px solid #1c1e22;
+}
+
+#managerContainer .table th:hover, 
+#managerContainer .table td:hover {
+	cursor: pointer;
+}
+    
+#managerContainer .hiddenTd{
+background-color:#272b30!important;
+border:#272b30!important;
+}
+    
