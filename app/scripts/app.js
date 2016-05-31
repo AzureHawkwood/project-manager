@@ -31,6 +31,8 @@ angular
         controllerAs: 'LoginCtrl'
       })
       .when('/register', {
+        hoho: 'huhu',
+        name: 'registerhu',
         templateUrl: 'views/register/register.html',
         controller: 'RegisterController',
         controllerAs: 'RegisterCtrl'

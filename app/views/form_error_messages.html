@@ -1,5 +1,14 @@
+<!--
 <div ng-message="required">Champ requis</div>
 <div ng-message="minlength">Valeur trop courte</div>
 <div ng-message="maxlength">Valeur trop longue</div>
 <div ng-message="email">E-mail non valide</div>
 <div ng-message="number">Caractères alphabétiques non autorisés</div>
+-->
+<!-- remote file: error-messages.html -->
+<div class="alert alert-danger" ng-message="required">This field is required.</div>
+<div class="alert alert-danger" ng-message="minlength">Your entry is too short.</div>
+<div class="alert alert-danger" ng-message="maxlength">Your entry is too long.</div>
+<div class="alert alert-danger" ng-message="email">Your entry has an invalid email address.</div>
+<div class="alert alert-danger" ng-message="url">Your entry has an invalid url. (ex: http://www.yourdomainname.com)</div>
+<div class="alert alert-danger" ng-message="number">Caractères alphabétiques non autorisés</div>

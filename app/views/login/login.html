@@ -22,18 +22,23 @@
         </div>
         -->
       
-      <input name="login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login" class="form-control" />
-      <div ng-messages="loginForm.login.$error" ng-messages-include="form_error_messages.html"></div>
+        <input name="login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login ou Email" class="form-control" />
+        <div class="error-messages" ng-messages="loginForm.login.$error">
+            <div ng-messages-include="views/form_error_messages.html"></div>
+        </div>
 
-      <input name="password" type="password" placeholder="Mot de passe"  ng-maxlength="30" ng-minlength="2" class="form-control" />
-      <div ng-messages="loginForm.password.$error" ng-messages-include="form_error_messages.html"></div>
+
+        <input name="password" type="password" placeholder="Mot de passe"  ng-maxlength="30" ng-minlength="2" class="form-control" />
+        <div class="error-messages" ng-messages="loginForm.password.$error">
+            <div ng-messages-include="views/form_error_messages.html"></div>
+        </div>
 
 
-      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Connexion</button>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Connexion</button>
 
     </form>
 
-    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">S'enregistrer</button>
+    <button class="btn btn-lg btn-primary btn-block btn-signin"  ng-click="go('registerhu')">S'enregistrer</button>
     <!--
     <a href="#" class="forgot-password">
         Mot de passe oublié ?
