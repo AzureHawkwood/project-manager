@@ -3,18 +3,16 @@
 	width: 100%;
 }
 
+/**********************************
+ Gestion du tableau et de ses colonnes 
+ **********************************/
+
 #managerContainer table{
-	/*background-color: #464c52;*/
 
 	width:100%;
 	table-layout:fixed;
 
-
-
-
 	background-color: transparent;
-
-
 
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
@@ -37,7 +35,6 @@
 	line-height:12px;
 	font-size:12px;
 }
-
 #managerContainer table th:hover, 
 #managerContainer table td:hover {
 	cursor: pointer;
@@ -46,10 +43,16 @@
 
 
 
+
+/**********************************
+ Gestion des classes ayant différents effets
+ **********************************/
+
+ /*
+ * hiddenTd pour masquer la toute première cellule ainsi que 
+ * les cellules correspondantes à des ajouts de lignes ou colonnes
+ */
 #managerContainer .hiddenTd{
-	/*	
-	background-color:#272b30!important;
-	*/
 	background-color: transparent!important;
 	border:#272b30!important;
 }
@@ -58,7 +61,11 @@
 }
 
 
-#managerContainer table th .move-vertical,
+ /*
+ * move-vertical et move-horizontal sont utilisés pour le style
+ * des puces handler des événements drag drop des lignes et colonnes
+ */
+#managerContainer table th .move-vertical, 
 #managerContainer table th .move-horizontal {
 	display:block;
 	float:left;
@@ -81,7 +88,6 @@
 	background: radial-gradient(ellipse at center, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#464c52', endColorstr='#464c52', GradientType=1 );
 }
-
 #managerContainer table th .move-vertical:hover {
 	cursor: ns-resize!important;
 }

@@ -12,8 +12,6 @@
 }
 .dragtable-sortable li {
     margin: 0; padding: 0; float: left; font-size: 1em;
-
-
 }
 
 .dragtable-sortable th, .dragtable-sortable td{
@@ -28,7 +26,7 @@
     opacity: 0.7;
     filter: alpha(opacity=70);
 }
-.ui-sortable-placeholder { 
+.ui-sortable-placeholder {
       
     background: rgba(16,18,20,1);
     background: -moz-linear-gradient(top, rgba(16,18,20,1) 0%, rgba(39,43,48,1) 70%, rgba(39,43,48,1) 100%);
