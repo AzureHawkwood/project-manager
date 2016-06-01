@@ -1,0 +1,90 @@
+/* 
+ * dragtable
+ *
+ * @Version 2.0.14
+ *
+ * default css
+ *
+ */
+/*##### the dragtable stuff #####*/
+.dragtable-sortable { 
+    list-style-type: none; margin: 0; padding: 0; -moz-user-select: none;
+}
+.dragtable-sortable li {
+    margin: 0; padding: 0; float: left; font-size: 1em;
+
+
+}
+
+.dragtable-sortable th, .dragtable-sortable td{
+    border-left: 0px;
+}
+
+.dragtable-sortable li:first-child th, .dragtable-sortable li:first-child td {
+    border-left: 1px solid #CCC; 
+}
+
+.ui-sortable-helper {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+.ui-sortable-placeholder { 
+      
+    background: rgba(16,18,20,1);
+    background: -moz-linear-gradient(top, rgba(16,18,20,1) 0%, rgba(39,43,48,1) 70%, rgba(39,43,48,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(16,18,20,1)), color-stop(70%, rgba(39,43,48,1)), color-stop(100%, rgba(39,43,48,1)));
+    background: -webkit-linear-gradient(top, rgba(16,18,20,1) 0%, rgba(39,43,48,1) 70%, rgba(39,43,48,1) 100%);
+    background: -o-linear-gradient(top, rgba(16,18,20,1) 0%, rgba(39,43,48,1) 70%, rgba(39,43,48,1) 100%);
+    background: -ms-linear-gradient(top, rgba(16,18,20,1) 0%, rgba(39,43,48,1) 70%, rgba(39,43,48,1) 100%);
+    background: linear-gradient(to bottom, rgba(16,18,20,1) 0%, rgba(39,43,48,1) 70%, rgba(39,43,48,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#101214', endColorstr='#272b30', GradientType=0 );
+
+
+    visibility: visible !important;
+
+}
+.ui-sortable-placeholder * { 
+    opacity: 0.0; visibility: hidden; 
+}
+
+
+
+
+
+
+
+
+/*
+
+
+.dragtable-sortable { 
+    list-style-type: none; margin: 0; padding: 0; -moz-user-select: none;
+}
+.dragtable-sortable li {
+    margin: 0; padding: 0; float: left; font-size: 1em; background: white; 
+}
+
+.dragtable-sortable th, .dragtable-sortable td{
+    border-left: 0px;
+}
+
+.dragtable-sortable li:first-child th, .dragtable-sortable li:first-child td {
+    border-left: 1px solid #CCC; 
+}
+
+.ui-sortable-helper {
+    opacity: 0.7;filter: alpha(opacity=70);
+}
+.ui-sortable-placeholder { 
+    -moz-box-shadow: 4px 5px 4px #C6C6C6 inset;
+    -webkit-box-shadow: 4px 5px 4px #C6C6C6 inset;
+    box-shadow: 4px 5px 4px #C6C6C6 inset;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    visibility: visible !important;
+    background: #EFEFEF !important; 
+    visibility: visible !important;
+}
+.ui-sortable-placeholder * { 
+    opacity: 0.0; visibility: hidden; 
+}*/

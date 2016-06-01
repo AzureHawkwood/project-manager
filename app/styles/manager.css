@@ -3,7 +3,7 @@
 	width: 100%;
 }
 
-#managerContainer .table{
+#managerContainer table{
 	/*background-color: #464c52;*/
 
 	width:100%;
@@ -21,24 +21,25 @@
 	border-radius: 8px;
 }
 
-#managerContainer .table th, 
-#managerContainer .table td {	
+#managerContainer table th, 
+#managerContainer table td {	
 	border: 1px solid #1c1e22;
 	background-color: #464c52;
 }
-#managerContainer .table th {
+#managerContainer table th {
 	text-align: center;
 	vertical-align: middle;
+	line-height: 28px;
 }
-#managerContainer .table td {
+#managerContainer table td {
 	text-align: left;
 	/*min-height: 50px;*/
 	line-height:12px;
 	font-size:12px;
 }
 
-#managerContainer .table th:hover, 
-#managerContainer .table td:hover {
+#managerContainer table th:hover, 
+#managerContainer table td:hover {
 	cursor: pointer;
 	background-color: rgba(255,255,255,0.2);
 }
@@ -55,4 +56,38 @@
 #managerContainer .hiddenTd:hover{
 	cursor: default!important;
 }
+
+
+#managerContainer table th .move-vertical,
+#managerContainer table th .move-horizontal {
+	display:block;
+	float:left;
+
+	width: 26px;
+	height: 26px;
+	font-size: 14px;
+	line-height: 26px;
+
+	border-radius: 50%;
+
+	text-align: center;
+
+	background: rgba(70,76,82,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(70,76,82,1)), color-stop(39%, rgba(54,59,64,1)), color-stop(51%, rgba(97,103,110,1)), color-stop(62%, rgba(74,79,84,1)), color-stop(100%, rgba(70,76,82,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#464c52', endColorstr='#464c52', GradientType=1 );
+}
+
+#managerContainer table th .move-vertical:hover {
+	cursor: ns-resize!important;
+}
+#managerContainer table th .move-horizontal:hover {
+	cursor: ew-resize!important;
+}
+
+
 

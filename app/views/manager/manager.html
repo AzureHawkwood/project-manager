@@ -1,21 +1,21 @@
 
 <div id="managerContainer" >
-	<table class="table">
+	<table id="managerContainerTable" class="table" data-nb_col="{{nbCol}}" data-nb_row="{{nbRow}}">
 		<tr>
-			<th class="hiddenTd"></th>
-			<th>task 1</th>
-			<th>task 2</th>
-			<th>task 3</th>
-			<th>task 4</th>
-			<th>
+			<th class="hiddenTd nosort"></th>
+			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 1</th>
+			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 2</th>
+			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 3</th>
+			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 4</th>
+			<th class="nosort">
 				<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 			</th>
 			
 		</tr>		
 		<tr>
-			<th>Item 1</th>
+			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 1</th>
 
-			<td>1/1{{ longText | cutLongString:true:maxLengthStringToDisplay }}
+			<td>1/1 {{ longText | cutLongString:true:maxLengthStringToDisplay }}
 			</td>
 			<td>1/2 {{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
 			<td>1/3</td>
@@ -24,18 +24,18 @@
 			<td class="hiddenTd"></td>
 		</tr>
 		<tr>
-			<th>Item 2</th>
+			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 2</th>
 
 			<td>2/1</td>
 			<td>2/2</td>
 			<td>2/3
-			Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. </td>
+			Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</td>
 			<td>2/4</td>
 
 			<td class="hiddenTd"></td>
 		</tr>
 		<tr>
-			<th>Item 2</th>
+			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 3</th>
 			
 			<td>3/1</td>
 			<td>3/2</td>
@@ -45,7 +45,7 @@
 			<td class="hiddenTd"></td>
 		</tr>
 		<tr>
-			<th>Item 4</th>
+			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 4</th>
 
 			<td>4/1</td>
 			<td>4/2</td>
@@ -75,6 +75,8 @@
 
 
 <script>
+
+/*
 var fixHelperModified = function(e, tr) {
     var $originals = tr.children();
     var $helper = tr.clone();
@@ -93,13 +95,68 @@ var fixHelperModified = function(e, tr) {
 
 
 
-/*
-$("#sort tbody").sortable({
+
+$("#managerContainer table").sortable({
     helper: fixHelperModified,
     stop: updateIndex
 }).disableSelection();
+
 */
 
+/*
+$('#managerContainerTable').dragtable();
+*/
+$(document).ready(function(){
 
+/*
+	$('#managerContainerTable').sorttable({
+		revert: true,
+		placeholder: 'th .move-horizontal',
+    	helperCells: null,
+    	items: '>:not(.nosort)',
+    	start: function (e, ui) { ui.item.parents('table:first').children().find('>tr:not(.ui-sortable)').fadeTo('slow', 0.25); },
+    	stop: function (e, ui) { ui.item.parents('table:first').children().find('>tr:not(.ui-sortable)').fadeTo('fast', 1); }
+	}).disableSelection();
+*/
+
+$('#managerContainerTable').dragtable({
+	dragHandle:'.move-horizontal',			//point de clic où l'on autorise le drag
+	dragaccept:'.move-horizontal-accept',	//colonnes acceptées dans le drag
+	clickDelay:0,	//délai à partir duquel le drag commence
+	distance:0,		//distance à partir de laquelle le drag commence	
+	revert: true,	//permet de faire l'anim de la colonne qui se replace bien
+	exact: false,	//IMPORTANT, ça casse le css sinon
+	containment: '#managerContainer',
+ 	beforeStart: function(){       
+    },
+	beforeMoving: function(){       
+    },
+	beforeReorganize: function(){       
+    },
+	beforeStop: function(){       
+    }
+
+});
+
+
+	$("#managerContainerTable").rowSorter({
+
+		handler         : 'th .move-vertical',
+		//tbody           : true,
+		//tableClass      : 'sorting-table',
+		//dragClass       : 'sorting-row',
+		stickTopRows    : 1,
+		stickBottomRows : 1,
+		onDragStart: function(tbody, row, index)
+	    {
+	        //console.log('start index is ' + index);
+	    },
+	    onDrop: function(tbody, row, new_index, old_index)
+	    {
+	        //console.log('sorted from ' + old_index + ' to ' + new_index);
+	    }
+	});
+
+});
 
 </script>
