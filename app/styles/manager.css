@@ -96,4 +96,27 @@
 }
 
 
+ /*
+ * state-X où X est l'id d'un état, sont utilisés pour le style
+ * des cellules en fonction de leur état, commencé,
+ * terminé etc...
+ */
+#managerContainer table td.undefined {
+	background-color: #c8c8c8;
+	color:black;
+}
 
+#managerContainer table td.tostart {
+	background-color: #cc5555;
+	color:white;
+}
+
+#managerContainer table td.started {
+	background-color: #dd9955;
+	color:white;
+}
+
+#managerContainer table td.finished {
+	background-color: #55bb55;
+	color:white;
+}
