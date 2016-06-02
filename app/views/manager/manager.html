@@ -19,7 +19,8 @@
 		<tbody>
 			<tr ng-repeat="item in items | orderBy: 'order' track by item.id" wait-on-row-load="">
 				<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>{{item.name}}</th>
-
+				
+				
 				<!--	
 				<td ng-repeat="task in tasks" ng-class="{{action[item.id].stateClass}}">
 				{{action[item.id].comment}}
@@ -32,7 +33,6 @@
 					{{task.name | cutLongString:true:maxLengthStringToDisplay }} 
 				</td>
 				-->
-
 
 
 				<td ng-repeat="task in tasks | orderBy: 'order' track by task.id" class="{{actions[task.id][item.id].stateClass}}">

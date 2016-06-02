@@ -23,11 +23,18 @@
 #managerContainer table td {	
 	border: 1px solid #1c1e22;
 	background-color: #464c52;
+	word-break: break-all!important;
 }
 #managerContainer table th {
 	text-align: center;
 	vertical-align: middle;
 	line-height: 28px;
+
+	-moz-box-shadow: inset 0px 0px 20px 10px #353b41;
+	-webkit-box-shadow: inset 0px 0px 20px 10px #353b41;
+	-o-box-shadow: inset 0px 0px 20px 10px #353b41;
+	box-shadow: inset 0px 0px 20px 10px #353b41;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#353b41, Direction=NaN, Strength=20);
 }
 #managerContainer table td {
 	text-align: left;
@@ -37,7 +44,10 @@
 #managerContainer table th:hover, 
 #managerContainer table td:hover {
 	cursor: pointer;
-	background-color: rgba(255,255,255,0.2);
+	/*background-color: rgba(255,255,255,0.2);*/
+	-webkit-box-shadow: none!important;
+	-moz-box-shadow: none!important;
+	box-shadow: none!important;
 }
 
 
@@ -54,6 +64,9 @@
 #managerContainer .hiddenTd{
 	background-color: transparent!important;
 	border:none!important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 #managerContainer .hiddenTd:hover{
 	cursor: default!important;
