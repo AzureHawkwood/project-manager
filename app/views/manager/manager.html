@@ -9,14 +9,14 @@
 			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 4</th>
 			<th class="nosort">
 				<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-			</th>			
-		</tr>		
+			</th>
+		</tr>
 		<tr>
 			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 1</th>
 
 			<td>1/1 {{ longText | cutLongString:true:maxLengthStringToDisplay }}
 			</td>
-			<td>1/2 {{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
+			<td class="finished">1/2</td>
 			<td>1/3</td>
 			<td>1/4</td>
 
@@ -26,9 +26,8 @@
 			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 2</th>
 
 			<td>2/1</td>
-			<td>2/2</td>
-			<td>2/3
-			Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</td>
+			<td class="started">2/2</td>
+			<td>2/3</td>
 			<td>2/4</td>
 
 			<td class="hiddenTd"></td>
@@ -37,8 +36,8 @@
 			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 3</th>
 			
 			<td>3/1</td>
-			<td>3/2</td>
-			<td>3/3</td>
+			<td class="tostart">3/2</td>
+			<td>3/3 {{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
 			<td>3/4</td>
 
 			<td class="hiddenTd"></td>
@@ -47,7 +46,7 @@
 			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 4</th>
 
 			<td>4/1</td>
-			<td>4/2</td>
+			<td class="undefined">4/2</td>
 			<td>4/3</td>
 			<td>4/4</td>
 
