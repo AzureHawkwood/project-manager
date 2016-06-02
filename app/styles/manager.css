@@ -31,7 +31,6 @@
 }
 #managerContainer table td {
 	text-align: left;
-	/*min-height: 50px;*/
 	line-height:12px;
 	font-size:12px;
 }
@@ -54,7 +53,7 @@
  */
 #managerContainer .hiddenTd{
 	background-color: transparent!important;
-	border:#272b30!important;
+	border:none!important;
 }
 #managerContainer .hiddenTd:hover{
 	cursor: default!important;
@@ -104,19 +103,65 @@
 #managerContainer table td.undefined {
 	background-color: #c8c8c8;
 	color:black;
+
+	-moz-box-shadow: inset 0px 0px 20px 10px #a6a6a6;
+-webkit-box-shadow: inset 0px 0px 20px 10px #a6a6a6;
+-o-box-shadow: inset 0px 0px 20px 10px #a6a6a6;
+box-shadow: inset 0px 0px 20px 10px #a6a6a6;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#a6a6a6, Direction=NaN, Strength=20);
+
 }
 
 #managerContainer table td.tostart {
 	background-color: #cc5555;
 	color:white;
+
+
+
+/*
+-moz-box-shadow: inset 0px 0px 25px 15px #aa3333;
+-webkit-box-shadow: inset 0px 0px 25px 15px #aa3333;
+-o-box-shadow: inset 0px 0px 25px 15px #aa3333;
+box-shadow: inset 0px 0px 25px 15px #aa3333;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#aa3333, Direction=NaN, Strength=25);
+*/
+
+/*
+Ombres : couleur -2 pour chaque lettre hexa, 20 strength (blur) et 10 spread 
+*/
+-moz-box-shadow: inset 0px 0px 20px 10px #aa3333;
+-webkit-box-shadow: inset 0px 0px 20px 10px #aa3333;
+-o-box-shadow: inset 0px 0px 20px 10px #aa3333;
+box-shadow: inset 0px 0px 20px 10px #aa3333;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#aa3333, Direction=NaN, Strength=20);
 }
 
 #managerContainer table td.started {
 	background-color: #dd9955;
 	color:white;
+
+-moz-box-shadow: inset 0px 0px 20px 10px #cc7733;
+-webkit-box-shadow: inset 0px 0px 20px 10px #cc7733;
+-o-box-shadow: inset 0px 0px 20px 10px #cc7733;
+box-shadow: inset 0px 0px 20px 10px #cc7733;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#cc7733, Direction=NaN, Strength=20);
 }
 
 #managerContainer table td.finished {
 	background-color: #55bb55;
 	color:white;
+
+/*
+-moz-box-shadow: inset 0px 0px 25px 15px #339933;
+-webkit-box-shadow: inset 0px 0px 25px 15px #339933;
+-o-box-shadow: inset 0px 0px 25px 15px #339933;
+box-shadow: inset 0px 0px 25px 15px #339933;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#339933, Direction=NaN, Strength=25);
+*/
+
+-moz-box-shadow: inset 0px 0px 20px 10px #339933;
+-webkit-box-shadow: inset 0px 0px 20px 10px #339933;
+-o-box-shadow: inset 0px 0px 20px 10px #339933;
+box-shadow: inset 0px 0px 20px 10px #339933;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#339933, Direction=NaN, Strength=20);
 }
