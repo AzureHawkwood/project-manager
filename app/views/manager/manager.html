@@ -6,7 +6,7 @@
 			<tr>
 				<th class="hiddenTd nosort"></th>
 				
-				<th ng-repeat="task in tasks | orderBy: 'order' track by task.id" class="move-horizontal-accept" wait-on-row-load="">
+				<th ng-repeat="task in tasks | orderBy: 'order' track by task.id" class="move-horizontal-accept" wait-on-col-load="">
 					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
 					{{task.name}}
 				</th>
@@ -17,7 +17,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items | orderBy: 'order' track by item.id" wait-on-line-load="">
+			<tr ng-repeat="item in items | orderBy: 'order' track by item.id" wait-on-row-load="">
 				<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>{{item.name}}</th>
 
 				<!--	
@@ -25,96 +25,33 @@
 				{{action[item.id].comment}}
 				</td>
 				-->
+
+
+				<!--
 				<td ng-repeat="task in tasks">
 					{{task.name | cutLongString:true:maxLengthStringToDisplay }} 
 				</td>
+				-->
+
+
+
+				<td ng-repeat="task in tasks | orderBy: 'order' track by task.id" class="{{actions[task.id][item.id].stateClass}}">
+				{{actions[task.id][item.id].comment}}
+				</td>
+
+
 
 				<td class="hiddenTd"></td>
 			</tr>
 			<tr>
 				<th><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></th>
 
-				<td class="hiddenTd"></td>
-				<td class="hiddenTd"></td>
-				<td class="hiddenTd"></td>
-				<td class="hiddenTd"></td>
-
+				<td ng-repeat="task in tasks track by task.id" class="hiddenTd"></td>
+				
 				<td class="hiddenTd"></td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-
-
-
-<!--
-<div id="managerContainer" >
-	<table id="managerContainerTable" class="table" data-nb_col="{{nbCol}}" data-nb_row="{{nbRow}}">
-		<tr>
-			<th class="hiddenTd nosort"></th>
-			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 1</th>
-			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 2</th>
-			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 3</th>
-			<th class="move-horizontal-accept"><span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>task 4</th>
-			<th class="nosort">
-				<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-			</th>
-		</tr>
-		<tr>
-			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 1</th>
-
-			<td>1/1 {{ longText | cutLongString:true:maxLengthStringToDisplay }}
-			</td>
-			<td class="finished">1/2</td>
-			<td>1/3</td>
-			<td>1/4</td>
-
-			<td class="hiddenTd"></td>
-		</tr>
-		<tr>
-			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 2</th>
-
-			<td>2/1</td>
-			<td class="started">2/2</td>
-			<td>2/3</td>
-			<td>2/4{{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
-
-			<td class="hiddenTd"></td>
-		</tr>
-		<tr>
-			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 3</th>
-			
-			<td>3/1</td>
-			<td class="tostart">3/2</td>
-			<td>3/3 {{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
-			<td>3/4</td>
-
-			<td class="hiddenTd"></td>
-		</tr>
-		<tr>
-			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 4</th>
-
-			<td>4/1{{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
-			<td class="undefined">4/2</td>
-			<td>4/3</td>
-			<td>4/4</td>
-
-			<td class="hiddenTd"></td>
-		</tr>
-
-		<tr>
-			<th><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></th>
-
-			<td class="hiddenTd"></td>
-			<td class="hiddenTd"></td>
-			<td class="hiddenTd"></td>
-			<td class="hiddenTd"></td>
-
-			<td class="hiddenTd"></td>
-		</tr>
-	</table>
-</div>
-
--->
 
