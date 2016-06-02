@@ -28,8 +28,8 @@
 			<td>2/1</td>
 			<td class="started">2/2</td>
 			<td>2/3</td>
-			<td>2/4</td>
-
+			<td>2/4{{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
+			
 			<td class="hiddenTd"></td>
 		</tr>
 		<tr>
@@ -45,7 +45,7 @@
 		<tr>
 			<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>Item 4</th>
 
-			<td>4/1</td>
+			<td>4/1{{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
 			<td class="undefined">4/2</td>
 			<td>4/3</td>
 			<td>4/4</td>
