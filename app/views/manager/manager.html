@@ -1,4 +1,54 @@
 
+
+<div id="managerContainer" >
+	<table id="managerContainerTable" class="table" data-nb_col="{{nbCol}}" data-nb_row="{{nbRow}}"  >
+		<thead>
+			<tr>
+				<th class="hiddenTd nosort"></th>
+				
+				<th ng-repeat="task in tasks | orderBy: 'order' track by task.id" class="move-horizontal-accept" wait-on-row-load="">
+					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
+					{{task.name}}
+				</th>
+
+				<th class="nosort">
+					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items | orderBy: 'order' track by item.id" wait-on-line-load="">
+				<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>{{item.name}}</th>
+
+				<!--	
+				<td ng-repeat="task in tasks" ng-class="{{action[item.id].stateClass}}">
+				{{action[item.id].comment}}
+				</td>
+				-->
+				<td ng-repeat="task in tasks">
+					{{task.name | cutLongString:true:maxLengthStringToDisplay }} 
+				</td>
+
+				<td class="hiddenTd"></td>
+			</tr>
+			<tr>
+				<th><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></th>
+
+				<td class="hiddenTd"></td>
+				<td class="hiddenTd"></td>
+				<td class="hiddenTd"></td>
+				<td class="hiddenTd"></td>
+
+				<td class="hiddenTd"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+
+<!--
 <div id="managerContainer" >
 	<table id="managerContainerTable" class="table" data-nb_col="{{nbCol}}" data-nb_row="{{nbRow}}">
 		<tr>
@@ -29,7 +79,7 @@
 			<td class="started">2/2</td>
 			<td>2/3</td>
 			<td>2/4{{ longText | cutLongString:true:maxLengthStringToDisplay }}</td>
-			
+
 			<td class="hiddenTd"></td>
 		</tr>
 		<tr>
@@ -65,4 +115,6 @@
 		</tr>
 	</table>
 </div>
+
+-->
 
