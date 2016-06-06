@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "grunt": "^0.4.5",
-    "jquery": "^2.2.4"
+    "jquery": "^2.2.4",
+    "mysql": "^2.10.2"
   }
 }
