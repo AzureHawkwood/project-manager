@@ -1,20 +1,11 @@
 
 var express   =     require("express");
 var app       =     express();
-//var connection  = require('express-myconnection');
-var mysql      = require('mysql');
 
-var connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'root',
-	password : '',
-	database : 'project_manager'
-});
-
-exports.mysql_connection = connection;
 
 var r_task = require('./node_requests/task');
 var r_item = require('./node_requests/item');
+var r_manager = require('./node_requests/manager');
 var r_action = require('./node_requests/action');
 var r_project = require('./node_requests/project');
 var r_user = require('./node_requests/user');
@@ -173,20 +164,6 @@ app.get('/getTasks', function(req,res){
 .all('*', function (req, res) {
     res.sendFile('index.html', { root: __dirname+'/app' });
 });
-*/
-
-/*
-app.use(    
-    connection(mysql,{
-        
-        host: 'localhost',
-        user: 'root',
-        password : '',
-        port : 80, 
-        database:'project_manager'
-
-    },'pool')
-);
 */
 
 

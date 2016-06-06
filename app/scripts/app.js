@@ -48,6 +48,13 @@ angular
         controller: 'LogoutController',
         controllerAs: 'LogoutCtrl'
       })
+      .when('/action/:task_id/:item_id', {
+        name: 'actionView',
+        templateUrl: 'views/action/action.html',
+        controller: 'ActionController',
+        controllerAs: 'ActionCtrl',
+        animation: 'slide'
+      })
       .when('/item/:id', {
         name: 'itemView',
         templateUrl: 'views/item/item.html',

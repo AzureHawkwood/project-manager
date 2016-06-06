@@ -1,0 +1,42 @@
+<div id="actionContainer">
+  <div class="maj_action">
+
+    <form name="actionForm" class="" ng-submit="addAction()" novalidate>
+
+        <!--
+        <span id="reauth-email" class="reauth-email"></span>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <div id="remember" class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        -->
+        <label>Etat</label><br />
+        <select name="state" required="" style="width:100%;">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        <div class="error-messages" ng-messages="actionForm.state.$error">
+            <div ng-messages-include="views/form_error_messages.html"></div>
+        </div>
+
+        <br /><br />
+        <label>Message</label><br />
+        <textarea name="comment" placeholder="Saisir un commentaire..." style="width:100%;"></textarea>
+        <div class="error-messages" ng-messages="actionForm.comment.$error">
+            <div ng-messages-include="views/form_error_messages.html"></div>
+        </div>
+
+
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Mettre à jour</button>
+
+    </form>
+
+
+  </div>
+  <div class="historique_action"> dfg fsdgsdfgsd gsdLe Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</div>
+</div>
