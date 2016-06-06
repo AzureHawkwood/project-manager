@@ -22,7 +22,7 @@
 
 
 
-				<td ng-repeat="task in tasks track by task.id" class="{{actions[task.id][item.id].stateClass}}">
+				<td ng-repeat="task in tasks track by task.id" class="{{actions[task.id][item.id].state_class?actions[task.id][item.id].state_class:'undefined' }}" ng-click="go('/action/'+task.id+'/'+item.id)">
 				{{actions[task.id][item.id].comment}}
 				</td>
 

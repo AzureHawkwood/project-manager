@@ -1,408 +1,45 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name projet7AlbumManagerApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the projet7AlbumManagerApp
- */
 angular.module('projet7AlbumManagerApp')
-	.controller('ManagerController', function ($scope, ManagerAjax) {
+	.controller('ManagerController', function ($scope, $location, ManagerAjax) {
 	
-	$scope.nbCol = 4;
-	$scope.nbRow = 4;
-	$scope.longText = "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker";
+	$scope.nbCol = 0;
+	$scope.nbRow = 0;
 	$scope.maxLengthStringToDisplay = 240;
 
-	
 	$scope.initManager = initManager;
-
-//alert("penser à changer le fonctionnement et trier à l'avance les données reçues en json, plutôt que d'utiliser le filter");
 
 	$scope.tasks = [];
 	$scope.items = [];
 	$scope.actions = [];
 
-	ManagerAjax.getTasks().then(function successCallback(response) {
-	
-	    if(angular.isArray(response.data))
-	    {
-	    	$scope.tasks = response.data;
-	    }
-
- 	}, function errorCallback(response) {
-
-	    console.log( "Erreur de récupération des données de getTasks" );
-		$scope.tasks = [];
-
-  	});
-
-
-	ManagerAjax.getItems().then(function successCallback(response) {
-	
-	    if(angular.isArray(response.data))
-	    {
-	    	$scope.items = response.data;
-	    }
-
- 	}, function errorCallback(response) {
-
-	    console.log( "Erreur de récupération des données de getItems" );
-		$scope.tasks = [];
-
-  	});
-
-
-	/*
-	ManagerAjax.getTasks(function(data){
-        $scope.tasks = data;
-
-        console.log("huhu");
-    });
-*/
-
-/*
-
-			$http({
-		        method : "GET",
-		        url : "/getTasks",
-		        data: {},
-		    }).then(function successCallback(response) {
-			    // this callback will be called asynchronously
-			    // when the response is available
-			    console.log(response.data);
-			    if(angular.isArray(response.data))
-			    {console.log("hu");}
-				else
-				{console.log("ho");}
-			    
-			       $scope.tasks = response.data;
-		 	}, function errorCallback(response) {
-			    // called asynchronously if an error occurs
-			    // or server returns response with an error status.
-			    console.log( "Erreur de récupération des données de getTasks" );
-				return [];
-		  	});
-
-*/
-
-
-/*
-		    $http({
-		        method : "GET",
-		        url : "/getItems",
-		        data: {},
-		    }).then(function successCallback(response) {
-			    // this callback will be called asynchronously
-			    // when the response is available
-			    console.log(response.data);
-			    if(angular.isArray(response.data))
-			    {console.log("hu");}
-				else
-				{console.log("ho");}
-			    
-			       $scope.items = response.data;
-		 	}, function errorCallback(response) {
-			    // called asynchronously if an error occurs
-			    // or server returns response with an error status.
-			    console.log( "Erreur de récupération des données de getTasks" );
-				return [];
-		  	});
-*/
-
-/*
-	
-    	$http({
-	        method : "POST",
-	        //url : "http://localhost/project_manager_php/task/getTasks.php",
-	        url : "/get/getTasks",
-	        data: {},
-	    }).success(function(data, status) {
-			$scope.tasks =  data;
-		}).error(function(data, status) {
-			console.log( "Erreur de récupération des données de getTasks " + data + " |||| " + status );
-			$scope.tasks = [];
-		});
-
-*/
-
-
-
-
 	$scope.initManager();
 	
+	$scope.go = function(path){
+		$location.path( path );
+	};
 
 	function initManager(){
 		
-		/*$scope.tasks = [
-			{	id: 1,
-				name: "task 1",
-				order: 1
-			},
-			{	id: 2,
-				name: "task 2",
-				order: 4
-			},
-			{	id: 3,
-				name: "task 3",
-				order: 3
-			},
-			{	id: 4,
-				name: "task 4",
-				order: 2
-			},
-			{	id: 5,
-				name: "task 5",
-				order: 5
-			}
-		];*/
+		ManagerAjax.getTasks().then(function successCallback(response) {
+			$scope.tasks = response.data;
+			$scope.nbCol = response.data.length;
+	 	}, function errorCallback(response) {
+		    console.log("Erreur de récupération des données de getTasks");
+	  	});
 
-/*
-		$scope.items = [
-			{	id: 1,
-				name: "item 1",
-				order: 1
-			},
-			{	id: 2,
-				name: "item 2",
-				order: 4
-			},
-			{	id: 3,
-				name: "item 3",
-				order: 3
-			},
-			{	id: 4,
-				name: "item 4",
-				order: 2
-			},
-			{	id: 5,
-				name: "item 5",
-				order: 5
-			}
-		];
-*/
-		/*
-		$scope.actions = [
-			1: {
+		ManagerAjax.getItems().then(function successCallback(response) {
+	    	$scope.items = response.data;
+	    	$scope.nbRow = response.data.length;
+	 	}, function errorCallback(response) {
+		    console.log("Erreur de récupération des données de getItems");
+	  	});
 
-
-
-			}, 2: {}, 3: {}];
-		*/
-
-		$scope.actions[1] = [];
-		$scope.actions[2] = [];
-		$scope.actions[3] = [];
-		$scope.actions[4] = [];
-		$scope.actions[5] = [];
-
-		$scope.actions[1][1] = {
-			id: 1,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[1][2] = {
-			id: 2,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[1][3] = {
-			id: 3,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "finished"
-		};
-		$scope.actions[1][4] = {
-			id: 4,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[1][5] = {
-			id: 5,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-
-
-		$scope.actions[2][1] = {
-			id: 6,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "started"
-		};
-		$scope.actions[2][2] = {
-			id: 7,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[2][3] = {
-			id: 8,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[2][4] = {
-			id: 9,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "tostart"
-		};
-		$scope.actions[2][5] = {
-			id: 10,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-
-		$scope.actions[3][1] = {
-			id: 11,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[3][2] = {
-			id: 12,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[3][3] = {
-			id: 13,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[3][4] = {
-			id: 14,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[3][5] = {
-			id: 15,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-
-		$scope.actions[4][1] = {
-			id: 16,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[4][2] = {
-			id: 17,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[4][3] = {
-			id: 18,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[4][4] = {
-			id: 19,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[4][5] = {
-			id: 20,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-
-		$scope.actions[5][1] = {
-			id: 21,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[5][2] = {
-			id: 22,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[5][3] = {
-			id: 23,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[5][4] = {
-			id: 24,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-		$scope.actions[5][5] = {
-			id: 25,
-			comment: "huhu commentaire",
-			userName: "mon user",
-			userLogin: "mon login",
-			dateLastModif: "06/05/2016",
-			stateClass: "undefined"
-		};
-
+		ManagerAjax.getLastActions().then(function successCallback(response) {
+	    	$scope.actions = response.data;
+	 	}, function errorCallback(response) {
+		    console.log("Erreur de récupération des données de getLastActions");
+	  	});
 
 	};
 

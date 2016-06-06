@@ -1,0 +1,23 @@
+#actionContainer {
+	display: inline-block;
+	width: 100%;
+}
+
+
+#actionContainer .maj_action,
+#actionContainer .historique_action {
+
+	display:block;
+
+	padding: 15px;
+
+	float:left;
+
+	width: 50%;
+}
+
+#actionContainer .maj_action {
+
+	border-right: #464c52 3px double;
+	text-align: right;
+}
