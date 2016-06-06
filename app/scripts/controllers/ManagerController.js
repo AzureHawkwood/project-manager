@@ -8,7 +8,7 @@
  * Controller of the projet7AlbumManagerApp
  */
 angular.module('projet7AlbumManagerApp')
-	.controller('ManagerController', function ($scope, ManagerAjax, $http) {
+	.controller('ManagerController', function ($scope, ManagerAjax) {
 	
 	$scope.nbCol = 4;
 	$scope.nbRow = 4;
@@ -24,14 +24,47 @@ angular.module('projet7AlbumManagerApp')
 	$scope.items = [];
 	$scope.actions = [];
 
+	ManagerAjax.getTasks().then(function successCallback(response) {
+	
+	    if(angular.isArray(response.data))
+	    {
+	    	$scope.tasks = response.data;
+	    }
 
-/*
+ 	}, function errorCallback(response) {
+
+	    console.log( "Erreur de récupération des données de getTasks" );
+		$scope.tasks = [];
+
+  	});
+
+
+	ManagerAjax.getItems().then(function successCallback(response) {
+	
+	    if(angular.isArray(response.data))
+	    {
+	    	$scope.items = response.data;
+	    }
+
+ 	}, function errorCallback(response) {
+
+	    console.log( "Erreur de récupération des données de getItems" );
+		$scope.tasks = [];
+
+  	});
+
+
+	/*
 	ManagerAjax.getTasks(function(data){
         $scope.tasks = data;
 
         console.log("huhu");
     });
-*/$http({
+*/
+
+/*
+
+			$http({
 		        method : "GET",
 		        url : "/getTasks",
 		        data: {},
@@ -39,6 +72,10 @@ angular.module('projet7AlbumManagerApp')
 			    // this callback will be called asynchronously
 			    // when the response is available
 			    console.log(response.data);
+			    if(angular.isArray(response.data))
+			    {console.log("hu");}
+				else
+				{console.log("ho");}
 			    
 			       $scope.tasks = response.data;
 		 	}, function errorCallback(response) {
@@ -48,8 +85,31 @@ angular.module('projet7AlbumManagerApp')
 				return [];
 		  	});
 
+*/
 
 
+/*
+		    $http({
+		        method : "GET",
+		        url : "/getItems",
+		        data: {},
+		    }).then(function successCallback(response) {
+			    // this callback will be called asynchronously
+			    // when the response is available
+			    console.log(response.data);
+			    if(angular.isArray(response.data))
+			    {console.log("hu");}
+				else
+				{console.log("ho");}
+			    
+			       $scope.items = response.data;
+		 	}, function errorCallback(response) {
+			    // called asynchronously if an error occurs
+			    // or server returns response with an error status.
+			    console.log( "Erreur de récupération des données de getTasks" );
+				return [];
+		  	});
+*/
 
 /*
 	
@@ -98,7 +158,7 @@ angular.module('projet7AlbumManagerApp')
 			}
 		];*/
 
-
+/*
 		$scope.items = [
 			{	id: 1,
 				name: "item 1",
@@ -121,7 +181,7 @@ angular.module('projet7AlbumManagerApp')
 				order: 5
 			}
 		];
-
+*/
 		/*
 		$scope.actions = [
 			1: {

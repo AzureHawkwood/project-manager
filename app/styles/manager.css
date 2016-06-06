@@ -23,7 +23,7 @@
 #managerContainer table td {	
 	border: 1px solid #1c1e22;
 	background-color: #464c52;
-	word-break: break-all!important;
+	
 }
 #managerContainer table th {
 	text-align: center;
@@ -37,6 +37,8 @@
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#353b41, Direction=NaN, Strength=20);
 }
 #managerContainer table td {
+	word-break: break-all!important;
+
 	text-align: left;
 	line-height:12px;
 	font-size:12px;
@@ -80,7 +82,13 @@
 #managerContainer table th .move-vertical, 
 #managerContainer table th .move-horizontal {
 	display:block;
+
+
+	/*
 	float:left;
+	*/
+	margin:auto;
+
 
 	width: 26px;
 	height: 26px;

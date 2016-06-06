@@ -6,8 +6,8 @@
 			<tr>
 				<th class="hiddenTd nosort"></th>
 				
-				<th ng-repeat="task in tasks | orderBy: 'order' track by task.id" class="move-horizontal-accept" wait-on-col-load="">
-					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
+				<th ng-repeat="task in tasks track by task.id" class="move-horizontal-accept" wait-on-col-load="">
+						<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
 					{{task.name}}
 				</th>
 
@@ -17,25 +17,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items | orderBy: 'order' track by item.id" wait-on-row-load="">
+			<tr ng-repeat="item in items track by item.id" wait-on-row-load="">
 				<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>{{item.name}}</th>
-				
-				
-				<!--	
-				<td ng-repeat="task in tasks" ng-class="{{action[item.id].stateClass}}">
-				{{action[item.id].comment}}
-				</td>
-				-->
 
 
-				<!--
-				<td ng-repeat="task in tasks">
-					{{task.name | cutLongString:true:maxLengthStringToDisplay }} 
-				</td>
-				-->
 
-
-				<td ng-repeat="task in tasks | orderBy: 'order' track by task.id" class="{{actions[task.id][item.id].stateClass}}">
+				<td ng-repeat="task in tasks track by task.id" class="{{actions[task.id][item.id].stateClass}}">
 				{{actions[task.id][item.id].comment}}
 				</td>
 

@@ -5,11 +5,13 @@ angular.module('projet7AlbumManagerApp')
     return{
         getTasks: function(){
 
+        	/*
+        	console.log("Factory : ManagerAjax");
         	$http({
 		        method : "GET",
 		        url : "/getTasks",
 		        data: {},
-		    })/*.then(function successCallback(response) {
+		    }).then(function successCallback(response) {
 			    // this callback will be called asynchronously
 			    // when the response is available
 			    console.log(response.data);
@@ -19,11 +21,17 @@ angular.module('projet7AlbumManagerApp')
 			    // or server returns response with an error status.
 			    console.log( "Erreur de récupération des données de getTasks" );
 				return [];
-		  	})*/;
+		  	});
+		    */
+		    return $http({
+		        method : "GET",
+		        url : "/getTasks",
+		        data: {},
+		    });
 
         },
         getItems: function(){
-
+/*
         	$http({
 		        method : "GET",
 		        url : "/getItems",
@@ -34,7 +42,12 @@ angular.module('projet7AlbumManagerApp')
 				console.log( "Erreur de récupération des données de getItems" );
 				return [];
 			});
-
+*/
+			return $http({
+		        method : "GET",
+		        url : "/getItems",
+		        data: {},
+		    });
         },
         getLastActions: function(){
             $http({
