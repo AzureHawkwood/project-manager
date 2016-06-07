@@ -48,6 +48,18 @@ angular.module('projet7AlbumManagerApp')
 		    });
 		    
         },
+        addAction: function(data){
+            console.log(data);
+            return $http({
+		        method : "POST",
+		        url : "/addAction",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+				 }
+		    });
+		    
+        },
 
 
         /*

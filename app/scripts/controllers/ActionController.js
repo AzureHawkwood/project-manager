@@ -5,7 +5,10 @@ angular.module('projet7AlbumManagerApp')
 
 		$scope.task_id = 0;
 		$scope.item_id = 0;
-		$scope.state_id = 0;
+		//On initialise la variable à null car il s'agit d'une dropdownlist bootstrap retravaillée
+		//qui va alimenter un input hidden, donc cet input doit être en required et ne pas avoir
+		//de valeur, tant que l'on a pas choisi une valeur dans la dropdownlist
+		$scope.state_id = null;
 		$scope.state_name = "";
 		$scope.comment = "";
 
@@ -17,9 +20,24 @@ angular.module('projet7AlbumManagerApp')
 		$scope.chooseState = function(state){
 			$scope.state_id = state.id;
 			$scope.state_name = state.name;
-		}
+		};
 
-
+		$scope.addAction = function(form){
+			if(form.$valid) {
+				var formData = {
+					task_id: $scope.task_id,
+					item_id: $scope.item_id,
+					user_id: 1,
+					state_id: $scope.state_id,
+					comment: $scope.comment
+				}
+	            AjaxFactory.addAction(formData).then(function successCallback(response) {
+					console.log("huhu bien ajouté");
+			 	}, function errorCallback(response) {
+				    console.log("Erreur d'exécution de addAction");
+			  	});
+	       	}
+		};
 
 
 

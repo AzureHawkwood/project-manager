@@ -1,7 +1,7 @@
 <div id="actionContainer">
   <div class="maj_action">
 
-    <form name="actionForm" class="" ng-submit="addAction()" novalidate>
+    <form name="actionForm" class="" ng-submit="addAction(actionForm)" novalidate>
 
         <!--
         <span id="reauth-email" class="reauth-email"></span>
@@ -35,16 +35,16 @@
           </ul>
         </div>
 
-        <input type="hidden" name="state_id" ng-model="state_id" value="state_id" required/>
-        <div class="error-messages" ng-messages="actionForm.state_id.$error">
-            <div ng-messages-include="views/form_error_messages.html"></div>
+        <input type="hidden" name="state_id" ng-model="state_id" value="state_id" required="" />
+        <div class="error-messages" ng-messages="actionForm.state_id.$error" ng-if="actionForm.$submitted">
+            <div  style="color: #dd3333;" ng-message="required">Merci de sélectionner une valeur dans la liste déroulante</div>
         </div>
 
 
         <br />
         <label>Message</label><br />
         <textarea ng-model="comment" name="comment" placeholder="Saisir un commentaire..." style="width:100%;height:120px;"></textarea>
-        <div class="error-messages" ng-messages="actionForm.comment.$error">
+        <div class="error-messages" ng-messages="actionForm.comment.$error" ng-if="actionForm.$submitted">
             <div ng-messages-include="views/form_error_messages.html"></div>
         </div>
 
@@ -58,7 +58,7 @@
 
   <div class="historique_action">
       <div class="history" ng-repeat="comment in comments track by comment.id">
-      <strong>{{comment.user_login | capitalize}}</strong> [Etat: {{comment.state_name}}] <em>({{comment.date_last_modif | date:'dd/MM/yyyy à h:mm' }})</em> :
+      <strong>{{comment.user_login | capitalize}}</strong> [Etat: {{comment.state_name}}] <em>({{comment.date_last_modif | date:'dd/MM/yyyy à HH:mm' }})</em> :
       <p>{{comment.comment}}</p>
       <hr />
       </div>
