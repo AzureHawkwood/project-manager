@@ -21,15 +21,6 @@ angular.module('projet7AlbumManagerApp')
 		    });
 
         },
-        getLastActions: function(){
-            
-            return $http({
-		        method : "GET",
-		        url : "/getLastActions",
-		        data: {},
-		    });
-
-        },
         getStates: function(){
             
             return $http({
@@ -39,28 +30,48 @@ angular.module('projet7AlbumManagerApp')
 		    });
 		    
         },
-        getComments: function(task_id, item_id){
+        getLastActions: function(){
             
             return $http({
 		        method : "GET",
-		        url : "/getComments/"+task_id+"/"+item_id,
+		        url : "/getLastActions",
+		        data: {},
+		    });
+
+        },
+        getActions: function(task_id, item_id){
+            
+            return $http({
+		        method : "GET",
+		        url : "/getActions/"+task_id+"/"+item_id,
 		        data: {},
 		    });
 		    
         },
         addAction: function(data){
-            console.log(data);
+            
             return $http({
 		        method : "POST",
 		        url : "/addAction",
 		        data: data,
 		        headers: {
 				   'Content-Type': "application/json"
-				 }
+			 	}
 		    });
 		    
         },
-
+        removeAction: function(action_id){
+            
+            return $http({
+		        method : "POST",
+		        url : "/removeAction",
+		        data: {action_id: action_id},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });
+		    
+        },
 
         /*
         getItems: function(){

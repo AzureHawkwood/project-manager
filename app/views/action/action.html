@@ -57,10 +57,10 @@
   </div>
 
   <div class="historique_action">
-      <div class="history" ng-repeat="comment in comments track by comment.id">
-      <strong>{{comment.user_login | capitalize}}</strong> [Etat: {{comment.state_name}}] <em>({{comment.date_last_modif | date:'dd/MM/yyyy à HH:mm' }})</em> :
-      <p>{{comment.comment}}</p>
-      <hr />
+      <div class="history" ng-repeat="action in actions track by action.id">
+      <span class="cursorPointer glyphicon glyphicon-trash" ng-click="removeAction(action.id, $index)"></span> <strong>{{action.user_login | capitalize}}</strong> [Etat: {{action.state_name}}] <em>({{action.date_last_modif | date:'dd/MM/yyyy à HH:mm' }})</em> :
+      <p>{{action.comment}}</p>
+      <hr ng-hide="$index === actions.length-1"/>
       </div>
   </div>
 </div>

@@ -1,28 +1,11 @@
 var node_mysql_connection = require("../node_mysql_connection");
 var connection = node_mysql_connection.mysql_connection;
 
-exports.getActions = function(req, res){
-
- 
-  
-};
-
 
 exports.getLastActions = function(req, res){
 
 	var actions = [];
-	/*
-	var request = "SELECT A.id, A.fk_item_id as item_id, A.fk_task_id as task_id, \
-				A.fk_user_id as user_id, A.fk_state_id as state_id, A.comment, \
-				max(A.creation_date) as date_last_modif, \
-				U.firstname as user_name, U.login as user_login, S.name as state_name, \
-				S.class_name as state_class \
-				FROM action A \
-				LEFT JOIN user U ON A.fk_user_id = U.id \
-				LEFT JOIN state S ON A.fk_state_id = S.id \
-				GROUP BY A.fk_task_id, A.fk_item_id \
-				";
-	*/
+	
 	var request = "SELECT A.id, A.fk_item_id as item_id, A.fk_task_id as task_id, A.fk_user_id as user_id, A.fk_state_id as state_id, A.comment, \
 				A.creation_date as date_last_modif, U.firstname as user_name, U.login as user_login, S.name as state_name, S.class_name as state_class 	\
 				FROM action A 																															\
@@ -73,20 +56,20 @@ exports.addAction = function(req, res){
 					comment: comment
 				};
 
-	connection.query(request, fields, function(err,res){
+	connection.query(request, fields, function(err){
 	 	if (err) {
 			console.log("Error Inserting : %s ",err );
 		 	throw err;
 		}
 		
-		//console.log('Last insert ID:', res.insertId);
+		res.send({success : "Inserted Successfully", status : 200});
 	});
 
 };
 
 
 
-exports.getComments = function(req, res){
+exports.getActions = function(req, res){
 
 	var task_id = parseInt(req.params.task_id);
 	var item_id = parseInt(req.params.item_id);
@@ -107,6 +90,27 @@ exports.getComments = function(req, res){
 		
 		res.send(rows);
 
+	});
+
+};
+
+
+
+exports.removeAction = function(req, res){
+
+
+	var action_id = parseInt(req.body.action_id);
+
+	var request = "DELETE FROM action WHERE id = ?";
+	
+
+	connection.query(request, [action_id], function(err){
+	 	if (err) {
+			console.log("Error Deleting : %s ",err );
+		 	throw err;
+		}
+		
+		res.send({success : "Deleted Successfully", status : 200});
 	});
 
 };
