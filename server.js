@@ -179,11 +179,11 @@ app.get('/', function (req, res) {
 })
 .get('/getTasks', r_task.getTasks)
 .get('/getItems', r_item.getItems)
-.get('/getActions', r_action.getActions)
 .get('/getLastActions', r_action.getLastActions)
 .get('/getStates', r_state.getStates)
-.get('/getComments/:task_id/:item_id', r_action.getComments)
+.get('/getActions/:task_id/:item_id', r_action.getActions)
 .post('/addAction', r_action.addAction)
+.post('/removeAction', r_action.removeAction)
 .all('*', function (req, res) {
     res.sendFile('index.html', { root: __dirname+'/app' });
 });

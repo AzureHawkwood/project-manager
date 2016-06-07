@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('projet7AlbumManagerApp')
-	.controller('ActionController', function ($scope, $routeParams, AjaxFactory) {
+	.controller('ActionController', function ($scope, $routeParams, $location, AjaxFactory) {
 
 		$scope.task_id = 0;
 		$scope.item_id = 0;
@@ -13,13 +13,18 @@ angular.module('projet7AlbumManagerApp')
 		$scope.comment = "";
 
 		$scope.states = [];
-		$scope.comments = [];
+		$scope.actions = [];
 		$scope.initManager = initManager;
+
 
 
 		$scope.chooseState = function(state){
 			$scope.state_id = state.id;
 			$scope.state_name = state.name;
+		};
+
+		$scope.go = function(path){
+			$location.path(path);
 		};
 
 		$scope.addAction = function(form){
@@ -32,24 +37,28 @@ angular.module('projet7AlbumManagerApp')
 					comment: $scope.comment
 				}
 	            AjaxFactory.addAction(formData).then(function successCallback(response) {
-					console.log("huhu bien ajouté");
+					$scope.go("/");
 			 	}, function errorCallback(response) {
 				    console.log("Erreur d'exécution de addAction");
 			  	});
 	       	}
 		};
 
-
-
-
-
-
-
-
+		$scope.removeAction = function(action_id, array_index) {
+			if(confirm("Êtes-vous certain de vouloir supprimer cette action ?")) {
+				AjaxFactory.removeAction(action_id).then(function successCallback(response) {
+					$scope.actions.splice(array_index, 1);
+			 	}, function errorCallback(response) {
+				    console.log("Erreur d'exécution de removeAction");
+			  	});
+			}
+		}
+		
+		
 		$scope.initManager();
 		
 
-		function initManager(){
+		function initManager() {
 
 			$scope.task_id = parseInt($routeParams.task_id);
 			$scope.item_id = parseInt($routeParams.item_id);
@@ -59,14 +68,11 @@ angular.module('projet7AlbumManagerApp')
 		 	}, function errorCallback(response) {
 			    console.log("Erreur de récupération des données de getActions");
 		  	});
-			AjaxFactory.getComments($scope.task_id, $scope.item_id).then(function successCallback(response) {
-				$scope.comments = response.data;
+			AjaxFactory.getActions($scope.task_id, $scope.item_id).then(function successCallback(response) {
+				$scope.actions = response.data;
 		 	}, function errorCallback(response) {
 			    console.log("Erreur de récupération des données de getStates");
 		  	});
-
-			
-			$scope.comments_history = [];
 
 		};
 
