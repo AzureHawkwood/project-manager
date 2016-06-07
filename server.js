@@ -1,5 +1,6 @@
 
 var express   =     require("express");
+var bodyParser = require('body-parser')
 var app       =     express();
 
 
@@ -11,6 +12,10 @@ var r_project = require('./node_requests/project');
 var r_user = require('./node_requests/user');
 var r_state = require('./node_requests/state');
 
+
+//Pour pouvoir récupérer des paramètres post dans node au format json
+//on pourra à présent y accéder par req.body.variable
+app.use(bodyParser.json());
 
 
 //Important !!! Décrire les url des dossiers se trouvant dans app ici, car le serveur se trouve à la racine, un cran plus haut,
@@ -178,6 +183,7 @@ app.get('/', function (req, res) {
 .get('/getLastActions', r_action.getLastActions)
 .get('/getStates', r_state.getStates)
 .get('/getComments/:task_id/:item_id', r_action.getComments)
+.post('/addAction', r_action.addAction)
 .all('*', function (req, res) {
     res.sendFile('index.html', { root: __dirname+'/app' });
 });

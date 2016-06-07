@@ -54,6 +54,35 @@ exports.getLastActions = function(req, res){
 
 
 
+exports.addAction = function(req, res){
+
+
+	var task_id = parseInt(req.body.task_id);
+	var item_id = parseInt(req.body.item_id);
+	var user_id = 1;//parseInt(req.params.user_id);
+	var state_id = parseInt(req.body.state_id);
+	var comment = req.body.comment;
+
+
+	var request = "INSERT INTO action SET creation_date=NOW(), ?";
+	var fields = {  
+					fk_task_id: task_id,
+					fk_item_id: item_id,
+					fk_user_id: user_id,
+					fk_state_id: state_id,
+					comment: comment
+				};
+
+	connection.query(request, fields, function(err,res){
+	 	if (err) {
+			console.log("Error Inserting : %s ",err );
+		 	throw err;
+		}
+		
+		//console.log('Last insert ID:', res.insertId);
+	});
+
+};
 
 
 
