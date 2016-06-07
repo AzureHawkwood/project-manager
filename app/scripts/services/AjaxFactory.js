@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('projet7AlbumManagerApp')
-  .factory('ManagerAjax', function ($http) {
+  .factory('AjaxFactory', function ($http) {
     return{
         getTasks: function(){
 
@@ -28,21 +28,26 @@ angular.module('projet7AlbumManagerApp')
 		        url : "/getLastActions",
 		        data: {},
 		    });
+
+        },
+        getStates: function(){
+            
+            return $http({
+		        method : "GET",
+		        url : "/getStates",
+		        data: {},
+		    });
 		    
         },
-        getActions: function(){
-            $http({
+        getComments: function(task_id, item_id){
+            
+            return $http({
 		        method : "GET",
-		        url : "/getActions",
+		        url : "/getComments/"+task_id+"/"+item_id,
 		        data: {},
-		    }).success(function(data, status) {
-				return data;
-			}).error(function(data, status) {
-				console.log( "Erreur de récupération des données de getActions" );
-				return {};
-			});
-        }
-
+		    });
+		    
+        },
 
 
         /*

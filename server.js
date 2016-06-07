@@ -9,6 +9,7 @@ var r_manager = require('./node_requests/manager');
 var r_action = require('./node_requests/action');
 var r_project = require('./node_requests/project');
 var r_user = require('./node_requests/user');
+var r_state = require('./node_requests/state');
 
 
 
@@ -175,6 +176,8 @@ app.get('/', function (req, res) {
 .get('/getItems', r_item.getItems)
 .get('/getActions', r_action.getActions)
 .get('/getLastActions', r_action.getLastActions)
+.get('/getStates', r_state.getStates)
+.get('/getComments/:task_id/:item_id', r_action.getComments)
 .all('*', function (req, res) {
     res.sendFile('index.html', { root: __dirname+'/app' });
 });

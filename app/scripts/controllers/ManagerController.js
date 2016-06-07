@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('projet7AlbumManagerApp')
-	.controller('ManagerController', function ($scope, $location, ManagerAjax) {
+	.controller('ManagerController', function ($scope, $location, AjaxFactory) {
 	
 	$scope.nbCol = 0;
 	$scope.nbRow = 0;
@@ -21,21 +21,21 @@ angular.module('projet7AlbumManagerApp')
 
 	function initManager(){
 		
-		ManagerAjax.getTasks().then(function successCallback(response) {
+		AjaxFactory.getTasks().then(function successCallback(response) {
 			$scope.tasks = response.data;
 			$scope.nbCol = response.data.length;
 	 	}, function errorCallback(response) {
 		    console.log("Erreur de récupération des données de getTasks");
 	  	});
 
-		ManagerAjax.getItems().then(function successCallback(response) {
+		AjaxFactory.getItems().then(function successCallback(response) {
 	    	$scope.items = response.data;
 	    	$scope.nbRow = response.data.length;
 	 	}, function errorCallback(response) {
 		    console.log("Erreur de récupération des données de getItems");
 	  	});
 
-		ManagerAjax.getLastActions().then(function successCallback(response) {
+		AjaxFactory.getLastActions().then(function successCallback(response) {
 	    	$scope.actions = response.data;
 	 	}, function errorCallback(response) {
 		    console.log("Erreur de récupération des données de getLastActions");
