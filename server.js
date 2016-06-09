@@ -177,13 +177,30 @@ app.get('/getTasks', function(req,res){
 app.get('/', function (req, res) {
     res.sendFile('index.html', { root: __dirname+'/app' });
 })
-.get('/getTasks', r_task.getTasks)
-.get('/getItems', r_item.getItems)
-.get('/getLastActions', r_action.getLastActions)
+
 .get('/getStates', r_state.getStates)
+
+.get('/getLastActions', r_action.getLastActions)
 .get('/getActions/:task_id/:item_id', r_action.getActions)
 .post('/addAction', r_action.addAction)
 .post('/removeAction', r_action.removeAction)
+
+.get('/getTask/:task_id', r_task.getTask)
+.get('/getTasks', r_task.getTasks)
+.post('/task', r_task.task)
+.put('/task', r_task.task)
+.delete('/task', r_task.task)
+
+.get('/getItem/:item_id', r_item.getItem)
+.get('/getItems', r_item.getItems)
+.post('/item', r_item.item)
+.put('/item', r_item.item)
+.delete('/item', r_item.item)
+
+app.get('/404', function (req, res) {
+    res.sendFile('404.html', { root: __dirname+'/app' });
+})
+
 .all('*', function (req, res) {
     res.sendFile('index.html', { root: __dirname+'/app' });
 });

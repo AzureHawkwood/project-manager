@@ -37,7 +37,7 @@
 
         <input type="hidden" name="state_id" ng-model="state_id" value="state_id" required="" />
         <div class="error-messages" ng-messages="actionForm.state_id.$error" ng-if="actionForm.$submitted">
-            <div  style="color: #dd3333;" ng-message="required">Merci de sélectionner une valeur dans la liste déroulante</div>
+             <div ng-messages-include="views/form_error_messages.html"></div>
         </div>
 
 
@@ -58,9 +58,11 @@
 
   <div class="historique_action">
       <div class="history" ng-repeat="action in actions track by action.id">
-      <span class="cursorPointer glyphicon glyphicon-trash" ng-click="removeAction(action.id, $index)"></span> <strong>{{action.user_login | capitalize}}</strong> [Etat: {{action.state_name}}] <em>({{action.date_last_modif | date:'dd/MM/yyyy à HH:mm' }})</em> :
+      <span class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeAction(action.id, $index)"></span> <strong>{{action.user_login | capitalize}}</strong> [Etat: {{action.state_name}}] <em>({{action.date_last_modif | date:'dd/MM/yyyy à HH:mm' }})</em> :
       <p>{{action.comment}}</p>
       <hr ng-hide="$index === actions.length-1"/>
       </div>
   </div>
 </div>
+
+<button class="btn btn-lg btn-primary btn-block btn-signin" ng-click="go('/')">Retour</button>

@@ -44,7 +44,7 @@ exports.addAction = function(req, res){
 	var item_id = parseInt(req.body.item_id);
 	var user_id = 1;//parseInt(req.params.user_id);
 	var state_id = parseInt(req.body.state_id);
-	var comment = req.body.comment;
+	var comment = req.body.comment.trim();
 
 
 	var request = "INSERT INTO action SET creation_date=NOW(), ?";

@@ -132,15 +132,34 @@
         padding: 0;
         border: 0;
       }
+
+
+      .buttonCustom {
+        display:block; width:100%;
+        background-color:#eeeeee;
+        border:#444444 thin solid;
+        padding:15px;
+        border-radius:5px;
+        color: #555555;
+      }
+      .buttonCustom:hover {
+        background-color:#555555;
+        border:#222222 thin solid;
+        color: #eeeeee;
+        cursor: pointer;
+      }
+
     </style>
   </head>
   <body>
     <div class="container">
+    
       <h1>Page non trouvée <span>:(</span></h1>
-      <script>
-        var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
-      </script>
-      <script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+      
+      <br />
+
+      <button class="buttonCustom" onclick="window.location.href='/'" >Retour sur le site</button>
+
     </div>
   </body>
 </html>

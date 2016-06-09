@@ -1,6 +1,8 @@
 #managerContainer {
 	display: block;
 	width: 100%;
+
+	overflow-x: auto;
 }
 
 /**********************************
@@ -30,6 +32,9 @@
 	vertical-align: middle;
 	line-height: 28px;
 
+	max-width:150px!important;
+	min-width:100px!important;
+
 	-moz-box-shadow: inset 0px 0px 20px 10px #353b41;
 	-webkit-box-shadow: inset 0px 0px 20px 10px #353b41;
 	-o-box-shadow: inset 0px 0px 20px 10px #353b41;
@@ -45,15 +50,15 @@
 }
 #managerContainer table th:hover, 
 #managerContainer table td:hover {
-	cursor: pointer;
 	/*background-color: rgba(255,255,255,0.2);*/
 	-webkit-box-shadow: none!important;
 	-moz-box-shadow: none!important;
 	box-shadow: none!important;
 }
-
-
-
+#managerContainer table td:hover,
+#managerContainer table th .title:hover {
+	cursor: pointer;
+}
 
 /**********************************
  Gestion des classes ayant différents effets
