@@ -10,6 +10,8 @@
 angular.module('projet7AlbumManagerApp')
   .controller('AuthenticationController', function ($scope, $location, namedRouteService) {
     
+    $scope.huhu = "huhu";
+
   	$scope.login = function(){
   		alert("login");
   	}
@@ -27,8 +29,11 @@ angular.module('projet7AlbumManagerApp')
 
   	}
 
-	$scope.go = function ( path ) {
-		$location.path(namedRouteService.reverse(path));
-	};
+  	$scope.goFromName = function (path) {
+  		$location.path(namedRouteService.reverse(path));
+  	};
+    $scope.go = function (path) {
+      $location.path(path);
+    };
 
   });

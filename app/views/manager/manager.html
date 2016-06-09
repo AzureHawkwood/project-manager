@@ -1,29 +1,32 @@
 
 
 <div id="managerContainer" >
-	<table id="managerContainerTable" class="table" data-nb_col="{{nbCol}}" data-nb_row="{{nbRow}}"  >
+	<table id="managerContainerTable" class="table">
 		<thead>
 			<tr>
 				<th class="hiddenTd nosort"></th>
 				
 				<th ng-repeat="task in tasks track by task.id" class="move-horizontal-accept" wait-on-col-load="">
-						<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
-					{{task.name}}
+					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
+					<span class="title" ng-click="go('/task/'+task.id)">{{task.name}}</span>
 				</th>
 
-				<th class="nosort">
+				<th class="nosort cursorPointer" data-toggle="modal" data-target="#addTaskModal">
 					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="item in items track by item.id" wait-on-row-load="">
-				<th><span class="move-vertical glyphicon glyphicon-resize-vertical"></span>{{item.name}}</th>
+				<th>
+					<span class="move-vertical glyphicon glyphicon-resize-vertical"></span>
+					<span class="title" ng-click="go('/item/'+item.id)">{{item.name}}</span>
+				</th>
 
 
 
 				<td ng-repeat="task in tasks track by task.id" class="{{actions[task.id][item.id].state_class?actions[task.id][item.id].state_class:'undefined' }}" ng-click="go('/action/'+task.id+'/'+item.id)">
-				{{actions[task.id][item.id].comment}}
+				{{actions[task.id][item.id].comment | cutLongString:true:maxLengthStringToDisplay}}
 				</td>
 
 
@@ -31,7 +34,9 @@
 				<td class="hiddenTd"></td>
 			</tr>
 			<tr>
-				<th><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></th>
+				<th class="cursorPointer" data-toggle="modal" data-target="#addItemModal">
+					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+				</th>
 
 				<td ng-repeat="task in tasks track by task.id" class="hiddenTd"></td>
 				
@@ -39,6 +44,63 @@
 			</tr>
 		</tbody>
 	</table>
+
+
+
+
+<div id="addTaskModal" class="modal">
+	<form name="addTaskForm" class="form-signin" ng-submit="addTask(addTaskForm)" novalidate>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				  <h4 class="modal-title">Ajouter une nouvelle tâche</h4>
+				</div>
+				<div class="modal-body">
+
+					<input type="text" name="newTaskName" value="" ng-model="newTaskName" style="width:100%;" placeholder="Nom de la tâche" ng-maxlength="100" ng-minlength="2" class="form-control" required=""/>
+					<div class="error-messages" ng-messages="addTaskForm.newTaskName.$error">
+			            <div ng-messages-include="views/form_error_messages.html"></div>
+			        </div>
+
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+				  <button type="submit" class="btn btn-primary">Ajouter</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+<div id="addItemModal" class="modal">
+	<form name="addItemForm" class="form-signin" ng-submit="addItem(addItemForm)" novalidate>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				  <h4 class="modal-title">Ajouter un nouveau morceau</h4>
+				</div>
+				<div class="modal-body">
+
+					<input type="text" name="newItemName" value="" ng-model="newItemName" style="width:100%;" placeholder="Titre du morceau" ng-maxlength="100" ng-minlength="1" class="form-control" required=""/>
+					<div class="error-messages" ng-messages="addItemForm.newItemName.$error">
+			            <div ng-messages-include="views/form_error_messages.html"></div>
+			        </div>
+
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+				  <button type="submit" class="btn btn-primary">Ajouter</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+
 </div>
 
 

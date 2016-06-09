@@ -69,6 +69,13 @@ angular
         controllerAs: 'TaskCtrl',
         animation: 'slide'
       })
+      .when('/404', {
+        name: '404',
+        templateUrl: 'views/404.html',
+        controller: 'AuthenticationController',
+        controllerAs: 'AuthenticationCtrl',
+        animation: 'slide'
+      })
       .otherwise({
         redirectTo: '/login'
       });

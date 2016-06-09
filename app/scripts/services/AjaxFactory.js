@@ -3,53 +3,121 @@
 angular.module('projet7AlbumManagerApp')
   .factory('AjaxFactory', function ($http) {
     return{
-        getTasks: function(){
 
+    	/************************
+		*	TASK
+    	************************/
+    	getTask: function(task_id){
+		    return $http({
+		        method : "GET",
+		        url : "/getTask/"+task_id,
+		        data: {},
+		    });
+        },
+        getTasks: function(){
 		    return $http({
 		        method : "GET",
 		        url : "/getTasks",
 		        data: {},
 		    });
+        },
+        addTask: function(data){
+            return $http({
+		        method : "POST",
+		        url : "/task",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
+        },
+        updateTask: function(data){
+            return $http({
+		        method : "PUT",
+		        url : "/task",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
+        },
+        removeTask: function(data){
+            return $http({
+		        method : "DELETE",
+		        url : "/task",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
+        },
 
+    	/************************
+		*	ITEM
+    	************************/
+    	getItem: function(item_id){
+		    return $http({
+		        method : "GET",
+		        url : "/getItem/"+item_id,
+		        data: {},
+		    });
         },
         getItems: function(){
-
 			return $http({
 		        method : "GET",
 		        url : "/getItems",
 		        data: {},
 		    });
-
         },
-        getStates: function(){
-            
+        addItem: function(data){            
             return $http({
-		        method : "GET",
-		        url : "/getStates",
-		        data: {},
-		    });
-		    
+		        method : "POST",
+		        url : "/item",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
         },
-        getLastActions: function(){
-            
+        updateItem: function(data){
+            return $http({
+		        method : "PUT",
+		        url : "/item",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
+        },
+        removeItem: function(data){
+            return $http({
+		        method : "DELETE",
+		        url : "/item",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
+        },
+
+    	/************************
+		*	ACTION
+    	************************/
+    	getLastActions: function(){            
             return $http({
 		        method : "GET",
 		        url : "/getLastActions",
 		        data: {},
 		    });
-
         },
-        getActions: function(task_id, item_id){
-            
+        getActions: function(task_id, item_id){            
             return $http({
 		        method : "GET",
 		        url : "/getActions/"+task_id+"/"+item_id,
 		        data: {},
-		    });
-		    
+		    });		    
         },
-        addAction: function(data){
-            
+        addAction: function(data){            
             return $http({
 		        method : "POST",
 		        url : "/addAction",
@@ -57,11 +125,9 @@ angular.module('projet7AlbumManagerApp')
 		        headers: {
 				   'Content-Type': "application/json"
 			 	}
-		    });
-		    
+		    });		    
         },
-        removeAction: function(action_id){
-            
+        removeAction: function(action_id){            
             return $http({
 		        method : "POST",
 		        url : "/removeAction",
@@ -69,67 +135,22 @@ angular.module('projet7AlbumManagerApp')
 		        headers: {
 				   'Content-Type': "application/json"
 			 	}
-		    });
-		    
+		    });		    
         },
 
-        /*
-        getItems: function(){
-
-        	$http({
-		        method : "POST",
-		        url : "http://localhost/project_manager_php/item/getItems.php",
+    	/************************
+		*	STATE
+    	************************/
+        getStates: function(){            
+            return $http({
+		        method : "GET",
+		        url : "/getStates",
 		        data: {},
-		    }).success(function(data, status) {
-				return data;
-			}).error(function(data, status) {
-				console.log( "Erreur de récupération des données de getItems" );
-				return {};
-			});
+		    });		    
+        },
+        
 
-        },
-        getLastActions: function(query, page){
-            $http({
-		        method : "POST",
-		        url : "http://localhost/project_manager_php/action/getLastActions.php",
-		        data: {},
-		    }).success(function(data, status) {
-				return data;
-			}).error(function(data, status) {
-				console.log( "Erreur de récupération des données de getLastActions" );
-				return {};
-			});
-        },
-        getActions: function(query, page){
-            $http({
-		        method : "POST",
-		        url : "http://localhost/project_manager_php/action/getActions.php",
-		        data: {},
-		    }).success(function(data, status) {
-				return data;
-			}).error(function(data, status) {
-				console.log( "Erreur de récupération des données de getActions" );
-				return {};
-			});
-        },
-        */
-
-
-
-        /*
-        getItems: function(query, page){
-            return $http.get("http://localhost:3000/search?q=" + query + "&page=" + page);
-        },
-        getTasks: function(query, page){
-            return $http.get("http://localhost:3000/search?q=" + query + "&page=" + page);
-        },
-        info: function(id){
-            return $http.get("http://localhost:3000/info/" + id);
-        },
-        popular: function(page){
-            return $http.get("http://localhost:3000/popular?page=" + page);
-        }
-        */
+      
     }
 
   });

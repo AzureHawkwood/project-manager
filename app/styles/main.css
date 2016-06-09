@@ -15,7 +15,7 @@ body {
 }
 
 .cursorPointer:hover{
-	cursor: pointer;
+	cursor: pointer!important;
 }
 .zoom-1 {
     zoom: 1;
@@ -36,4 +36,8 @@ body {
     zoom: 4;
     -moz-transform: scale(4);
     -moz-transform-origin: 0 0;
+}
+
+.colorRed {
+	color: #dd3333;
 }

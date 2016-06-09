@@ -1,11 +1,11 @@
 'use strict';
 
 /**
- * @ngdoc function
- * @name projet7AlbumManagerApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the projet7AlbumManagerApp
+ * Ce filtre s'utilise de la sorte par exemple : {{ texte | cutLongString:true:25}}
+ * value est utilisé à gauche du pipe, c'est le texte à couper
+ * wordwise permet d'indiquer via un booleen si l'on coupe un mot en plein milieu ou non
+ * max correspond au nombre max de lettres à afficher
+ * tail est la chaine de texte que l'on rajoute à la fin si le texte a été coupé, " ..." par défaut
  */
 angular.module('projet7AlbumManagerApp')
 .filter('cutLongString', function () {

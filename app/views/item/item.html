@@ -1,23 +1,22 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+
+<div class="card card-container">
+    <span class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeItem()"></span>
+    <br />
+    <form name="itemForm" class="form-signin" ng-submit="updateItem(itemForm)" novalidate>
+
+        <label>Morceau</label>
+        <input name="item_name" id="item_name" type="text" ng-maxlength="100" ng-minlength="1" placeholder="Nom de la tâche" class="form-control" autofocus="" required="" ng-model="item_name"/>
+        <div class="error-messages" ng-messages="itemForm.item_name.$error">
+            <div ng-messages-include="views/form_error_messages.html"></div>
+        </div>
+
+
+        <button ng-show="original_item_name != item_name" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Mettre à jour</button>
+
+    </form>
+
+
+
+<button class="btn btn-lg btn-primary btn-block btn-signin" ng-click="go('/')">Retour</button>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>

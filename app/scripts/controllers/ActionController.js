@@ -57,7 +57,7 @@ angular.module('projet7AlbumManagerApp')
 		
 		$scope.initManager();
 		
-
+		
 		function initManager() {
 
 			$scope.task_id = parseInt($routeParams.task_id);
