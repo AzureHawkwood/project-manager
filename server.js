@@ -12,7 +12,9 @@ var r_project = require('./node_requests/project');
 var r_user = require('./node_requests/user');
 var r_state = require('./node_requests/state');
 
-
+//urlencoded pour récupérer le body encodé au format utf8, le extender false
+//permet de n'autoriser que des variables string et array, et pas n'importe quoi
+app.use(bodyParser.urlencoded({ extended: false }));
 //Pour pouvoir récupérer des paramètres post dans node au format json
 //on pourra à présent y accéder par req.body.variable
 app.use(bodyParser.json());
@@ -23,154 +25,7 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/app'));
 
 
-/*
-app.get('/*', function (req, res) {
-    res.sendFile('index.html', { root: __dirname+'/app' });
-});
-*/
 
-
-
-/*
-
-//VERSION OPERATIONNELLE 1 : 
-
-var connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'root',
-	password : '',
-	database : 'project_manager'
-});
-
-connection.connect(function(err) {
-
-	if (err) {
-		console.error('error connecting: ' + err.stack);
-		return;
-	}
-
-	//console.log('connected as id ' + connection.threadId);
-});
-
-app.get('/getTasks', function(req,res){
-	
-    connection.query('SELECT * FROM task ORDER BY task_order asc', function(err, rows, fields) {
-		
-		if (err) {
-			res.send([]);
-		 	throw err;
-		}
-		
-		res.send(rows);
-
-	});
-	
-})
-.post('/getTasks',function(req,res){
-	console.log("hoho post");
-})
-.all('*', function (req, res) {
-    res.sendFile('index.html', { root: __dirname+'/app' });
-});
-
-*/
-
-
-/* ******
-
-REQUETES SQL DEPUIS NODE : 
-
-
-SELECT
-
-con.query('SELECT * FROM employees',function(err,rows){
-  if(err) throw err;
-
-  console.log('Data received from Db:\n');
-  console.log(rows);
-});
-
-
-
-INSERT
-
-var employee = { name: 'Winnie', location: 'Australia' };
-con.query('INSERT INTO employees SET ?', employee, function(err,res){
-  if(err) throw err;
-
-  console.log('Last insert ID:', res.insertId);
-});
-
-
-
-UPDATE
-
-con.query(
-  'UPDATE employees SET location = ? Where ID = ?',
-  ["South Africa", 5],
-  function (err, result) {
-    if (err) throw err;
-
-    console.log('Changed ' + result.changedRows + ' rows');
-  }
-);
-
-
-
-DELETE 
-
-con.query(
-  'DELETE FROM employees WHERE id = ?',
-  [5],
-  function (err, result) {
-    if (err) throw err;
-
-    console.log('Deleted ' + result.affectedRows + ' rows');
-  }
-);
-
-* *******/
-
-
-
-
-/*
-//VERSION OPERATIONNELLE 2 : avec un pool d'adresses
-
-var mysqlPool = mysql.createPool({
-	connectionLimit : 100, //important
-	host     : 'localhost',
-	user     : 'root',
-	password : '',
-	database : 'project_manager'
-});
-
-app.get('/getTasks', function(req,res){
-	
-	mysqlPool.getConnection(function(err, connection){
-
-		connection.query('SELECT * FROM task ORDER BY task_order asc', function(err, rows) {
-			
-			if (err) {
-				res.send([]);
-			 	throw err;
-			}
-			
-			res.send(rows);
-
-		});
-	  	
-		connection.release();
-	});
-
-})
-.post('/getTasks',function(req,res){
-	console.log("hoho post");
-})
-.all('*', function (req, res) {
-    res.sendFile('index.html', { root: __dirname+'/app' });
-});
-*/
 
 
 

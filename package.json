@@ -42,8 +42,10 @@
     "test": "karma start test\\karma.conf.js"
   },
   "dependencies": {
+    "body-parser": "^1.15.1",
     "grunt": "^0.4.5",
     "jquery": "^2.2.4",
+    "mongoose": "^4.5.0",
     "mysql": "^2.10.2"
   }
 }

@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"over",
+				"overflow-x"
+			],
+			[
+				"comme",
+				"comment_id"
+			],
+			[
+				"state",
+				"state_id"
+			],
+			[
+				"h",
+				"hidden"
+			],
+			[
 				"move",
 				"move-horizontal"
 			],
@@ -23,86 +39,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/scripts/app.js",
-			"settings":
-			{
-				"buffer_size": 1773,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/manager/manager.html",
-			"settings":
-			{
-				"buffer_size": 2101,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/styles/footer_custom.css",
-			"settings":
-			{
-				"buffer_size": 1350,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/filters/cutLongStringFilter.js",
-			"settings":
-			{
-				"buffer_size": 874,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/controllers/ManagerController.js",
-			"settings":
-			{
-				"buffer_size": 2361,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/controllers/LogoutController.js",
-			"settings":
-			{
-				"buffer_size": 606,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/index.html",
-			"settings":
-			{
-				"buffer_size": 4690,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/register/register.html",
-			"settings":
-			{
-				"buffer_size": 2351,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/styles/manager.css",
-			"settings":
-			{
-				"buffer_size": 3321,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/styles/main.css",
-			"settings":
-			{
-				"buffer_size": 582,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -139,42 +75,80 @@
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/services",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/item",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/login",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/manager",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/register",
-		"/C/wamp/www/project_manager_php",
-		"/C/wamp/www/project_manager_php/user",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet10 - login register angularjs",
-		"/C/Users/mngrha/Desktop/ftorres/www/mean-stack-registration-login-example-master"
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/task"
 	],
 	"file_history":
 	[
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/main.css",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/login_form.css",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/dragtable_columns.css",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/filters/cutStringFilter.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/filters/CutStringFilter.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/manager.css",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/action.css",
+		"/C/Users/mngrha/Desktop/ftorres/www/nodecrud-master/routes/index.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/server.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_requests/project.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_requests/item.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_requests/manager.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_requests/task.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_requests/state.js",
+		"/C/wamp/www/project_manager_php/task/getTasks.php",
+		"/C/wamp/www/project_manager_php/user/view.php",
+		"/C/wamp/www/project_manager_php/item/getItems.php",
+		"/C/wamp/www/project_manager_php/action/getActions.php",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_requests/action.js",
+		"/C/wamp/www/project_manager_php/action/getLastActions.php",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/AuthenticationController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/LogoutController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/task/task.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/services/AjaxFactory.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/directives/ManagerDirective.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/TaskController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/item/item.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/ItemController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/index.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/footer_custom.css",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/manager/manager.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/404.html",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/register/register.html",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/login/login.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/ManagerController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/nodecrud-master/routes/customers.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/nodecrud-master/app.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/filters/capitalizeFilter.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/action/action.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/filters/cutLongStringFilter.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/form_error_messages.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_mysql_connection.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/ActionController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/404.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/app.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/directives/ActionDirective.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/favicon.ico",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_requests/user.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/node_constants.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/services/angular-dragtable-master.zip",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/services/angular-dragtable-master_v2.zip",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/dragtable_columns.css",
+		"/C/Users/mngrha/Desktop/ftorres/www/mean-stack-registration-login-example-master/controllers/app.controller.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/mean-stack-registration-login-example-master/controllers/register.controller.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/mean-stack-registration-login-example-master/controllers/login.controller.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/filters/cutStringFilter.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/filters/CutStringFilter.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/authentication.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/manager.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/ManagerController.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/LogoutController.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/server.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/index.html",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/logout.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/bootstrap_slate_theme.css",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/services/LogoutService.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/login.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/manager/manager.html",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/register.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/main.css",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/app.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/mean-stack-registration-login-example-master/server.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/footer_custom.css",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/footer-basic-centered.css",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/404.html",
 		"/C/wamp/www/project_manager_php/connexion.php",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - AlbumManager/server.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - AlbumManager/app/index.html",
@@ -182,7 +156,6 @@
 		"/C/wamp/www/project_manager_php/user/edit.php",
 		"/C/wamp/www/project_manager_php/user/add.php",
 		"/C/wamp/www/project_manager_php/user/delete.php",
-		"/C/wamp/www/project_manager_php/user/view.php",
 		"/C/wamp/www/project_manager/user/view.php",
 		"/C/wamp/www/project_manager/index.php",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet1/server.js",
@@ -190,7 +163,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -204,6 +177,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"task",
+			"nbCol",
+			"getCOmme",
+			"compile",
+			"}\n",
 			"overflo",
 			"font-face",
 			"'\n",
@@ -219,6 +197,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"item",
 			"_custom"
 		],
 		"reverse": false,
@@ -230,304 +209,13 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/scripts/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1773,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								906,
-								906
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 210.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/manager/manager.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2101,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1527,
-								1527
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 435.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/styles/footer_custom.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1350,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/scripts/filters/cutLongStringFilter.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 874,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								826,
-								826
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/scripts/controllers/ManagerController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2361,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2013,
-								2013
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 24.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/scripts/controllers/LogoutController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 606,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								296,
-								296
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4690,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4095,
-								4095
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1665.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/register/register.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2351,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2111,
-								2111
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 480.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 8,
-					"file": "app/styles/manager.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3321,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3316,
-								3316
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1215.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/styles/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 582,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								244,
-								244
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -559,7 +247,7 @@
 		"cols":
 		[
 			0.0,
-			0.447321428571,
+			0.5,
 			1.0
 		],
 		"rows":

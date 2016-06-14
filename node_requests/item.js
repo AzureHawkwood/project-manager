@@ -83,7 +83,7 @@ exports.item = function(req, res, next){
 	if(req.method === "POST")
 	{
 
-		var item_name = req.body.name.trim();
+		var item_name = req.body.item_name.trim();
 		var user_id = 1;
 		var item_order =  0;
 

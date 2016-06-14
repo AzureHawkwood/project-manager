@@ -37,17 +37,18 @@ angular.module('projet7AlbumManagerApp')
 		}
 	};
 	$scope.removeItem = function(){
+		if(confirm("Êtes-vous certain de vouloir supprimer définitivement ce morceau ?")) {
 			
-		var data = { 
-			item_id: $scope.item_id
-		};
+			var data = { 
+				item_id: $scope.item_id
+			};
 
-		AjaxFactory.removeItem(data).then(function successCallback(response) {
-			$location.path("/");
-	 	}, function errorCallback(response) {
-		    console.log("Erreur de suppression de données removeItem");
-	  	});
-	
+			AjaxFactory.removeItem(data).then(function successCallback(response) {
+				$location.path("/");
+		 	}, function errorCallback(response) {
+			    console.log("Erreur de suppression de données removeItem");
+		  	});
+		}
 	};
 
 
