@@ -58,7 +58,7 @@ exports.task = function(req, res, next){
 	if(req.method === "POST")
 	{
 
-		var task_name = req.body.name.trim();
+		var task_name = req.body.task_name.trim();
 		var user_id = 1;
 		var task_order =  0;
 

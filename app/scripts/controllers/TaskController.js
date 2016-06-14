@@ -37,16 +37,18 @@ angular.module('projet7AlbumManagerApp')
 		}
 	};
 	$scope.removeTask = function(){
-			
-		var data = { 
-			task_id: $scope.task_id
-		};
+		if(confirm("Êtes-vous certain de vouloir supprimer définitivement cette tâche ?")) {
+		
+			var data = { 
+				task_id: $scope.task_id
+			};
 
-		AjaxFactory.removeTask(data).then(function successCallback(response) {
-			$location.path("/");
-	 	}, function errorCallback(response) {
-		    console.log("Erreur de suppression de données removeTask");
-	  	});
+			AjaxFactory.removeTask(data).then(function successCallback(response) {
+				$location.path("/");
+		 	}, function errorCallback(response) {
+			    console.log("Erreur de suppression de données removeTask");
+		  	});
+		}
 	
 	};
 
