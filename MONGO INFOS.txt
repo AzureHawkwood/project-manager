@@ -1,0 +1,45 @@
+Lancer le serveur sous windows :
+
+"C:\Program Files\MongoDB\Server\3.2\bin\mongod.exe" --storageEngine=mmapv1 --dbpath="C:\Program Files\MongoDB\db"
+
+On précise le storage engine qui est normalement wiredtiger, mais ici sous windows on a l'ancien mmapv1
+on précise le dbpath, là où va se trouve la base, c'est à dire dans C:\Program Files\MongoDB\db (sinon par défaut c:\data\db)
+
+
+
+
+
+
+Une fois que le serveur mongodb tourne, on peut utiliser une console pour dialoguer avec la base :
+
+
+"C:\Program Files\MongoDB\Server\3.2\bin\mongo.exe"
+
+
+
+La lise des commandes possibles sur le site officiel : https://docs.mongodb.com/manual/mongo/
+
+
+
+Pour utiliser rock-mongo (style phpmyadmin mais pour mongo)
+
+Il faut déjà ajouter dans le path php et mongo, puis ajouter à wamp l'extension php_mongo
+package trouvé ici : 
+
+http://pecl.php.net/package/mongo
+
+/!\/!\/!\ L'extension dll php_mongo s'ajoute dans : C:\wamp\bin\php\php5.6.15\ext /!\/!\/!\
+le dossier ext !
+
+ajouter dans php ini la ligne :
+extension=php_mongo.dll
+
+
+Se connecter à l'interface   admin/admin
+
+
+
+
+
+
+

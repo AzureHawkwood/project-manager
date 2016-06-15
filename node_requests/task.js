@@ -37,6 +37,7 @@ exports.getTask = function(req, res, next){
 
 exports.getTasks = function(req, res, next){
 
+/*
     connection.query('SELECT * FROM task WHERE visible=1 ORDER BY task_order asc', function(err, rows) {
 	 	if (err) {
 			console.log("Error Selecting : %s ",err );
@@ -47,6 +48,11 @@ exports.getTasks = function(req, res, next){
 
 		
 	});
+	*/
+
+	var hu = [{"id":2,"name":"Gratte Azure","task_order":1,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":1,"name":"Gratte Mick","task_order":2,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":3,"name":"Basse Gaet","task_order":3,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":4,"name":"Batterie Adri","task_order":4,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":5,"name":"Voix Gaet","task_order":5,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":6,"name":"Effets","task_order":6,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":7,"name":"Mix","task_order":7,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":8,"name":"Master","task_order":8,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1}];
+	res.json(hu);
+
 };
 
 

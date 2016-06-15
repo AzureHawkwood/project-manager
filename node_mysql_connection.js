@@ -8,5 +8,4 @@ var mysql_pool = mysql.createPool({
 		database:constants.database
 });
 
-
 exports.mysql_connection = mysql_pool;
