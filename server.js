@@ -33,6 +33,10 @@ app.get('/', function (req, res) {
     res.sendFile('index.html', { root: __dirname+'/app' });
 })
 
+
+.get('/getUsers', r_user.getUsers)
+.get('/addUser', r_user.addUser)
+
 .get('/getStates', r_state.getStates)
 
 .get('/getLastActions', r_action.getLastActions)
@@ -46,8 +50,8 @@ app.get('/', function (req, res) {
 .put('/task', r_task.task)
 .delete('/task', r_task.task)
 
-.get('/getItem/:item_id', r_item.getItem)
-.get('/getItems', r_item.getItems)
+.get('/item/:item_id', r_item.item)
+.get('/item', r_item.item)
 .post('/item', r_item.item)
 .put('/item', r_item.item)
 .delete('/item', r_item.item)

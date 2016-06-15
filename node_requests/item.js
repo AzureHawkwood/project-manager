@@ -1,7 +1,9 @@
 var node_mysql_connection = require("../node_mysql_connection");
 var connection = node_mysql_connection.mysql_connection;
+//var node_mongo_connection = require("../node_mongo_connection");
+//var connection = node_mongo_connection.mongo_connection;
 
-
+/*
 exports.getItem = function(req, res, next){
 
 	var item_id = 0;
@@ -20,10 +22,11 @@ exports.getItem = function(req, res, next){
 
 	});
 };
-
+*/
 
 exports.getItems = function(req, res, next){
 
+/*
     connection.query('SELECT * FROM item WHERE visible=1 ORDER BY item_order asc', function(err, rows) {
 	 	if (err) {
 			console.log("Error Selecting : %s ",err );
@@ -33,9 +36,16 @@ exports.getItems = function(req, res, next){
 		res.send(rows);
 
 	});
+	*/
+
+
+	var hu = [{"id":1,"name":"Earth","item_order":1,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":2,"name":"Papyrus","item_order":2,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":3,"name":"Naysayer","item_order":3,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":4,"name":"Dead man walking","item_order":4,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":5,"name":"Hollow crown","item_order":5,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":6,"name":"Devil's island","item_order":6,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":7,"name":"Truth be told","item_order":7,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":8,"name":"Gone with the wind","item_order":8,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":9,"name":"These colours don't run","item_order":9,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1}];
+	res.json(hu);
+	
+
 };
 
-
+/*
 
 exports.addItem = function(req, res){
 
@@ -74,13 +84,48 @@ exports.addItem = function(req, res){
 
 };
 
-
+*/
 
 
 
 exports.item = function(req, res, next){
 
-	if(req.method === "POST")
+	if(req.method === "GET")
+	{
+		//Si un id a bien été passé en paramètre, on va sélectionner un seul item
+		if(typeof req.params.item_id !== "undefined")
+		{
+			var item_id = 0;
+			if(Number.isFinite(parseInt(req.params.item_id)))
+			{
+				item_id = parseInt(req.params.item_id);
+			}
+
+		    connection.query('SELECT * FROM item WHERE id=?', [item_id], function(err, rows) {
+			 	if (err) {
+					console.log("Error Selecting : %s ",err );
+				 	throw err;
+				}
+				
+				res.send(rows);
+
+			});
+		}
+		//Sinon, on renvoie tous les items
+		else
+		{
+			connection.query('SELECT * FROM item WHERE visible=1 ORDER BY item_order asc', function(err, rows) {
+			 	if (err) {
+					console.log("Error Selecting : %s ",err );
+				 	throw err;
+				}
+				
+				res.send(rows);
+
+			});
+		}
+	}
+	else if(req.method === "POST")
 	{
 
 		var item_name = req.body.item_name.trim();
