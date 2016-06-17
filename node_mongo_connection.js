@@ -3,9 +3,8 @@ var constants = require("./node_constants");
 
 
 
-var mongo_url = "mongodb://"+constants.host_mongo+":"+constants.port_mongo+"/"+constants.database_mongo;
 
-mongoose.connect(mongo_url);
+mongoose.connect(constants.mongo_db_url);
 
 
 
