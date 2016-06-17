@@ -3,9 +3,9 @@
 angular.module('projet7AlbumManagerApp')
 	.controller('ItemController', function ($scope, $routeParams, $location, AjaxFactory) {
 	
-	$scope.item_id = 0;
+	$scope.item_id = "";
 
-	if(Number.isFinite(parseInt($routeParams.id))) {
+	if(typeof $routeParams.id !== "undefined") {
 		$scope.item_id = $routeParams.id;
 	}
 

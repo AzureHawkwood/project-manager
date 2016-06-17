@@ -3,33 +3,17 @@
 
     <form name="actionForm" class="" ng-submit="addAction(actionForm)" novalidate>
 
-        <!--
-        <span id="reauth-email" class="reauth-email"></span>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-        <div id="remember" class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        -->
+        
 
         <label>Etat</label><br />
-        <!--
-        <select name="state" required="" style="width:100%;">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-        </select>
-        -->
+        
 
          <div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" name="state" id="dropdownstate" style="width:100%;" data-toggle="dropdown">{{state_name?state_name:'Choisir un état'}}
             &nbsp;<span class="caret"></span>
           </button>
           <ul class="dropdown-menu" style="width:100%;">
-            <li ng-repeat="state in states track by state.id" ng-click="chooseState(state)" class="cursorPointer">
+            <li ng-repeat="state in states track by state._id" ng-click="chooseState(state)" class="cursorPointer">
               <a>{{state.name}}</a>
             </li>
           </ul>
@@ -53,12 +37,11 @@
 
     </form>
 
-
   </div>
 
   <div class="historique_action">
-      <div class="history" ng-repeat="action in actions track by action.id">
-      <span class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeAction(action.id, $index)"></span> <strong>{{action.user_login | capitalize}}</strong> [Etat: {{action.state_name}}] <em>({{action.date_last_modif | date:'dd/MM/yyyy à HH:mm' }})</em> :
+      <div class="history" ng-repeat="action in actions track by action._id">
+      <span class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeAction(action._id, $index)"></span> <strong>{{action._fk_user_id.login | capitalize}}</strong> [Etat: {{action._fk_state_id.name}}] <em>({{action.creation_date | date:'dd/MM/yyyy à HH:mm' }})</em> :
       <p>{{action.comment}}</p>
       <hr ng-hide="$index === actions.length-1"/>
       </div>

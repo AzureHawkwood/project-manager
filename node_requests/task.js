@@ -1,120 +1,130 @@
-var node_mysql_connection = require("../node_mysql_connection");
-var connection = node_mysql_connection.mysql_connection;
-
-exports.getTask = function(req, res, next){
-
-	var task_id = 0;
-	if(Number.isFinite(parseInt(req.params.task_id)))
-	{
-		task_id = parseInt(req.params.task_id);
-
-	    connection.query('SELECT * FROM task WHERE id=?', [task_id], function(err, rows) {
-		 	if (err) {
-				console.log("Error Selecting : %s ",err );
-			 	throw err;
-			}
-			
-//			if(rows.length > 0)
-//			{
-				res.send(rows);
-//			}
-//			else
-//			{
-				//res.status(404).send({ error: 'Pas de résultat pour ce paramètre' });
-//				res.redirect('/404');
-//			}
-			
-
-		});
-	}
-	else
-	{
-		//res.status(404).send({ error: 'Mauvais paramètre' });
-		res.redirect('/404');
-	}
-
-};
-
-exports.getTasks = function(req, res, next){
-
-/*
-    connection.query('SELECT * FROM task WHERE visible=1 ORDER BY task_order asc', function(err, rows) {
-	 	if (err) {
-			console.log("Error Selecting : %s ",err );
-		 	throw err;
-		}
-		
-		res.send(rows);
-
-		
-	});
-	*/
-
-	var hu = [{"id":2,"name":"Gratte Azure","task_order":1,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":1,"name":"Gratte Mick","task_order":2,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":3,"name":"Basse Gaet","task_order":3,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":4,"name":"Batterie Adri","task_order":4,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":5,"name":"Voix Gaet","task_order":5,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":6,"name":"Effets","task_order":6,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":7,"name":"Mix","task_order":7,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1},{"id":8,"name":"Master","task_order":8,"fk_user_id":1,"last_modification":"2016-06-01T22:00:00.000Z","visible":1}];
-	res.json(hu);
-
-};
-
-
-
-
+var node_mongo_connection = require("../node_mongo_connection");
+var mongoose = node_mongo_connection.mongoose;
+var Schema = node_mongo_connection.Schema;
+var TaskModel = node_mongo_connection.TaskModel;
 
 exports.task = function(req, res, next){
 
-	if(req.method === "POST")
+	if(req.method === "GET")
 	{
+		//Si un id a bien été passé en paramètre, on va sélectionner un seul task
+		if(typeof req.params.task_id !== "undefined")
+		{
+			var task_id = req.params.task_id;
+			
+			//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
+			if(mongoose.Types.ObjectId.isValid(task_id))
+			{
 
-		var task_name = req.body.task_name.trim();
-		var user_id = 1;
-		var task_order =  0;
+				TaskModel.find({_id: task_id, visible: 1}).exec(function(err, rows) {
+					if (err) {
+						console.log("Error Selecting : %s ", err );
+					 	throw err;
+					}
 
-
-		connection.query('SELECT MAX(task_order) as max_order FROM task WHERE visible=1', function(err, rows) {
-		 	if (err) {
-				console.log("Error Selecting : %s ",err );
-			 	throw err;
+					res.json(rows);
+				});
+			}
+			else
+			{
+				res.status(500).send({ error: 'ID non valide' });
 			}
 
-			task_order = rows[0].max_order + 1;
-			
-			var request = "INSERT INTO task SET last_modification=NOW(), ?";
-			var fields = {  
-							name: task_name,
-							task_order: task_order,
-							fk_user_id: user_id,
-							visible: 1
-						};
-
-			connection.query(request, fields, function(err){
-			 	if (err) {
-					console.log("Error Inserting : %s ",err );
+		}
+		//Sinon, on renvoie tous les tasks
+		else
+		{
+			TaskModel.find({visible: 1}).sort({ task_order : 'ascending'}).exec(function(err, rows) {
+				if (err) {
+					console.log("Error Selecting : %s ", err );
 				 	throw err;
 				}
 
-				res.send({success : "Inserted Successfully", status : 200});
+				res.json(rows);
 			});
 
-		});
+		}
+	}
+	else if(req.method === "POST")
+	{
+
+		var task_name = req.body.task_name.trim();
+		var user_id = "57610daa8d82383010000029";
+		var task_order =  0;
+
+		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
+		if(mongoose.Types.ObjectId.isValid(user_id))
+		{
+
+			TaskModel.find({}, function(err, rows) {
+			   	if (err) {
+					console.log("Error Selecting : %s ",err );
+				 	throw err;
+				}
+			  	
+			  	var nb_tasks =  rows.length + 1;
+			  	
+
+			  	//console.log("Ajout d'un nouvel task : nombre actuellement existant d'tasks:  " + nb_tasks);
+			
+			  	var task = new TaskModel({ 
+					name 			: task_name,
+					task_order		: nb_tasks,
+					_fk_user_id		: user_id,
+					visible			: 1
+				});
+
+			  	task.save(function (err) {
+					if (err) {
+						console.log("Error Inserting : %s ",err );
+					 	throw err;
+					}
+				  	
+				  	res.status(200).send({ success: 'Inserted Successfully' });
+			  	});
+
+			});
+		}
+		else
+		{
+			res.status(500).send({ error: 'ID non valide' });
+		}
+
 
 	}
 	else if(req.method === "PUT")
 	{
-		if(Number.isFinite(parseInt(req.body.task_id)))
+		if(typeof req.body.task_id !== "undefined")
 		{
-			var task_id = parseInt(req.body.task_id);
+			var task_id = req.body.task_id;
 			var task_name = req.body.task_name.trim();
-			var user_id = 1;
+			var user_id = "57610daa8d82383010000029";
+			//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
+			if(mongoose.Types.ObjectId.isValid(task_id) && mongoose.Types.ObjectId.isValid(user_id))
+			{
+				TaskModel.findById(task_id, function (err, task) {
+					if (err) {
+						console.log("Error Finding task : %s ", err );
+					 	throw err;
+					}
+					task.name = task_name;
+					task.last_modification = new Date();
+					task._fk_user_id = user_id;
+					task.save(function (err) {
+						if (err) {
+							console.log("Error Updating : %s ", err );
+						 	throw err;
+						}
+							
+						res.status(200).send({ success: 'Updated Successfully' });
+					});
+				});
+			}
+			else
+			{
+				res.status(500).send({ error: 'ID non valides' });
+			}
 
-
-			connection.query('UPDATE task SET last_modification=NOW(), name=?, fk_user_id=? WHERE id=?', [task_name, user_id, task_id], function (err, result) {
-				if (err) {
-					console.log("Error Updating : %s ",err );
-				 	throw err;
-				}
-
-				res.send({success : "Updated Successfully", status : 200});
-
-			});
 		}
 		else
 		{
@@ -123,21 +133,41 @@ exports.task = function(req, res, next){
 	}
 	else if(req.method === "DELETE")
 	{
-		if(Number.isFinite(parseInt(req.body.task_id)))
+		if(typeof req.body.task_id !== "undefined")
 		{
-			var task_id = parseInt(req.body.task_id);
-			var user_id = 1;
+			var task_id = req.body.task_id;
+			var user_id = "57610daa8d82383010000029";
 
+			//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
+			if(mongoose.Types.ObjectId.isValid(task_id) && mongoose.Types.ObjectId.isValid(user_id))
+			{
 
-			connection.query('UPDATE task SET last_modification=NOW(), visible=0, fk_user_id=? WHERE id=?', [user_id, task_id], function (err, result) {
-				if (err) {
-					console.log("Error Updating : %s ",err );
-				 	throw err;
-				}
+				TaskModel.findById(task_id, function (err, task) {
+					if (err) {
+						console.log("Error Finding task : %s ", err );
+					 	throw err;
+					}
 
-				res.send({success : "Deleted Successfully", status : 200});
+					task.visible = 0;
+					task.last_modification = new Date();
+					task._fk_user_id = user_id;
 
-			});
+					task.save(function (err) {
+						if (err) {
+							console.log("Error Deleting : %s ", err );
+						 	throw err;
+						}
+						
+						res.status(200).send({ success: 'Deleted Successfully' });
+					});
+				});
+
+			}
+			else
+			{
+				res.status(500).send({ error: 'ID non valides' });
+			}
+
 		}
 		else
 		{
@@ -150,93 +180,4 @@ exports.task = function(req, res, next){
 	}
    
 };
-
-
-
-/*
-exports.addTask = function(req, res){
-
-
-	var task_name = req.body.name.trim();
-	var user_id = 1;
-	var task_order =  0;
-
-
-	connection.query('SELECT MAX(task_order) as max_order FROM task WHERE visible=1', function(err, rows) {
-	 	if (err) {
-			console.log("Error Selecting : %s ",err );
-		 	throw err;
-		}
-		
-		task_order = rows[0].max_order + 1;
-		
-		var request = "INSERT INTO task SET last_modification=NOW(), ?";
-		var fields = {  
-						name: task_name,
-						task_order: task_order,
-						fk_user_id: user_id,
-						visible: 1
-					};
-
-		connection.query(request, fields, function(err){
-		 	if (err) {
-				console.log("Error Inserting : %s ",err );
-			 	throw err;
-			}
-			
-			res.send({success : "Inserted Successfully", status : 200});
-		});
-
-	});
-
-};
-
-
-
-
-exports.updateTask = function(req, res, next){
-
-	console.log(req.method);
-
-	if(Number.isFinite(parseInt(req.body.task_id)))
-	{
-		var task_id = parseInt(req.body.task_id);
-		var task_name = req.body.task_name.trim();
-		var user_id = 1;
-
-		var data = {
-			name: task_name,
-			fk_user_id: user_id
-		};
-
-		con.query('UPDATE task SET last_modification=NOW(), ? Where id = ?', [data, task_id], function (err, result) {
-			if (err) {
-				console.log("Error Inserting : %s ",err );
-			 	throw err;
-			}
-
-			res.send({success : "Inserted Successfully", status : 200});
-
-		});
-	}
-	else
-	{
-		res.redirect('/404');
-	}
-	
-};
-
-exports.removeTask = function(req, res, next){
-
-};
-
-*/
-
-
-
-
-
-
-
-
 

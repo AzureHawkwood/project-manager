@@ -52,7 +52,7 @@ angular.module('projet7AlbumManagerApp')
 		  	});
 		}
 	};
-
+	
 	function initManager(){
 		
 		updateManagerTasks();
@@ -65,7 +65,7 @@ angular.module('projet7AlbumManagerApp')
 	  	});
 
 	};
-
+	
 	function updateManagerTasks(){
 		AjaxFactory.getTasks().then(function successCallback(response) {
 			$scope.tasks = response.data;
