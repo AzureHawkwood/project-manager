@@ -5,7 +5,7 @@ var StateModel = node_mongo_connection.StateModel;
 
 exports.getStates = function(req, res, next){
 
-    StateModel.find().exec(function(err, states) {
+    StateModel.find().sort({"name": 1}).exec(function(err, states) {
 				if (err) {
 					console.log("Error Selecting : %s ", err );
 				 	throw err;
