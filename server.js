@@ -34,9 +34,6 @@ app.get('/', function (req, res) {
 })
 
 
-.get('/getUsers', r_user.getUsers)
-.get('/addUser', r_user.addUser)
-
 .get('/getStates', r_state.getStates)
 
 .get('/getLastActions', r_action.getLastActions)
@@ -44,8 +41,8 @@ app.get('/', function (req, res) {
 .post('/addAction', r_action.addAction)
 .post('/removeAction', r_action.removeAction)
 
-.get('/getTask/:task_id', r_task.getTask)
-.get('/getTasks', r_task.getTasks)
+.get('/task/:task_id', r_task.task)
+.get('/task', r_task.task)
 .post('/task', r_task.task)
 .put('/task', r_task.task)
 .delete('/task', r_task.task)
@@ -55,6 +52,10 @@ app.get('/', function (req, res) {
 .post('/item', r_item.item)
 .put('/item', r_item.item)
 .delete('/item', r_item.item)
+
+
+
+
 
 app.get('/404', function (req, res) {
     res.sendFile('404.html', { root: __dirname+'/app' });

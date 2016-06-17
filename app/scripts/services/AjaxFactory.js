@@ -10,14 +10,14 @@ angular.module('projet7AlbumManagerApp')
     	getTask: function(task_id){
 		    return $http({
 		        method : "GET",
-		        url : "/getTask/"+task_id,
+		        url : "/task/"+task_id,
 		        data: {},
 		    });
         },
         getTasks: function(){
 		    return $http({
 		        method : "GET",
-		        url : "/getTasks",
+		        url : "/task",
 		        data: {},
 		    });
         },
@@ -58,14 +58,14 @@ angular.module('projet7AlbumManagerApp')
     	getItem: function(item_id){
 		    return $http({
 		        method : "GET",
-		        url : "/getItem/"+item_id,
+		        url : "/item/"+item_id,
 		        data: {},
 		    });
         },
         getItems: function(){
 			return $http({
 		        method : "GET",
-		        url : "/getItems",
+		        url : "/item",
 		        data: {},
 		    });
         },

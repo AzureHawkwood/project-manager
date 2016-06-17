@@ -3,9 +3,8 @@
 angular.module('projet7AlbumManagerApp')
 	.controller('TaskController', function ($scope, $routeParams, $location, AjaxFactory) {
 	
-	$scope.task_id = 0;
-
-	if(Number.isFinite(parseInt($routeParams.id))) {
+	$scope.task_id = "";
+	if(typeof $routeParams.id !== "undefined") {
 		$scope.task_id = $routeParams.id;
 	}
 
@@ -28,9 +27,10 @@ angular.module('projet7AlbumManagerApp')
 				task_name: $scope.task_name
 			};
 
+
 			AjaxFactory.updateTask(data).then(function successCallback(response) {
 				$scope.original_task_name = $scope.task_name;
-				//$location.path("/");
+				$location.path("/");
 		 	}, function errorCallback(response) {
 			    console.log("Erreur d'ajout de données updateTask");
 		  	});
