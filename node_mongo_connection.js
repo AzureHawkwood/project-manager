@@ -1,6 +1,6 @@
-var mongoose = require("mongoose");
-var constants = require("./node_constants");
-
+var mongoose 	= require("mongoose");
+var constants 	= require("./node_constants");
+var bcrypt		= require("bcrypt-nodejs");
 
 
 
@@ -11,12 +11,25 @@ mongoose.connect(constants.mongo_db_url);
 
 var Schema = mongoose.Schema;
 
-
 var UserSchema = new Schema({
-	login: { type: String, default: "" },
-	password: { type: String, default: "" },
-	firstname: { type: String, default: "" },
-	email: { type: String, default: "" }
+  	login: {
+        type: String,
+        unique: true,
+        required: true
+    },
+  	password: {
+        type: String,
+        required: true
+    },
+    firstname: { 
+    	type: String,
+    	default: ""
+    },
+	email: {
+		type: String,
+		unique: true,
+		required: true
+	}
 }, {collection: "user"});
 
 var StateSchema = new Schema({
@@ -51,6 +64,39 @@ var ActionSchema = new Schema({
 		creation_date	: { type: Date, default: Date.now }
 	//}]
 }, {collection: "action"});
+
+
+
+
+
+
+UserSchema.pre('save', function (next) {
+    var user = this;
+    if (this.isModified('password') || this.isNew) {
+        bcrypt.genSalt(10, function (err, salt) {
+            if (err) {
+                return next(err);
+            }
+            bcrypt.hash(user.password, salt, function (err, hash) {
+                if (err) {
+                    return next(err);
+                }
+                user.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
+}); 
+UserSchema.methods.comparePassword = function (passw, cb) {
+    bcrypt.compare(passw, this.password, function (err, isMatch) {
+        if (err) {
+            return cb(err);
+        }
+        cb(null, isMatch);
+    });
+};
 
 
 

@@ -1,8 +1,14 @@
 
-var express   =     require("express");
-var bodyParser = require('body-parser')
-var app       =     express();
+var express			= require("express");
+var bodyParser 		= require('body-parser');
+var morgan			= require('morgan');
+var passport		= require('passport');
+var jwt         	= require('jwt-simple');
+var app				= express();
 
+
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "localhost";
 
 var r_task = require('./node_requests/task');
 var r_item = require('./node_requests/item');
@@ -14,11 +20,13 @@ var r_state = require('./node_requests/state');
 
 //urlencoded pour récupérer le body encodé au format utf8, le extender false
 //permet de n'autoriser que des variables string et array, et pas n'importe quoi
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 //Pour pouvoir récupérer des paramètres post dans node au format json
 //on pourra à présent y accéder par req.body.variable
 app.use(bodyParser.json());
 
+//Log dans la console
+//app.use(morgan('dev'));
 
 //Important !!! Décrire les url des dossiers se trouvant dans app ici, car le serveur se trouve à la racine, un cran plus haut,
 //il faut donc dire que le dossier front racine se trouve dans le dossier app
@@ -26,6 +34,18 @@ app.use('/', express.static(__dirname + '/app'));
 
 
 
+getToken = function (headers) {
+  if (headers && headers.authorization) {
+    var parted = headers.authorization.split(' ');
+    if (parted.length === 2) {
+      return parted[1];
+    } else {
+      return null;
+    }
+  } else {
+    return null;
+  }
+};
 
 
 
@@ -53,9 +73,11 @@ app.get('/', function (req, res) {
 .put('/item', r_item.item)
 .delete('/item', r_item.item)
 
+.post('/authenticate', r_user.authenticate)
+.post('/addUser', r_user.addUser)
+.get('/getUser/:user', passport.authenticate('jwt', { session: false}), r_user.getUser)
 
-
-
+ 
 
 app.get('/404', function (req, res) {
     res.sendFile('404.html', { root: __dirname+'/app' });
@@ -66,7 +88,7 @@ app.get('/404', function (req, res) {
 });
 
 
-app.listen(8080,function(){
-	console.log("Started on PORT 8080");
-})
+app.listen(port,ipaddress, function(){
+	console.log("Started on PORT "+port);
+});
 
