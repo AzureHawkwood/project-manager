@@ -2,14 +2,15 @@
 var express			= require("express");
 var bodyParser 		= require('body-parser');
 var morgan			= require('morgan');
+var mongoose 		= require('mongoose');
 var passport		= require('passport');
-var jwt         	= require('jwt-simple');
+var flash    		= require('connect-flash');
+//var jwt         	= require('jwt-simple');
 var app				= express();
 
+var constant = require('./server/config/Constant');	
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "localhost";
-
+/*
 var r_task = require('./node_requests/task');
 var r_item = require('./node_requests/item');
 var r_manager = require('./node_requests/manager');
@@ -17,6 +18,13 @@ var r_action = require('./node_requests/action');
 var r_project = require('./node_requests/project');
 var r_user = require('./node_requests/user');
 var r_state = require('./node_requests/state');
+*/
+
+mongoose.connect(constant.MONGO_DB_URL);
+//On envoie à notre fichier Passport.js du dossier config
+//notre variable passport initialisée à partir du module passport
+require('./server/config/Passport')(passport);
+
 
 //urlencoded pour récupérer le body encodé au format utf8, le extender false
 //permet de n'autoriser que des variables string et array, et pas n'importe quoi
@@ -26,31 +34,71 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Log dans la console
-//app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 //Important !!! Décrire les url des dossiers se trouvant dans app ici, car le serveur se trouve à la racine, un cran plus haut,
 //il faut donc dire que le dossier front racine se trouve dans le dossier app
 app.use('/', express.static(__dirname + '/app'));
 
+// set up our express application
+//app.use(express.logger('dev')); // log every request to the console
+//app.use(express.cookieParser()); // read cookies (needed for auth)
+//app.use(express.bodyParser()); // get information from html forms
 
-
-getToken = function (headers) {
-  if (headers && headers.authorization) {
-    var parted = headers.authorization.split(' ');
-    if (parted.length === 2) {
-      return parted[1];
-    } else {
-      return null;
-    }
-  } else {
-    return null;
-  }
-};
+// required for passport
+//app.use(express.session({ secret: constant.SECRET })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 
+// routes ======================================================================
+// load our routes and pass in our app and fully configured passport
+require('./server/route/routes')(app, passport);
+
+
+
+
+
+app.listen(constant.NODE_PORT, constant.NODE_HOST, function(){
+	console.log("Server started on PORT "+constant.NODE_PORT+ " and HOST " + constant.NODE_HOST);
+});
+
+
+
+
+
+/*
 app.get('/', function (req, res) {
     res.sendFile('index.html', { root: __dirname+'/app' });
+})
+
+
+
+
+.get('/login', function (req, res) {
+    //res.sendFile('login.html', { root: __dirname+'/app' });
+    console.log("HUUUUUHUUUUUUUUUUUUUUUUUUUUUUUUUU");
+    
+    res.status(200).send({ success: 'Inserted Successfully' });
+})
+
+.get('/register', function (req, res) {
+    //res.sendFile('register.html', { root: __dirname+'/app' });
+    console.log("HOOOOOOOOOOOO");
+	
+	res.status(200).send({ success: 'Inserted Successfully' });
+
+
+})
+
+.get('/logout', function (req, res) {
+    //res.sendFile('logout.html', { root: __dirname+'/app' });
+    console.log("HAAAAAAAAAAAAAAAAAAAA");
+    
+    res.status(200).send({ success: 'Inserted Successfully' });
+
 })
 
 
@@ -75,7 +123,7 @@ app.get('/', function (req, res) {
 
 .post('/authenticate', r_user.authenticate)
 .post('/addUser', r_user.addUser)
-.get('/getUser/:user', passport.authenticate('jwt', { session: false}), r_user.getUser)
+.get('/getUser/:user', r_user.getUser)
 
  
 
@@ -88,7 +136,11 @@ app.get('/404', function (req, res) {
 });
 
 
+
 app.listen(port,ipaddress, function(){
 	console.log("Started on PORT "+port);
 });
 
+
+
+*/
