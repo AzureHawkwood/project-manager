@@ -67,7 +67,7 @@ var ActionSchema = new Schema({
 
 
 
-
+/*
 
 
 UserSchema.pre('save', function (next) {
@@ -99,7 +99,7 @@ UserSchema.methods.comparePassword = function (passw, cb) {
 };
 
 
-
+*/
 
 exports.mongoose = mongoose;
 exports.Schema = Schema;

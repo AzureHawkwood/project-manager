@@ -150,6 +150,39 @@ angular.module('projet7AlbumManagerApp')
         },
         
 
+        /************************
+		*	USER
+    	************************/
+        login: function(data){
+            return $http({
+		        method : "POST",
+		        url : "/login",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
+        },
+        register: function(data){
+            return $http({
+		        method : "POST",
+		        url : "/register",
+		        data: {data},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
+        },
+        logout: function(data){
+            return $http({
+		        method : "POST",
+		        url : "/logout",
+		        data: {data},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });		    
+        },
       
     }
 

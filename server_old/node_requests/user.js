@@ -85,3 +85,16 @@ exports.authenticate = function(req, res){
   });
 };
 
+
+/*
+exports.login = function(req, res){
+	res.sendFile('index.html', { root: __dirname+'/app' });
+};
+exports.register = function(req, res){
+	res.sendFile('index.html', { root: __dirname+'/app' });
+};
+exports.logout = function(req, res){
+	res.sendFile('index.html', { root: __dirname+'/app' });
+};
+
+*/

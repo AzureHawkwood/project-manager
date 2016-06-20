@@ -10,7 +10,8 @@
 angular.module('projet7AlbumManagerApp')
   .controller('AuthenticationController', function ($scope, $location, namedRouteService) {
     
-    $scope.huhu = "huhu";
+    //$scope.huhu = "huhu";
+    //alert("chargement");
 
   	$scope.login = function(){
   		alert("login");
