@@ -54,4 +54,3 @@ angular.module('projet7AlbumManagerApp').directive("waitOnRowLoad", function(){
         }
     };
 });
-
