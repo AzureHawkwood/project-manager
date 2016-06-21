@@ -66,16 +66,7 @@ angular.module('projet7AlbumManagerApp')
       }
   	}
 
-  	$scope.logout = function(){
-
-
-  		alert("logout");
-
-  		//Session.clear();
-    	$location.path(namedRouteService.reverse('login'));
-
-
-  	}
+  	
 
   	$scope.goFromName = function (path) {
   		$location.path(namedRouteService.reverse(path));

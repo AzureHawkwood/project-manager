@@ -24,14 +24,11 @@ module.exports = function(app, passport, dirname) {
 
   .get('/authentication', function (req, res) {
     console.log("Route GET /authentication");
-    console.log("User ? "+ req.user);
+    console.log("authentication :  "+ req.user);
     //res.sendFile('index.html', { root: __dirname+'/app'} );
     res.sendFile('authentication.html', { root: dirname+'/app' });
   })
-  .get('/logout', function (req, res) {
-    console.log("Route GET /logout");
-    res.sendFile('authentication.html', { root: dirname+'/app' });
-  })
+  
 
 
   .get('/getStates', route_state.getStates)
@@ -74,6 +71,7 @@ module.exports = function(app, passport, dirname) {
     failureFlash : true // allow flash messages
   }))
   */
+  /*
  .post('/login', function(req, res, next) {
 
   console.log("POST /login");
@@ -99,6 +97,8 @@ module.exports = function(app, passport, dirname) {
 
     })(req, res, next);
 })
+*/
+
  /*
   .post('/register', passport.authenticate('local-register', {
     //successRedirect : '/authentication', // redirect to the secure profile section
@@ -107,7 +107,7 @@ module.exports = function(app, passport, dirname) {
   }))
 */
 
-
+/*
 .post('/register', passport.authenticate('local-register', {
     successRedirect : '/', // redirect to the secure profile section
     failureRedirect : '/register', // redirect back to the signup page if there is an error
@@ -120,9 +120,17 @@ module.exports = function(app, passport, dirname) {
     //successRedirect : '/authentication', // redirect to the secure profile section
     //failureRedirect : '/register', // redirect back to the signup page if there is an error
     //failureFlash : true // allow flash messages
-  })
-
-
+  })*/
+ .post('/login', passport.authenticate('local-login', {
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/login', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }))
+.post('/register', passport.authenticate('local-register', {
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/register', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }))
 
 
  /* .get('/profile', isLoggedIn, function(req, res) {
@@ -130,10 +138,10 @@ module.exports = function(app, passport, dirname) {
       user : req.user // get the user out of session and pass to template
     });
   })*/
-  .post('/logout', function(req, res) {
+  .get('/logout', function(req, res) {
     console.log("Route POST /logout");
     req.logout();
-    res.redirect('/login');
+    res.redirect('/authentication');
   })
 
 
@@ -229,11 +237,11 @@ module.exports = function(app, passport, dirname) {
 
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
-  console.log(req.user);
+  console.log("isLoggedIn requser : " + req.user);
   console.log("CHECK SI AUTHENTIFIE :");
 
   // if user is authenticated in the session, carry on
-  if (req.passport)
+  if (req.isAuthenticated())
   {
     console.log("EST AUTHENTIFIE");
     return next();

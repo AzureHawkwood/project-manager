@@ -40,9 +40,8 @@ app.use(cookieParser()); // read cookies (needed for auth)
 
 // required for passport
 app.use(session({ secret: constant.SECRET,
-					resave: false,
-				 	saveUninitialized: true,
-				  	cookie: { secure: true }
+					resave: true,
+				 	saveUninitialized: true
 			   	}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions

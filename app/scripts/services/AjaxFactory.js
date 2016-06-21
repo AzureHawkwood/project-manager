@@ -161,7 +161,7 @@ angular.module('projet7AlbumManagerApp')
 		        headers: {
 				   'Content-Type': "application/json"
 			 	}
-		    });		    
+		    });
         },
         register: function(data){
             return $http({
@@ -171,18 +171,8 @@ angular.module('projet7AlbumManagerApp')
 		        headers: {
 				   'Content-Type': "application/json"
 			 	}
-		    });		    
-        },
-        logout: function(data){
-            return $http({
-		        method : "POST",
-		        url : "/logout",
-		        data: data,
-		        headers: {
-				   'Content-Type': "application/json"
-			 	}
-		    });		    
-        },
+		    });
+        }
       
     }
 
