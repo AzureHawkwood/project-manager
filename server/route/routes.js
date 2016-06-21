@@ -7,7 +7,7 @@ var route_user = require('./user');
 var route_state = require('./state');
 
 
-module.exports = function(app, passport, mongoose) {
+module.exports = function(app, passport, dirname) {
 
 
   //Comme pour chacune de ces routes, il y a à chaque fois plusieurs méthodes
@@ -17,20 +17,136 @@ module.exports = function(app, passport, mongoose) {
   app.use('/item',  route_item);
 
 
-  app.get('/', function (req, res) {
-    res.sendFile('index.html', { root: __dirname+'/app' });
+  app.get('/', isLoggedIn, function (req, res) {
+    console.log("Route GET /");
+    res.sendFile('index.html',  { root: dirname+'/app'});
+  })
+
+  .get('/authentication', function (req, res) {
+    console.log("Route GET /authentication");
+    console.log("User ? "+ req.user);
+    //res.sendFile('index.html', { root: __dirname+'/app'} );
+    res.sendFile('authentication.html', { root: dirname+'/app' });
+  })
+  .get('/logout', function (req, res) {
+    console.log("Route GET /logout");
+    res.sendFile('authentication.html', { root: dirname+'/app' });
   })
 
 
   .get('/getStates', route_state.getStates)
-
-
 
   .get('/getLastActions', route_action.getLastActions)
   .get('/getActions/:task_id/:item_id', route_action.getActions)
   .post('/addAction', route_action.addAction)
   .post('/removeAction', route_action.removeAction)
 
+  /*.get('/login', function(req, res) {
+    // render the page and pass in any flash data if it exists
+    res.render('login.ejs', { message: req.flash('loginMessage') });
+  })*/
+  /*
+  .post('/login', passport.authenticate('local-login', {
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/authentication', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }))
+  */
+
+/*
+.post('/register', route_user.register)
+
+.post('/login', passport.authenticate('local'), function(req, res) {
+  console.log("HUUUUUUUUUUUUU Route GET /login" + req.user);
+    //res.redirect('/');
+})*/
+
+
+  /*.get('/signup', function(req, res) {
+
+    // render the page and pass in any flash data if it exists
+    res.render('signup.ejs', { message: req.flash('signupMessage') });
+  })*/
+  /*
+  .post('/register', passport.authenticate('local-register', {
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/register', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }))
+  */
+ .post('/login', function(req, res, next) {
+
+  console.log("POST /login");
+    passport.authenticate('local-login', function(err, user, info) {
+      console.log("passport.authenticate /login");
+        if (err) {
+          //return next(err);
+            res.status(500).send({message: "Erreur serveur"});
+        }
+        if (!user) {
+            console.log("!user /login");
+
+            console.log(info);
+            // *** Display message without using flash option
+            // re-render the login form with a message
+            //res.redirect('/login');
+            res.status(401).send({ message: 'User invalide' });
+
+        }
+
+        //console.log('got user'+user);
+        res.status(200).json(user.local);
+
+    })(req, res, next);
+})
+ /*
+  .post('/register', passport.authenticate('local-register', {
+    //successRedirect : '/authentication', // redirect to the secure profile section
+    //failureRedirect : '/register', // redirect back to the signup page if there is an error
+    //failureFlash : true // allow flash messages
+  }))
+*/
+
+
+.post('/register', passport.authenticate('local-register', {
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/register', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }), function (req, res, err){
+    console.log("req: " + req);
+    //return res.local;
+
+
+    //successRedirect : '/authentication', // redirect to the secure profile section
+    //failureRedirect : '/register', // redirect back to the signup page if there is an error
+    //failureFlash : true // allow flash messages
+  })
+
+
+
+
+ /* .get('/profile', isLoggedIn, function(req, res) {
+    res.render('profile.ejs', {
+      user : req.user // get the user out of session and pass to template
+    });
+  })*/
+  .post('/logout', function(req, res) {
+    console.log("Route POST /logout");
+    req.logout();
+    res.redirect('/login');
+  })
+
+
+  .get('/404', function (req, res) {
+      console.log("Route GET /404");
+      res.sendFile('404.html', { root: dirname+'/app' });
+  })
+
+  .all('*', function (req, res) {
+      console.log("Route ALL *");
+      //res.status(500).send({ error: 'PAS BON EN ATTENDANT DE TROUVER COMMENT CHARGER LE FICHIER' });
+      res.sendFile('404.html', { root: dirname+'/app' });
+  });
 
 /*
   //Toutes les routes task et item sont simplifiées dans l'appel app.use plus haut
@@ -48,20 +164,6 @@ module.exports = function(app, passport, mongoose) {
 */
 
 
-
-  .post('/authenticate', route_user.authenticate)
-  .post('/addUser', route_user.addUser)
-  .get('/getUser/:user', route_user.getUser)
-
-   
-
-  app.get('/404', function (req, res) {
-      res.sendFile('404.html', { root: __dirname+'/app' });
-  })
-
-  .all('*', function (req, res) {
-      res.sendFile('404.html', { root: __dirname+'/app' });
-  });
 
 
 
@@ -123,38 +225,26 @@ module.exports = function(app, passport, mongoose) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
 
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
+  console.log(req.user);
+  console.log("CHECK SI AUTHENTIFIE :");
 
   // if user is authenticated in the session, carry on
-  if (req.isAuthenticated())
+  if (req.passport)
+  {
+    console.log("EST AUTHENTIFIE");
     return next();
+  }
+  else
+  {
+    console.log("N'EST PAS AUTHENTIFIE -> REDIRECT /login");
 
+    res.redirect('/authentication');
+  }
+  //console.log("2 redirect /");
   // if they aren't redirect them to the home page
-  res.redirect('/');
+  //res.redirect('/login');
 }

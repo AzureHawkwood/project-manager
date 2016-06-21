@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="styles/bootstrap_slate_theme.css">
     <link rel="stylesheet" href="styles/footer_custom.css">
     <link rel="stylesheet" href="styles/login_form.css">
-    <link rel="stylesheet" href="styles/manager.css">
-    <link rel="stylesheet" href="styles/action.css">
-    <link rel="stylesheet" href="styles/dragtable_columns.css">
     <link rel="stylesheet" href="styles/main.css">
 
     
@@ -49,6 +46,7 @@
       </div>
 
       <div class="collapse navbar-collapse" id="nav_link_container">
+      <!--
         <ul class="nav navbar-nav">
           <li><a href="#/login">login</a></li>
           <li><a href="#/register">register</a></li>
@@ -56,6 +54,7 @@
          <ul class="nav navbar-nav navbar-right">
             <li><a class="glyphicon glyphicon-off" href="#/logout" style="margin-top:-1px;"></a></li>
           </ul>
+          -->
       </div>
 
     </div>
@@ -110,29 +109,14 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     
 
-    <script src="scripts/lib/rowsorter/RowSorter.js"></script>
-    <script src="scripts/lib/dragtable-master/jquery.dragtable.js"></script>
-    
-
-   
     <!-- Important, on déclare en premier app.js qui contient la configuration et les routes du module -->
-    <script src="scripts/app.js"></script>
+    <script src="scripts/authentication.js"></script>
 
 
     <script src="scripts/controllers/AuthenticationController.js"></script>
-    <script src="scripts/controllers/LogoutController.js"></script>
-    <script src="scripts/controllers/ManagerController.js"></script>
-    <script src="scripts/controllers/ActionController.js"></script>
-    <script src="scripts/controllers/TaskController.js"></script>
-    <script src="scripts/controllers/ItemController.js"></script>
-
-    <script src="scripts/filters/cutLongStringFilter.js"></script>
-    <script src="scripts/filters/capitalizeFilter.js"></script>
-
+    
     <script src="scripts/services/AjaxFactory.js"></script>
     
-    <script src="scripts/directives/ManagerDirective.js"></script>
-    <script src="scripts/directives/ActionDirective.js"></script>
     <script src="scripts/directives/RegisterDirective.js"></script>
 
 

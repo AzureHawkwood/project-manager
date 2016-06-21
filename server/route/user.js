@@ -5,6 +5,10 @@ var mongoose  = require("mongoose");
 var UserModel = require('../model/user');
 
 
+
+
+
+/*
 exports.getUser = function(req, res){
 
   var token = getToken(req.headers);
@@ -81,6 +85,14 @@ exports.authenticate = function(req, res){
     }
   });
 };
+*/
+
+
+
+
+
+
+
 
 
 /*

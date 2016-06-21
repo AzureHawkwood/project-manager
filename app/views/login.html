@@ -8,7 +8,7 @@
     <p id="profile-name" class="profile-name-card"></p>
     -->
 
-    <form name="loginForm" class="form-signin" ng-submit="login()" novalidate>
+    <form name="loginForm" class="form-signin" ng-submit="loginFunction(loginForm)" novalidate>
 
         <!--
         <span id="reauth-email" class="reauth-email"></span>
@@ -21,15 +21,15 @@
             </label>
         </div>
         -->
-        <label>Login ou Email</label>
-        <input name="login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login ou Email" class="form-control" autofocus="" required="" />
-        <div class="error-messages" ng-messages="loginForm.login.$error">
+        <label>Login</label>
+        <input name="login" ng-model="user.login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login" class="form-control" autofocus="" required="" maxlength="30" />
+        <div class="error-messages" ng-if="loginForm.$submitted" ng-messages="loginForm.login.$error">
             <div ng-messages-include="views/form_error_messages.html"></div>
         </div>
 
         <label>Mot de passe</label>
-        <input name="password" type="password" placeholder="Mot de passe"  ng-maxlength="30" ng-minlength="2" class="form-control" required="" />
-        <div class="error-messages" ng-messages="loginForm.password.$error">
+        <input name="password" ng-model="user.password" type="password" placeholder="Mot de passe"  ng-maxlength="30" ng-minlength="6" class="form-control" required="" maxlength="30" />
+        <div class="error-messages" ng-if="loginForm.$submitted" ng-messages="loginForm.password.$error">
             <div ng-messages-include="views/form_error_messages.html"></div>
         </div>
 
