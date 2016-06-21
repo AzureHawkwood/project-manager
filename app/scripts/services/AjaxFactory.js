@@ -167,7 +167,7 @@ angular.module('projet7AlbumManagerApp')
             return $http({
 		        method : "POST",
 		        url : "/register",
-		        data: {data},
+		        data: data,
 		        headers: {
 				   'Content-Type': "application/json"
 			 	}
@@ -177,7 +177,7 @@ angular.module('projet7AlbumManagerApp')
             return $http({
 		        method : "POST",
 		        url : "/logout",
-		        data: {data},
+		        data: data,
 		        headers: {
 				   'Content-Type': "application/json"
 			 	}
