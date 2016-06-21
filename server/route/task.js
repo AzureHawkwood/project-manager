@@ -6,7 +6,7 @@ var TaskModel = require('../model/task');
 
 
 router.get('/', function(req, res) {
-
+console.log("huhu : "+req.user);
 	TaskModel.find({visible: 1}).sort({ task_order : 'ascending'}).exec(function(err, rows) {
 		if (err) {
 			console.log("Error Selecting : %s ", err );
