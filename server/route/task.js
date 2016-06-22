@@ -49,7 +49,7 @@ router.post('/', function(req, res) {
 		var task_order =  0;
 		var user_id = "";
 
-		if(req.user._id)
+		if(typeof req.user !== "undefined")
 		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
@@ -107,7 +107,7 @@ router.put('/', function(req, res) {
 		var user_id = "";
 
 		
-		if(req.user._id)
+		if(typeof req.user !== "undefined")
 		{	user_id = req.user._id.toHexString();	}
 
 
@@ -152,7 +152,7 @@ router.delete('/', function(req, res) {
 		var task_id = req.body.task_id;
 		var user_id = "";
 
-		if(req.user._id)
+		if(typeof req.user !== "undefined")
 		{	user_id = req.user._id.toHexString();	}
 		
 

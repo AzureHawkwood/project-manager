@@ -52,7 +52,7 @@ router.post('/', function(req, res) {
 		var item_order =  0;
 		var user_id = "";
 
-		if(req.user._id)
+		if(typeof req.user !== "undefined")
 		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
@@ -110,7 +110,7 @@ router.put('/', function(req, res) {
 		var item_name = req.body.item_name.trim();
 		var user_id = "";
 
-		if(req.user._id)
+		if(typeof req.user !== "undefined")
 		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
@@ -157,7 +157,7 @@ router.delete('/', function(req, res) {
 		var item_id = req.body.item_id;
 		var user_id = "";
 
-		if(req.user._id)
+		if(typeof req.user !== "undefined")
 		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)

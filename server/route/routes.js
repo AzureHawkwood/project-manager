@@ -24,8 +24,11 @@ module.exports = function(app, passport, dirname) {
 
   .get('/authentication', function (req, res) {
 
-    //Par sureté on va supprimer la potentielle session si l'utilisateur revient ici
-    req.logout();
+    if(req.isAuthenticated())
+    {
+      res.redirect('/');
+    }
+    
     //console.log("Route GET /authentication");
    // console.log("authentication :  "+ req.user);
     //res.sendFile('index.html', { root: __dirname+'/app'} );

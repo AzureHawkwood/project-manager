@@ -61,7 +61,7 @@ exports.addAction = function(req, res){
 	var user_id = "";
 
 
-	if(req.user._id)
+	if(typeof req.user !== "undefined")
 	{	user_id = req.user._id.toHexString();	}
 
 	//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
