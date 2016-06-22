@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('projet7AlbumManagerApp')
+angular.module('projectManagerApp')
 	.controller('ManagerController', function ($scope, $cookies, $location, AjaxFactory) {
 	
 	$scope.maxLengthStringToDisplay = 100;

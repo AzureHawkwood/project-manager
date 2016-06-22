@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('projet7AlbumManagerApp')
+angular.module('projectManagerApp')
   .factory('AjaxFactory', function ($http) {
     return{
 

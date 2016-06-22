@@ -7,7 +7,7 @@
  * max correspond au nombre max de lettres à afficher
  * tail est la chaine de texte que l'on rajoute à la fin si le texte a été coupé, " ..." par défaut
  */
-angular.module('projet7AlbumManagerApp')
+angular.module('projectManagerApp')
 .filter('cutLongString', function () {
 
   return function (value, wordwise, max, tail) {

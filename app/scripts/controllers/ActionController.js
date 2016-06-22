@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('projet7AlbumManagerApp')
+angular.module('projectManagerApp')
 	.controller('ActionController', function ($scope, $cookies, $routeParams, $location, AjaxFactory) {
 
 		$scope.task_id = "";

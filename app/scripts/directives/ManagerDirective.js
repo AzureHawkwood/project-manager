@@ -4,7 +4,7 @@
  * On va créer des directives qui serviront à lancer des événements d'une table draggable, on s'en sert
  * pour les exécuter une fois les directives angular ng-repeat de la table terminées
 */
-angular.module('projet7AlbumManagerApp').directive("waitOnColLoad", function(){
+angular.module('projectManagerApp').directive("waitOnColLoad", function(){
     return {
         restrict: 'A',
         scope:{},	//Important pour pouvoir récupérer le scope de l'élément dans la fonction link
@@ -32,7 +32,7 @@ angular.module('projet7AlbumManagerApp').directive("waitOnColLoad", function(){
         }
     };
 });
-angular.module('projet7AlbumManagerApp').directive("waitOnRowLoad", function(){
+angular.module('projectManagerApp').directive("waitOnRowLoad", function(){
     return {
         restrict: 'A',
         scope:{},	//Important pour pouvoir récupérer le scope de l'élément dans la fonction link

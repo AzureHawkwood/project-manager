@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the projet7AlbumManagerApp
  */
-angular.module('projet7AlbumManagerApp')
+angular.module('projectManagerApp')
 .filter('capitalize', function () {
 
   return function(input, scope) {

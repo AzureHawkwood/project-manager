@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name projet7AlbumManagerApp
+ * @name projectManagerApp
  * @description
- * # projet7AlbumManagerApp
+ * # projectManagerApp
  *
  * Main module of the application.
  */
 angular
-  .module('projet7AlbumManagerApp', [
+  .module('projectManagerApp', [
     'ngAnimate',
     'ngCookies',
     'ngMessages',

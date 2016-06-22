@@ -5,7 +5,7 @@
  *Par exemple utile pour le formulaire d'enregistrement pour vérifier les 2 mots de passe
  */
 
-angular.module('projet7AlbumManagerApp').directive('match', ['$parse', function ($parse) {
+angular.module('projectManagerApp').directive('match', ['$parse', function ($parse) {
     
     return {
         require: '?ngModel',

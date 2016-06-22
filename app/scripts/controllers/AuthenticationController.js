@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the projet7AlbumManagerApp
  */
-angular.module('projet7AlbumManagerApp')
+angular.module('projectManagerApp')
   .controller('AuthenticationController', function ($scope, $cookies, $location, namedRouteService, AjaxFactory) {
     
     //Première chose à faire, on supprime tout cookie pouvant correspondre à un utilisateur
