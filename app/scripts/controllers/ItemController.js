@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('projet7AlbumManagerApp')
-	.controller('ItemController', function ($scope, $routeParams, $location, AjaxFactory) {
+	.controller('ItemController', function ($scope, $cookies, $routeParams, $location, AjaxFactory) {
 	
 	$scope.item_id = "";
 

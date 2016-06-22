@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('projet7AlbumManagerApp')
-	.controller('TaskController', function ($scope, $routeParams, $location, AjaxFactory) {
+	.controller('TaskController', function ($scope, $cookies, $routeParams, $location, AjaxFactory) {
 	
 	$scope.task_id = "";
 	if(typeof $routeParams.id !== "undefined") {

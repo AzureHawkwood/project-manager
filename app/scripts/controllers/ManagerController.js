@@ -1,20 +1,39 @@
 'use strict';
 
 angular.module('projet7AlbumManagerApp')
-	.controller('ManagerController', function ($scope, $location, AjaxFactory) {
+	.controller('ManagerController', function ($scope, $cookies, $location, AjaxFactory) {
 	
 	$scope.maxLengthStringToDisplay = 100;
 
 	$scope.newTaskName = "";
 	$scope.newItemName = "";
 	$scope.initManager = initManager;
-
+	
 	$scope.tasks = [];
 	$scope.items = [];
 	$scope.actions = [];
 
 	$scope.initManager();
 	
+	//$cookies.remove('user');
+
+
+/*
+	var cookies = $cookies.getAll();
+	console.log(cookies);
+	$cookies.put('myFavorite','oatmeal');
+	cookies = $cookies.getAll();
+	console.log(cookies);
+	var favoriteCookie = $cookies.get('myFavorite');
+	console.log("favoriteCookie : " + favoriteCookie);
+  	// Get cookie
+  	
+	$cookies.remove('myFavorite');
+	cookies = $cookies.getAll();
+	console.log("all after remove :" );
+	console.log(cookies);
+*/
+
 	$scope.go = function(path){
 		$location.path(path);
 	};
