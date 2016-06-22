@@ -65,6 +65,7 @@ angular.module('projet7AlbumManagerApp')
 				$location.path("/404");
 			}
 	 	}, function errorCallback(response) {
+	 		$location.path("/404");
 		    console.log("Erreur de récupération des données de getItem");
 	  	});
 

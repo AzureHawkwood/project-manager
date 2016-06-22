@@ -28,26 +28,6 @@ angular
         controllerAs: 'ManagerCtrl',
         animation: 'slide'
       })
-      .when("/login", {
-        name: 'login',
-        templateUrl: 'views/login.html',
-        controller: 'AuthenticationController',
-        controllerAs: 'AuthenticationCtrl',
-        animation: 'slide'
-      })
-      .when('/register', {
-        name: 'register',
-        templateUrl: 'views/register.html',
-        controller: 'AuthenticationController',
-        controllerAs: 'AuthenticationCtrl',
-        animation: 'slide'
-      })
-      .when('/logout', {
-        name: 'logout',
-        template: " ",
-        controller: 'LogoutController',
-        controllerAs: 'LogoutCtrl'
-      })
       .when('/action/:task_id/:item_id', {
         name: 'actionView',
         templateUrl: 'views/action.html',
@@ -77,6 +57,6 @@ angular
         animation: 'slide'
       })
       .otherwise({
-        redirectTo: '/login'
+        redirectTo: '/'
       });
   });

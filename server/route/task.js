@@ -6,7 +6,7 @@ var TaskModel = require('../model/task');
 
 
 router.get('/', function(req, res) {
-console.log("huhu : "+req.user);
+
 	TaskModel.find({visible: 1}).sort({ task_order : 'ascending'}).exec(function(err, rows) {
 		if (err) {
 			console.log("Error Selecting : %s ", err );
@@ -36,7 +36,7 @@ router.get('/:task_id', function(req, res) {
 		});
 
 	} else {
-		res.status(500).send({ error: 'ID non valide' });
+		res.status(422).send({ error: 'ID non valide' });
 	}
 
 });
@@ -46,8 +46,11 @@ router.post('/', function(req, res) {
 	if(typeof req.body.task_name !== "undefined")
 	{
 		var task_name = req.body.task_name.trim();
-		var user_id = "57610daa8d82383010000029";
 		var task_order =  0;
+		var user_id = "";
+
+		if(req.user._id)
+		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
 		if(mongoose.Types.ObjectId.isValid(user_id)) {
@@ -82,7 +85,7 @@ router.post('/', function(req, res) {
 			});
 
 		} else {
-			res.status(500).send({ error: 'ID non valide' });
+			res.status(422).send({ error: 'ID non valide' });
 		}
 	}
 	else
@@ -101,10 +104,18 @@ router.put('/', function(req, res) {
 
 		var task_id = req.body.task_id;
 		var task_name = req.body.task_name.trim();
-		var user_id = "57610daa8d82383010000029";
+		var user_id = "";
+
+		
+		if(req.user._id)
+		{	user_id = req.user._id.toHexString();	}
+
+
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
 		if(mongoose.Types.ObjectId.isValid(task_id) && mongoose.Types.ObjectId.isValid(user_id))
 		{
+
+
 			TaskModel.findById(task_id, function (err, task) {
 				if (err) {
 					console.log("Error Finding task : %s ", err );
@@ -123,7 +134,8 @@ router.put('/', function(req, res) {
 				});
 			});
 		} else {
-			res.status(500).send({ error: 'ID non valides' });
+			console.log("id non valides ?!")
+			res.status(422).send({ error: 'ID non valides' });
 		}
 	}
 	else
@@ -138,7 +150,11 @@ router.delete('/', function(req, res) {
 	if(typeof req.body.task_id !== "undefined")
 	{
 		var task_id = req.body.task_id;
-		var user_id = "57610daa8d82383010000029";
+		var user_id = "";
+
+		if(req.user._id)
+		{	user_id = req.user._id.toHexString();	}
+		
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
 		if(mongoose.Types.ObjectId.isValid(task_id) && mongoose.Types.ObjectId.isValid(user_id))
@@ -165,7 +181,7 @@ router.delete('/', function(req, res) {
 			});
 
 		} else {
-			res.status(500).send({ error: 'ID non valides' });
+			res.status(422).send({ error: 'ID non valides' });
 		}
 	}
 	else

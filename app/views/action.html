@@ -41,7 +41,7 @@
 
   <div class="historique_action">
       <div class="history" ng-repeat="action in actions track by action._id">
-      <span class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeAction(action._id, $index)"></span> <strong>{{action._fk_user_id.login | capitalize}}</strong> [Etat: {{action._fk_state_id.name}}] <em>({{action.creation_date | date:'dd/MM/yyyy à HH:mm' }})</em> :
+      <span class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeAction(action._id, $index)"></span> <strong>{{action._fk_user_id.local.login | capitalize}}</strong> [Etat: {{action._fk_state_id.name}}] <em>({{action.creation_date | date:'dd/MM/yyyy à HH:mm' }})</em> :
       <p>{{action.comment}}</p>
       <hr ng-hide="$index === actions.length-1"/>
       </div>
