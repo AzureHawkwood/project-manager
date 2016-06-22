@@ -8,9 +8,11 @@
  * Controller of the projet7AlbumManagerApp
  */
 angular.module('projet7AlbumManagerApp')
-  .controller('AuthenticationController', function ($scope, $location, namedRouteService, AjaxFactory) {
+  .controller('AuthenticationController', function ($scope, $cookies, $location, namedRouteService, AjaxFactory) {
     
-    
+    //Première chose à faire, on supprime tout cookie pouvant correspondre à un utilisateur
+    $cookies.remove('user');
+
     $scope.user = { 
       login : "",
       firstname : "",
@@ -38,8 +40,10 @@ angular.module('projet7AlbumManagerApp')
               $scope.error_login = response.data.error;
               $scope.error_message = response.data.message;
 
+
               if($scope.error_login === false)
               {
+                $cookies.putObject('user', response.data.user);
                 window.location.href = "/";
               }
             }
@@ -67,7 +71,7 @@ angular.module('projet7AlbumManagerApp')
         };
 
         AjaxFactory.register(data).then(function successCallback(response) {
-          //$scope.original_item_name = $scope.item_name;
+          
           if(response)
           {
             $scope.error_login = response.data.error;
@@ -75,6 +79,7 @@ angular.module('projet7AlbumManagerApp')
 
             if($scope.error_login === false)
             {
+              $cookies.putObject('user', response.data.user);
               window.location.href = "/";
             }
           }

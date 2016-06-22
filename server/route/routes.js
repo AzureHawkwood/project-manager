@@ -133,16 +133,16 @@ module.exports = function(app, passport, dirname) {
   }))
 
   .get('/loginSuccessRoute', function(req, res) {
-    res.status(200).json({error: false, message: "Correctement connecté"});
+    res.status(200).json({error: false, message: "Correctement connecté", user: req.user});
   })
   .get('/loginFailRoute', function(req, res) {
-    res.status(200).json({error: true, message: "Mauvais identifiants"});
+    res.status(200).json({error: true, message: "Mauvais identifiants", user: {}});
   })
   .get('/registerSuccessRoute', function(req, res) {
-    res.status(200).json({error: false, message: "Correctement enregistré"});
+    res.status(200).json({error: false, message: "Correctement enregistré", user: req.user});
   })
   .get('/registerFailRoute', function(req, res) {
-    res.status(200).json({error: true, message: "Ce login existe déjà"});
+    res.status(200).json({error: true, message: "Ce login existe déjà", user: {}});
   })
 
  /* .get('/profile', isLoggedIn, function(req, res) {

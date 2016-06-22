@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('projet7AlbumManagerApp')
-	.controller('ActionController', function ($scope, $routeParams, $location, AjaxFactory) {
+	.controller('ActionController', function ($scope, $cookies, $routeParams, $location, AjaxFactory) {
 
 		$scope.task_id = "";
 		$scope.item_id = "";
@@ -16,7 +16,8 @@ angular.module('projet7AlbumManagerApp')
 		$scope.actions = [];
 		$scope.initManager = initManager;
 
-
+		$scope.cookie_user = $cookies.getObject('user');
+		//$scope.huhu = $scope.cookie_user.local._id+"";
 
 		$scope.chooseState = function(state){
 			$scope.state_id = state._id;
@@ -32,7 +33,6 @@ angular.module('projet7AlbumManagerApp')
 				var formData = {
 					task_id: $scope.task_id,
 					item_id: $scope.item_id,
-					user_id: "57610daa8d82383010000029",
 					state_id: $scope.state_id,
 					comment: $scope.comment
 				}

@@ -26,7 +26,7 @@
 
 
         <br />
-        <label>Message</label><br />
+        <label>Message</label> <em>(optionnel)</em><br />
         <textarea ng-model="comment" name="comment" placeholder="Saisir un commentaire..." style="width:100%;height:120px;"></textarea>
         <div class="error-messages" ng-messages="actionForm.comment.$error" ng-if="actionForm.$submitted">
             <div ng-messages-include="views/form_error_messages.html"></div>
@@ -41,7 +41,8 @@
 
   <div class="historique_action">
       <div class="history" ng-repeat="action in actions track by action._id">
-      <span class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeAction(action._id, $index)"></span> <strong>{{action._fk_user_id.local.login | capitalize}}</strong> [Etat: {{action._fk_state_id.name}}] <em>({{action.creation_date | date:'dd/MM/yyyy à HH:mm' }})</em> :
+      
+      <span ng-if="cookie_user._id == action._fk_user_id._id" class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeAction(action._id, $index)"></span> <strong>{{action._fk_user_id.local.login | capitalize}}</strong> [Etat: {{action._fk_state_id.name}}] <em>({{action.creation_date | date:'dd/MM/yyyy à HH:mm' }})</em> :
       <p>{{action.comment}}</p>
       <hr ng-hide="$index === actions.length-1"/>
       </div>
