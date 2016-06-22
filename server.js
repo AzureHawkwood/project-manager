@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 //Important !!! Décrire les url des dossiers se trouvant dans app ici, car le serveur se trouve à la racine, un cran plus haut,
 //il faut donc dire que le dossier front racine se trouve dans le dossier app
 //app.use('/', express.static(__dirname + '/app'));
-app.use('/', express.static(__dirname + '/app', {index: true, redirect: false}));
+app.use('/', express.static(__dirname + '/app', {index: false, redirect: false}));
 
 // set up our express application
 //app.use(express.logger('dev')); // log every request to the console
