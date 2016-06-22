@@ -19,6 +19,8 @@ angular.module('projet7AlbumManagerApp')
       email : ""
     };
 
+    $scope.error_login = false;
+    $scope.error_message = "";
 
   	$scope.loginFunction = function(form){
   		
@@ -30,10 +32,19 @@ angular.module('projet7AlbumManagerApp')
         };
 
         AjaxFactory.login(data).then(function successCallback(response) {
-          //$scope.original_item_name = $scope.item_name;
-          //console.log("correctement loggué en tant que : "+response.data);
-          console.log("correctement loggué");
-          //$location.path("/");
+          
+            if(response)
+            {
+              $scope.error_login = response.data.error;
+              $scope.error_message = response.data.message;
+
+              if($scope.error_login === false)
+              {
+                window.location.href = "/";
+              }
+            }
+            
+
         }, function errorCallback(response) {
           console.log("Erreur lors du loggin");
         });
@@ -57,16 +68,23 @@ angular.module('projet7AlbumManagerApp')
 
         AjaxFactory.register(data).then(function successCallback(response) {
           //$scope.original_item_name = $scope.item_name;
-          console.log("correctement enregistré en tant que : "+response.data);
+          if(response)
+          {
+            $scope.error_login = response.data.error;
+            $scope.error_message = response.data.message;
 
-          //$location.path("/");
+            if($scope.error_login === false)
+            {
+              window.location.href = "/";
+            }
+          }
         }, function errorCallback(response) {
           console.log("Erreur lors du register");
         });
       }
   	}
 
-  	
+
 
   	$scope.goFromName = function (path) {
   		$location.path(namedRouteService.reverse(path));

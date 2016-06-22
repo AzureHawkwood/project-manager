@@ -18,13 +18,13 @@ module.exports = function(app, passport, dirname) {
 
 
   app.get('/', isLoggedIn, function (req, res) {
-    console.log("Route GET /");
+    //console.log("Route GET /");
     res.sendFile('index.html',  { root: dirname+'/app'});
   })
 
   .get('/authentication', function (req, res) {
-    console.log("Route GET /authentication");
-    console.log("authentication :  "+ req.user);
+    //console.log("Route GET /authentication");
+   // console.log("authentication :  "+ req.user);
     //res.sendFile('index.html', { root: __dirname+'/app'} );
     res.sendFile('authentication.html', { root: dirname+'/app' });
   })
@@ -121,17 +121,29 @@ module.exports = function(app, passport, dirname) {
     //failureRedirect : '/register', // redirect back to the signup page if there is an error
     //failureFlash : true // allow flash messages
   })*/
- .post('/login', passport.authenticate('local-login', {
-    successRedirect : '/', // redirect to the secure profile section
-    failureRedirect : '/login', // redirect back to the signup page if there is an error
+  .post('/login', passport.authenticate('local-login', {
+    successRedirect : '/loginSuccessRoute', // redirect to the secure profile section
+    failureRedirect : '/loginFailRoute', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }))
-.post('/register', passport.authenticate('local-register', {
-    successRedirect : '/', // redirect to the secure profile section
-    failureRedirect : '/register', // redirect back to the signup page if there is an error
+  .post('/register', passport.authenticate('local-register', {
+    successRedirect : '/registerSuccessRoute', // redirect to the secure profile section
+    failureRedirect : '/registerFailRoute', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }))
 
+  .get('/loginSuccessRoute', function(req, res) {
+    res.status(200).json({error: false, message: "Correctement connecté"});
+  })
+  .get('/loginFailRoute', function(req, res) {
+    res.status(200).json({error: true, message: "Mauvais identifiants"});
+  })
+  .get('/registerSuccessRoute', function(req, res) {
+    res.status(200).json({error: false, message: "Correctement enregistré"});
+  })
+  .get('/registerFailRoute', function(req, res) {
+    res.status(200).json({error: true, message: "Ce login existe déjà"});
+  })
 
  /* .get('/profile', isLoggedIn, function(req, res) {
     res.render('profile.ejs', {
@@ -139,19 +151,19 @@ module.exports = function(app, passport, dirname) {
     });
   })*/
   .get('/logout', function(req, res) {
-    console.log("Route POST /logout");
+    //console.log("Route POST /logout");
     req.logout();
     res.redirect('/authentication');
   })
 
 
   .get('/404', function (req, res) {
-      console.log("Route GET /404");
+      //console.log("Route GET /404");
       res.sendFile('404.html', { root: dirname+'/app' });
   })
 
   .all('*', function (req, res) {
-      console.log("Route ALL *");
+      //console.log("Route ALL *");
       //res.status(500).send({ error: 'PAS BON EN ATTENDANT DE TROUVER COMMENT CHARGER LE FICHIER' });
       res.sendFile('404.html', { root: dirname+'/app' });
   });
@@ -237,18 +249,18 @@ module.exports = function(app, passport, dirname) {
 
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
-  console.log("isLoggedIn requser : " + req.user);
-  console.log("CHECK SI AUTHENTIFIE :");
+  //console.log("isLoggedIn requser : " + req.user);
+  //console.log("CHECK SI AUTHENTIFIE :");
 
   // if user is authenticated in the session, carry on
   if (req.isAuthenticated())
   {
-    console.log("EST AUTHENTIFIE");
+    //console.log("EST AUTHENTIFIE");
     return next();
   }
   else
   {
-    console.log("N'EST PAS AUTHENTIFIE -> REDIRECT /login");
+    //console.log("N'EST PAS AUTHENTIFIE -> REDIRECT /login");
 
     res.redirect('/authentication');
   }
