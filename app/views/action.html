@@ -1,0 +1,52 @@
+<div id="actionContainer">
+  <div class="maj_action">
+
+    <form name="actionForm" class="" ng-submit="addAction(actionForm)" novalidate>
+
+        
+
+        <label>Etat</label><br />
+        
+
+         <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" name="state" id="dropdownstate" style="width:100%;" data-toggle="dropdown">{{state_name?state_name:'Choisir un état'}}
+            &nbsp;<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" style="width:100%;">
+            <li ng-repeat="state in states track by state._id" ng-click="chooseState(state)" class="cursorPointer">
+              <a>{{state.name}}</a>
+            </li>
+          </ul>
+        </div>
+
+        <input type="hidden" name="state_id" ng-model="state_id" value="state_id" required="" />
+        <div class="error-messages" ng-messages="actionForm.state_id.$error" ng-if="actionForm.$submitted">
+             <div ng-messages-include="views/form_error_messages.html"></div>
+        </div>
+
+
+        <br />
+        <label>Message</label> <em>(optionnel)</em><br />
+        <textarea ng-model="comment" name="comment" placeholder="Saisir un commentaire..." style="width:100%;height:120px;"></textarea>
+        <div class="error-messages" ng-messages="actionForm.comment.$error" ng-if="actionForm.$submitted">
+            <div ng-messages-include="views/form_error_messages.html"></div>
+        </div>
+
+        <br />
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Mettre à jour</button>
+
+    </form>
+
+  </div>
+
+  <div class="historique_action">
+      <div class="history" ng-repeat="action in actions track by action._id">
+      
+      <span ng-if="cookie_user._id == action._fk_user_id._id" class="cursorPointer colorRed glyphicon glyphicon-trash" ng-click="removeAction(action._id, $index)"></span> <strong>{{action._fk_user_id.local.login | capitalize}}</strong> [Etat: {{action._fk_state_id.name}}] <em>({{action.creation_date | date:'dd/MM/yyyy à HH:mm' }})</em> :
+      <p>{{action.comment}}</p>
+      <hr ng-hide="$index === actions.length-1"/>
+      </div>
+  </div>
+</div>
+
+<button class="btn btn-lg btn-primary btn-block btn-signin" ng-click="go('/')">Retour</button>
