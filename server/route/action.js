@@ -57,14 +57,17 @@ exports.addAction = function(req, res){
 
 	var task_id = req.body.task_id;
 	var item_id = req.body.item_id;
-	var user_id = "57610daa8d82383010000029";
 	var state_id = req.body.state_id;
-	var comment = req.body.comment.trim();
+	var user_id = "";
+
+
+	if(req.user._id)
+	{	user_id = req.user._id.toHexString();	}
 
 	//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
 	if(mongoose.Types.ObjectId.isValid(task_id) && mongoose.Types.ObjectId.isValid(item_id) && mongoose.Types.ObjectId.isValid(user_id) && mongoose.Types.ObjectId.isValid(state_id))
 	{
-		
+		var comment = req.body.comment.trim();
 	  	//console.log("Ajout d'une nouvelle action");
 
 	  	var action = new ActionModel({				
@@ -86,7 +89,7 @@ exports.addAction = function(req, res){
 	}
 	else
 	{
-		res.status(500).send({ error: 'ID non valides' });
+		res.status(422).send({ error: 'ID non valides' });
 	}
 
 };
@@ -120,7 +123,7 @@ exports.getActions = function(req, res){
 	}
 	else
 	{
-		res.status(500).send({ error: 'ID non valides' });
+		res.status(422).send({ error: 'ID non valides' });
 	}
 	
 
@@ -150,7 +153,7 @@ exports.removeAction = function(req, res){
 	}
 	else
 	{
-		res.status(500).send({ error: 'ID non valide' });
+		res.status(422).send({ error: 'ID non valide' });
 	}
 
 };

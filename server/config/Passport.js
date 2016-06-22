@@ -63,8 +63,8 @@ module.exports = function(passport) {
         
 
 
-        console.log("TENTATIVE REGISTER : ");
-        console.log("login : " + login + " password : " + password);
+        //console.log("TENTATIVE REGISTER : ");
+        //console.log("login : " + login + " password : " + password);
 
       // find a user whose login is the same as the forms login
       // we are checking to see if the user trying to login already exists
@@ -72,20 +72,20 @@ module.exports = function(passport) {
               // if there are any errors, return the error
               if (err)
               {
-                   console.log("Une erreur s'est produite dans la tentative de recherche si un utilisateur existe déjà avec ce login");
+                  console.log("Une erreur s'est produite dans la tentative de recherche si un utilisateur existe déjà avec ce login");
                   return done(err);
               }
 
               // check to see if theres already a user with that login
               if (user)
               {
-                 console.log("Login déjà pris !");
+                 //console.log("Login déjà pris !");
 
                   return done(null, false, req.flash('signupMessage', 'Ce login est déjà pris'));
               }
               else
               {
-                console.log("Ok, login libre");
+                //console.log("Ok, login libre");
                   // if there is no user with that login
                   // create the user
                   var newUser            = new User();
@@ -96,7 +96,7 @@ module.exports = function(passport) {
                   newUser.local.password = newUser.generateHash(password); // use the generateHash function in our user model
                   newUser.local.email    = email;
                   newUser.local.firstname    = firstname;
-                   console.log("On hash le mot de passe");
+                   //console.log("On hash le mot de passe");
 
                    // save the user
                   newUser.save(function(err) {
@@ -106,7 +106,7 @@ module.exports = function(passport) {
                           throw err;
                       }
 
-                       console.log("User créé, on return la fonction done avec l'utilisateur");
+                       //console.log("User créé, on return la fonction done avec l'utilisateur");
                       return done(null, newUser);
                   });
               }
@@ -138,33 +138,33 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, login, password, done) { // callback with login and password from our form
-console.log("TENTATIVE LOGIN : ");
-console.log("login : " + login + " password : " + password);
+  //console.log("TENTATIVE LOGIN : ");
+  //console.log("login : " + login + " password : " + password);
         // find a user whose login is the same as the forms login
         // we are checking to see if the user trying to login already exists
         User.findOne({ 'local.login' :  login }, function(err, user) {
             // if there are any errors, return the error before anything else
             if (err)
             {
-              console.log("Result 0 : err");
-                return done(err);
+              console.log("Une erreur s'est produite dans la tentative de recherche de l'utilisateur");
+              return done(err);
             }
 
             // if no user is found, return the message
             if (!user)
             {
-              console.log("Result 1 : utilisateur non existant");
+              //console.log("Result 1 : utilisateur non existant");
                 return done(null, false, req.flash('loginMessage', 'Aucun utilisateur n\'existe avec ces identifiants')); // req.flash is the way to set flashdata using connect-flash
             }
 
             // if the user is found but the password is wrong
             if (!user.validPassword(password))
             {
-              console.log("Result 2 : password non valide");
+              //console.log("Result 2 : password non valide");
                 return done(null, false, req.flash('loginMessage', 'Mauvais mot de passe')); // create the loginMessage and save it to session as flashdata
             }
 
-            console.log("Result 3 user exiostant");
+            //console.log("Result 3 user exiostant");
             // all is well, return successful user
             return done(null, user);
         });

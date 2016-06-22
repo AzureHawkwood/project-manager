@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"User",
+				"userSchema"
+			],
+			[
 				"over",
 				"overflow-x"
 			],
@@ -39,6 +43,241 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/scripts/services/AjaxFactory.js",
+			"settings":
+			{
+				"buffer_size": 4053,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/server.js",
+			"settings":
+			{
+				"buffer_size": 1571,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/app/routes.js",
+			"settings":
+			{
+				"buffer_size": 2437,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/index.html",
+			"settings":
+			{
+				"buffer_size": 5227,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/scripts/directives/ManagerDirective.js",
+			"settings":
+			{
+				"buffer_size": 2143,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/manager.html",
+			"settings":
+			{
+				"buffer_size": 3648,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/register.html",
+			"settings":
+			{
+				"buffer_size": 2879,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/login.html",
+			"settings":
+			{
+				"buffer_size": 2033,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/404.html",
+			"settings":
+			{
+				"buffer_size": 3465,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/authentication.html",
+			"settings":
+			{
+				"buffer_size": 4413,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/scripts/authentication.js",
+			"settings":
+			{
+				"buffer_size": 1558,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/scripts/controllers/ActionController.js",
+			"settings":
+			{
+				"buffer_size": 2321,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/scripts/controllers/AuthenticationController.js",
+			"settings":
+			{
+				"buffer_size": 2260,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/form_error_messages.html",
+			"settings":
+			{
+				"buffer_size": 829,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/scripts/app.js",
+			"settings":
+			{
+				"buffer_size": 1578,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/404.html",
+			"settings":
+			{
+				"buffer_size": 256,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server.js",
+			"settings":
+			{
+				"buffer_size": 4391,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/route/state.js",
+			"settings":
+			{
+				"buffer_size": 318,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/route/task.js",
+			"settings":
+			{
+				"buffer_size": 7854,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/config/Passport.js",
+			"settings":
+			{
+				"buffer_size": 6660,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/route/routes.js",
+			"settings":
+			{
+				"buffer_size": 8862,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/route/project.js",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/route/manager.js",
+			"settings":
+			{
+				"buffer_size": 1,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/route/user.js",
+			"settings":
+			{
+				"buffer_size": 2716,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/route/action.js",
+			"settings":
+			{
+				"buffer_size": 3147,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/model/user.js",
+			"settings":
+			{
+				"buffer_size": 1661,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/model/state.js",
+			"settings":
+			{
+				"buffer_size": 274,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server/route/item.js",
+			"settings":
+			{
+				"buffer_size": 11974,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>ProjectManager</title>\n    <meta name=\"description\" content=\"\">\n    <meta name=\"viewport\" content=\"width=device-width\">\n    \n     <link rel=\"stylesheet\" href=\"bower_components/bootstrap/dist/css/bootstrap.css\" />  \n    \n  \n    <!-- On va réécraser le thème bootstrap vu plus haut, il faut tout de même garder l'original, pour les glyphicons, etc... -->\n    <link rel=\"stylesheet\" href=\"styles/bootstrap_slate_theme.css\">\n    <link rel=\"stylesheet\" href=\"styles/footer_custom.css\">\n    <link rel=\"stylesheet\" href=\"styles/login_form.css\">\n    <link rel=\"stylesheet\" href=\"styles/manager.css\">\n    <link rel=\"stylesheet\" href=\"styles/action.css\">\n    <link rel=\"stylesheet\" href=\"styles/dragtable_columns.css\">\n    <link rel=\"stylesheet\" href=\"styles/main.css\">\n\n    \n  <!-- endbuild -->\n  </head>\n  <body ng-app=\"projet7AlbumManagerApp\">\n    <!--[if lte IE 8]>\n      <p class=\"browsehappy\">La version de votre navigateur internet <strong>n'est pas à jour</strong>. <a href=\"http://browsehappy.com/\">Rechercher la mise à jour la plus récente</a>.</p>\n    <![endif]-->\n\n\n\n   <!-- Barre horizontale de menu en haut -->\n  <nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n\n      <!-- Navbar header avec button collapsed va permettre lorsque la fenetre est trop petite, de proposer\n      le menu sous forme de liste avec un bouton cliquable -->\n      <div class=\"navbar-header\">\n          <!-- On décrit le bouton, et on fait référence à l'id nav_link_container qui contient tous les liens du menu -->\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#nav_link_container\" aria-expanded=\"false\">\n            <!-- design du bouton, les icon-bar seront les traits horizontaux du bouton -->\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n\n          <!-- Lien principal du menu contenant le nom de l'appli avec un href sur la page d'accueil du site -->\n          <a class=\"navbar-brand\" href=\"#/\">Project Manager</a>\n      </div>\n\n      <div class=\"collapse navbar-collapse\" id=\"nav_link_container\">\n        <ul class=\"nav navbar-nav\">\n          <li><a href=\"/login\">login</a></li>\n          <li><a href=\"/register\">register</a></li>\n        </ul>\n         <ul class=\"nav navbar-nav navbar-right\">\n            <li><a class=\"glyphicon glyphicon-off\" href=\"/logout\" style=\"margin-top:-1px;\"></a></li>\n          </ul>\n      </div>\n\n    </div>\n  </nav>\n\n\n\n\n  <!-- Container principal, le ng-view sera remplacé par les différents templates selon la route demandée -->\n  <div class=\"container\">\n    \n  \n<div class=\"card card-container\">\n    \n    <img id=\"profile-img\" class=\"profile-img-card\" src=\"images/yeoman.png\" />\n\n    <!--\n    <p id=\"profile-name\" class=\"profile-name-card\"></p>\n    -->\n\n    <form name=\"loginForm\" class=\"form-signin\" ng-submit=\"loginFunction(loginForm)\" novalidate>\n\n        <!--\n        <span id=\"reauth-email\" class=\"reauth-email\"></span>\n        <input type=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required autofocus>\n        <input type=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>\n\n        <div id=\"remember\" class=\"checkbox\">\n            <label>\n                <input type=\"checkbox\" value=\"remember-me\"> Remember me\n            </label>\n        </div>\n        -->\n        <label>Login</label>\n        <input name=\"login\" ng-model=\"user.login\" type=\"text\" ng-maxlength=\"30\" ng-minlength=\"2\" placeholder=\"Login\" class=\"form-control\" autofocus=\"\" required=\"\" maxlength=\"30\" />\n        <div class=\"error-messages\" ng-if=\"loginForm.$submitted\" ng-messages=\"loginForm.login.$error\">\n            <div ng-messages-include=\"views/form_error_messages.html\"></div>\n        </div>\n\n        <label>Mot de passe</label>\n        <input name=\"password\" ng-model=\"user.password\" type=\"password\" placeholder=\"Mot de passe\"  ng-maxlength=\"30\" ng-minlength=\"6\" class=\"form-control\" required=\"\" maxlength=\"30\" />\n        <div class=\"error-messages\" ng-if=\"loginForm.$submitted\" ng-messages=\"loginForm.password.$error\">\n            <div ng-messages-include=\"views/form_error_messages.html\"></div>\n        </div>\n\n\n        <button class=\"btn btn-lg btn-primary btn-block btn-signin\" type=\"submit\">Connexion</button>\n\n    </form>\n\n    <button class=\"btn btn-lg btn-primary btn-block btn-signin\"  ng-click=\"goFromName('register')\">S'enregistrer</button>\n    <!--\n    <a href=\"#\" class=\"forgot-password\">\n        Mot de passe oublié ?\n    </a>\n    -->\n</div>\n\n\n  </div>\n\n\n\n\n<footer class=\"footer_custom\">\n\n    <!--\n      <p class=\"footer-links\">\n        <a href=\"#\">Home</a>\n        ·\n        <a href=\"#\">Blog</a>\n        ·\n        <a href=\"#\">Pricing</a>\n        ·\n        <a href=\"#\">About</a>\n        ·\n        <a href=\"#\">Faq</a>\n        ·\n        <a href=\"#\">Contact</a>\n      </p>\n      -->\n      <p class=\"footer-company-name\">Azure Hawkwood &copy; 2016</p>\n\n  </footer>\n\n\n\n\n    <script src=\"bower_components/jquery/dist/jquery.js\"></script>\n    <script src=\"bower_components/jquery-ui/jquery-ui.js\"></script>\n    <script src=\"bower_components/angular/angular.js\"></script>\n    <script src=\"bower_components/bootstrap/dist/js/bootstrap.js\"></script>\n    <script src=\"bower_components/angular-animate/angular-animate.js\"></script>\n    <script src=\"bower_components/angular-cookies/angular-cookies.js\"></script>\n    <script src=\"bower_components/angular-messages/angular-messages.js\"></script>\n    <script src=\"bower_components/angular-resource/angular-resource.js\"></script>\n    <script src=\"bower_components/angular-route/angular-route.js\"></script>\n    <script src=\"bower_components/angular-named-route/dist/angular-named-route.js\"></script>\n    <script src=\"bower_components/angular-sanitize/angular-sanitize.js\"></script>\n    <script src=\"bower_components/angular-touch/angular-touch.js\"></script>\n    \n\n    <script src=\"scripts/lib/rowsorter/RowSorter.js\"></script>\n    <script src=\"scripts/lib/dragtable-master/jquery.dragtable.js\"></script>\n    \n\n   \n    <!-- Important, on déclare en premier app.js qui contient la configuration et les routes du module -->\n    <script src=\"scripts/app.js\"></script>\n\n\n    <script src=\"scripts/controllers/AuthenticationController.js\"></script>\n    <script src=\"scripts/controllers/LogoutController.js\"></script>\n    <script src=\"scripts/controllers/ManagerController.js\"></script>\n    <script src=\"scripts/controllers/ActionController.js\"></script>\n    <script src=\"scripts/controllers/TaskController.js\"></script>\n    <script src=\"scripts/controllers/ItemController.js\"></script>\n\n    <script src=\"scripts/filters/cutLongStringFilter.js\"></script>\n    <script src=\"scripts/filters/capitalizeFilter.js\"></script>\n\n    <script src=\"scripts/services/AjaxFactory.js\"></script>\n    \n    <script src=\"scripts/directives/ManagerDirective.js\"></script>\n    <script src=\"scripts/directives/ActionDirective.js\"></script>\n\n\n\n</body>\n</html>\n",
+			"file": "app/login.html",
+			"file_size": 7352,
+			"file_write_time": 131109705503992224,
+			"settings":
+			{
+				"buffer_size": 7143,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -47,12 +286,12 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -72,20 +311,90 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/services",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/item",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/login",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/manager",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/register",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/views/task"
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/controllers",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/directives",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/services",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/styles",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/views",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/config",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/model",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/route"
 	],
 	"file_history":
 	[
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/model/task.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/views/login.ejs",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/controllers/LogoutController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/index.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Model/task.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Route/routes.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Model/user.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Route/user.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Route/project.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Route/manager.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Route/item.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Route/action.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Route/state.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/config/Constant.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Route/task.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/config/MongoDB.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/package.json",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/styles/action.css",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/controllers/ActionController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/controllers/ManagerController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/controllers/TaskController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/app/models/user.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/config/passport.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/controllers/AuthenticationController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/config/database.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/app/routes.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/directives/ActionDirective.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/controllers/ItemController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/directives/RegisterDirective.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/directives/ManagerDirective.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/views/action/action.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/views/manager/manager.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/views/task/task.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/views/login/login.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/views/item/item.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/views/register/register.html",
+		"/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/config/auth.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/server.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/server.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/package.json",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Model/action.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Model/item.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Model/manager.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Model/project.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/server/Model/state.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_requests/action.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_requests/item.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_requests/manager.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_requests/state.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_requests/project.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_requests/task.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_mongo_connection.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_requests/user.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/passport.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_constants.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/node_mysql_connection.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/styles/manager.css",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/server.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/passportJS.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet13 - ProjectManagerMongo/app/scripts/models/user.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/node_mysql_connection.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/node_constants.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/package.json",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/app/scripts/controllers/TaskController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/app/scripts/controllers/ManagerController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/app/scripts/controllers/ItemController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/app/scripts/controllers/ActionController.js",
+		"/C/Users/mngrha/Desktop/ftorres/www/front-azura/front/.gitignore",
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet11 - ProjectManagerMongo/server.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/main.css",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/login_form.css",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/manager.css",
@@ -144,26 +453,11 @@
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/manager.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/logout.js",
 		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/bootstrap_slate_theme.css",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/services/LogoutService.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/login.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/controllers/register.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/mean-stack-registration-login-example-master/server.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/styles/footer-basic-centered.css",
-		"/C/wamp/www/project_manager_php/connexion.php",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - AlbumManager/server.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - AlbumManager/app/index.html",
-		"/C/wamp/www/project_manager_php/index.php",
-		"/C/wamp/www/project_manager_php/user/edit.php",
-		"/C/wamp/www/project_manager_php/user/add.php",
-		"/C/wamp/www/project_manager_php/user/delete.php",
-		"/C/wamp/www/project_manager/user/view.php",
-		"/C/wamp/www/project_manager/index.php",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet1/server.js",
-		"/C/Users/mngrha/Desktop/ftorres/www/Projet1/index.html"
+		"/C/Users/mngrha/Desktop/ftorres/www/Projet7 - ProjectManager/app/scripts/services/LogoutService.js"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -177,6 +471,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"parse",
+			"ng-model=\"login\"",
+			"r_",
+			"Schema",
+			"TaskModel",
+			"Schema",
+			"mongoo",
+			"mongoose",
+			"isLoggedIn",
+			";",
+			"chargement",
+			"crypt",
+			"parsein",
+			"		\n",
+			".id",
+			"itemModel",
+			"taskModel",
+			"Item",
+			"item",
+			"confir",
 			"task",
 			"nbCol",
 			"getCOmme",
@@ -197,6 +511,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"route_",
+			",",
+			"._id",
+			"ItemModel",
+			"TaskModel",
+			"task",
 			"item",
 			"_custom"
 		],
@@ -209,13 +529,858 @@
 	"groups":
 	[
 		{
+			"selected": 15,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/scripts/services/AjaxFactory.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4008,
+								4008
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2160.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1571,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1222,
+								1222
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/mngrha/Desktop/ftorres/www/easy-node-authentication-local/app/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1854,
+								1854
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1625,
+								1625
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 885.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/scripts/directives/ManagerDirective.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/manager.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3648,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2350,
+								2350
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 825.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/register.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2630,
+								2630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 915.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1689,
+								1610
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/404.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/authentication.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4413,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2462,
+								2462
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/scripts/authentication.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1558,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1305,
+								1305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/scripts/controllers/ActionController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								541,
+								541
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "app/scripts/controllers/AuthenticationController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								318,
+								318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "app/views/form_error_messages.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								822,
+								822
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "app/scripts/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1325,
+								1325
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "app/views/404.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 16,
+					"file": "server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1760,
+								1760
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 385.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "server/route/state.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								318,
+								318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "server/route/task.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7854,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3410,
+								3410
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2160.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "server/config/Passport.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3180,
+								3180
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1125.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "server/route/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8862,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4693,
+								4693
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1665.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "server/route/project.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "server/route/manager.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "server/route/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2716,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								161,
+								161
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "server/route/action.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3088,
+								3088
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1935.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "server/model/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1661,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								555,
+								555
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "server/model/state.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "server/route/item.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3857,
+								3857
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 1980.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "app/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4724,
+								4724
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 999.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -247,7 +1412,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.716712580349,
 			1.0
 		],
 		"rows":
@@ -295,7 +1460,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -303,7 +1468,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 246.0,
+	"side_bar_width": 277.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

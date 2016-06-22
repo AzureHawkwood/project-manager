@@ -39,7 +39,7 @@ router.get('/:item_id', function(req, res) {
 	}
 	else
 	{
-		res.status(500).send({ error: 'ID non valide' });
+		res.status(422).send({ error: 'ID non valide' });
 	}
 
 });
@@ -49,8 +49,11 @@ router.post('/', function(req, res) {
 	if(typeof req.body.item_name !== "undefined")
 	{
 		var item_name = req.body.item_name.trim();
-		var user_id = "57610daa8d82383010000029";
 		var item_order =  0;
+		var user_id = "";
+
+		if(req.user._id)
+		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
 		if(mongoose.Types.ObjectId.isValid(user_id))
@@ -87,7 +90,7 @@ router.post('/', function(req, res) {
 		}
 		else
 		{
-			res.status(500).send({ error: 'ID non valide' });
+			res.status(422).send({ error: 'ID non valide' });
 		}
 	}
 	else
@@ -105,7 +108,10 @@ router.put('/', function(req, res) {
 	{
 		var item_id = req.body.item_id;
 		var item_name = req.body.item_name.trim();
-		var user_id = "57610daa8d82383010000029";
+		var user_id = "";
+
+		if(req.user._id)
+		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
 		if(mongoose.Types.ObjectId.isValid(item_id) && mongoose.Types.ObjectId.isValid(user_id))
@@ -132,7 +138,7 @@ router.put('/', function(req, res) {
 		}
 		else
 		{
-			res.status(500).send({ error: 'ID non valides' });
+			res.status(422).send({ error: 'ID non valides' });
 		}
 
 
@@ -149,7 +155,10 @@ router.delete('/', function(req, res) {
 	if(typeof req.body.item_id !== "undefined")
 	{
 		var item_id = req.body.item_id;
-		var user_id = "57610daa8d82383010000029";
+		var user_id = "";
+
+		if(req.user._id)
+		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
 		if(mongoose.Types.ObjectId.isValid(item_id) && mongoose.Types.ObjectId.isValid(user_id))
@@ -176,7 +185,7 @@ router.delete('/', function(req, res) {
 		}
 		else
 		{
-			res.status(500).send({ error: 'ID non valides' });
+			res.status(422).send({ error: 'ID non valides' });
 		}	
 
 	}
