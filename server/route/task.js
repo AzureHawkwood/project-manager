@@ -53,7 +53,7 @@ router.post('/', function(req, res) {
 		{	user_id = req.user._id.toHexString();	}
 
 		//Si l'objet id est un id mongo valide (24 symboles de 0-9a-fA-F)
-		if(mongoose.Types.ObjectId.isValid(user_id)) {
+		if(mongoose.Types.ObjectId.isValid(user_id) && task_name != "") {
 
 			TaskModel.find({}, function(err, rows) {
 			   	if (err) {
@@ -190,6 +190,51 @@ router.delete('/', function(req, res) {
 	}
 
 });
+
+
+
+
+router.put('/updateTaskOrder', function(req, res) {
+
+	if(typeof req.body !== "undefined")
+	{
+		var tabOrderTask = req.body;
+
+		TaskModel.find({}, function(err, task) {
+		   	if (err) {
+				console.log("Error Selecting : %s ",err );
+			 	throw err;
+			}
+		  	
+			for(var i=0; i < task.length; i++)
+			{
+				if(typeof tabOrderTask[task[i]._id] !== "undefined")
+				{
+					task[i].task_order = tabOrderTask[task[i]._id];
+
+					task[i].save(function (err) {
+						if (err) {
+							console.log("Error Inserting : %s ",err );
+						 	throw err;
+						}
+			  		});
+				}
+			}
+			
+			res.status(200).send({ success: 'Updated Successfully' });
+			
+
+		});
+
+	}
+	else
+	{
+		res.status(422).send({ error: 'Mauvais JSON envoyé' });
+	}
+
+});
+
+
 
 
 module.exports = router;

@@ -197,6 +197,51 @@ router.delete('/', function(req, res) {
 });
 
 
+
+
+
+router.put('/updateItemOrder', function(req, res) {
+
+	if(typeof req.body !== "undefined")
+	{
+		var tabOrderItem = req.body;
+
+		ItemModel.find({}, function(err, item) {
+		   	if (err) {
+				console.log("Error Selecting : %s ",err );
+			 	throw err;
+			}
+		  	
+			for(var i=0; i < item.length; i++)
+			{
+				if(typeof tabOrderItem[item[i]._id] !== "undefined")
+				{
+					item[i].item_order = tabOrderItem[item[i]._id];
+
+					item[i].save(function (err) {
+						if (err) {
+							console.log("Error Inserting : %s ",err );
+						 	throw err;
+						}
+			  		});
+				}
+			}
+			
+			res.status(200).send({ success: 'Updated Successfully' });
+			
+
+		});
+
+	}
+	else
+	{
+		res.status(422).send({ error: 'Mauvais JSON envoyé' });
+	}
+
+});
+
+
+
 module.exports = router;
 
 

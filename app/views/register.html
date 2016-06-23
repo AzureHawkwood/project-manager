@@ -10,7 +10,7 @@
     <form name="registerForm" class="form-signin" ng-submit="registerFunction(registerForm)" novalidate>
 
     	<label>Prénom</label>
-        <input name="firstname" ng-model="user.firstname" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Prénom" class="form-control" autofocus="" maxlength="30"/>
+        <input name="firstname" ng-model="user.firstname" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Prénom" class="form-control" autofocus="" maxlength="30" />
 		<div class="error-messages" ng-if="registerForm.$submitted"  ng-messages="registerForm.firstname.$error">
 		    <div ng-messages-include="views/form_error_messages.html"></div>
 		</div>

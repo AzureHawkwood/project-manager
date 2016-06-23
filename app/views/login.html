@@ -10,19 +10,9 @@
 
     <form name="loginForm" class="form-signin" ng-submit="loginFunction(loginForm)" novalidate>
 
-        <!--
-        <span id="reauth-email" class="reauth-email"></span>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-        <div id="remember" class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        -->
+        
         <label>Login</label>
-        <input name="login" ng-model="user.login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login" class="form-control" autofocus="" required="" maxlength="30" />
+        <input name="login" ng-model="user.login" type="text" ng-maxlength="30" ng-minlength="2" placeholder="Login" class="form-control" autofocus="" required="" maxlength="30"/>
         <div class="error-messages" ng-if="loginForm.$submitted" ng-messages="loginForm.login.$error">
             <div ng-messages-include="views/form_error_messages.html"></div>
         </div>

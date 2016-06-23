@@ -6,7 +6,7 @@
 			<tr>
 				<th class="hiddenTd nosort"></th>
 				
-				<th ng-repeat="task in tasks track by task._id" class="move-horizontal-accept" wait-on-col-load="">
+				<th ng-repeat="task in tasks track by task._id" data-task_id="{{task._id}}" class="move-horizontal-accept" wait-on-col-load="">
 					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
 					<span class="title" ng-click="go('/task/'+task._id)">{{task.name}}</span>
 				</th>
@@ -19,7 +19,7 @@
 		<tbody>
 			<tr ng-repeat="item in items track by item._id" wait-on-row-load="">
 				<th>
-					<span class="move-vertical glyphicon glyphicon-resize-vertical"></span>
+					<span class="move-vertical glyphicon glyphicon-resize-vertical" data-item_id="{{item._id}}"></span>
 					<span class="title" ng-click="go('/item/'+item._id)">{{item.name}}</span>
 				</th>
 

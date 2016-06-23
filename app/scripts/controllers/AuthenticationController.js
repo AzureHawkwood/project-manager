@@ -21,6 +21,7 @@ angular.module('projectManagerApp')
       email : ""
     };
 
+
     $scope.error_login = false;
     $scope.error_message = "";
 

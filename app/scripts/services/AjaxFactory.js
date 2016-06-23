@@ -12,6 +12,9 @@ angular.module('projectManagerApp')
 		        method : "GET",
 		        url : "/task/"+task_id,
 		        data: {},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
 		    });
         },
         getTasks: function(){
@@ -19,6 +22,9 @@ angular.module('projectManagerApp')
 		        method : "GET",
 		        url : "/task",
 		        data: {},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
 		    });
         },
         addTask: function(data){
@@ -51,7 +57,16 @@ angular.module('projectManagerApp')
 			 	}
 		    });		    
         },
-
+        updateTaskOrder: function(data){
+            return $http({
+		        method : "PUT",
+		        url : "/task/updateTaskOrder",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });
+        },
     	/************************
 		*	ITEM
     	************************/
@@ -60,6 +75,9 @@ angular.module('projectManagerApp')
 		        method : "GET",
 		        url : "/item/"+item_id,
 		        data: {},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
 		    });
         },
         getItems: function(){
@@ -67,6 +85,9 @@ angular.module('projectManagerApp')
 		        method : "GET",
 		        url : "/item",
 		        data: {},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
 		    });
         },
         addItem: function(data){            
@@ -99,7 +120,16 @@ angular.module('projectManagerApp')
 			 	}
 		    });		    
         },
-
+        updateItemOrder: function(data){
+            return $http({
+		        method : "PUT",
+		        url : "/item/updateItemOrder",
+		        data: data,
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
+		    });
+        },
     	/************************
 		*	ACTION
     	************************/
@@ -108,6 +138,9 @@ angular.module('projectManagerApp')
 		        method : "GET",
 		        url : "/getLastActions",
 		        data: {},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
 		    });
         },
         getActions: function(task_id, item_id){            
@@ -115,6 +148,9 @@ angular.module('projectManagerApp')
 		        method : "GET",
 		        url : "/getActions/"+task_id+"/"+item_id,
 		        data: {},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
 		    });		    
         },
         addAction: function(data){            
@@ -146,6 +182,9 @@ angular.module('projectManagerApp')
 		        method : "GET",
 		        url : "/getStates",
 		        data: {},
+		        headers: {
+				   'Content-Type': "application/json"
+			 	}
 		    });		    
         },
         
@@ -172,7 +211,16 @@ angular.module('projectManagerApp')
 				   'Content-Type': "application/json"
 			 	}
 		    });
-        }
+        },
+
+
+		
+        
+
+
+
+
+
       
     }
 
