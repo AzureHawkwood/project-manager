@@ -17,7 +17,8 @@ angular
     'ngRoute',
     'ngNamedRoute',  //On peut définir des noms aux routes grâce au module angular-named-route
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angular-loading-bar'
   ])
   .config(function ($routeProvider) {
     $routeProvider
