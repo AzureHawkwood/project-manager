@@ -1,5 +1,7 @@
 {
-  "name": "Project Manager",
+  "name": "projectManager",
+  "version": "1.0.0",
+  "description": "Petit outil de gestion de projet",
   "private": true,
   "devDependencies": {},
   "scripts": {},
