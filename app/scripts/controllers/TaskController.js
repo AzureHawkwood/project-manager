@@ -3,6 +3,8 @@
 angular.module('projectManagerApp')
 	.controller('TaskController', function ($scope, $cookies, $routeParams, $location, AjaxFactory) {
 	
+	$scope.pageClass = 'page-task';
+
 	$scope.task_id = "";
 	if(typeof $routeParams.id !== "undefined") {
 		$scope.task_id = $routeParams.id;

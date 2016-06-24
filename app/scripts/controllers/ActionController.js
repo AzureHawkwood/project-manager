@@ -2,6 +2,8 @@
 
 angular.module('projectManagerApp')
 	.controller('ActionController', function ($scope, $cookies, $routeParams, $location, AjaxFactory) {
+		
+		$scope.pageClass = 'page-action';
 
 		$scope.task_id = "";
 		$scope.item_id = "";

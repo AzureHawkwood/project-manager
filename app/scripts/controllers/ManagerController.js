@@ -3,6 +3,8 @@
 angular.module('projectManagerApp')
 	.controller('ManagerController', function ($scope, $cookies, $location, AjaxFactory) {
 	
+	$scope.pageClass = 'page-manager';
+
 	$scope.maxLengthStringToDisplay = 100;
 
 	$scope.newTaskName = "";

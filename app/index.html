@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles/manager.css">
     <link rel="stylesheet" href="styles/action.css">
     <link rel="stylesheet" href="styles/dragtable_columns.css">
+    <link rel="stylesheet" href="styles/animations.css">
     <link rel="stylesheet" href="styles/view_animation.css">
     <link rel="stylesheet" href="styles/main.css">
 
@@ -69,12 +70,18 @@
 
 
   <!-- Container principal, le ng-view sera remplacé par les différents templates selon la route demandée -->
-  <div class="container view-animate-container">
-    <div ng-view="" class="view-animate"></div>
+  
+  <div class="container">
+    <div ng-view=""></div>
   </div>
-
-
-
+  <!--
+  Finalement on ne met pas les animations, pas si esthétique que ça
+  -->
+  <!--
+  <div class="container">
+    <div ng-view class="{{ pageClass }}"></div>
+  </div>
+  -->
 
 <footer class="footer_custom">
 

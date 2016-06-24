@@ -10,6 +10,8 @@
 angular.module('projectManagerApp')
   .controller('AuthenticationController', function ($scope, $cookies, $location, namedRouteService, AjaxFactory) {
     
+    $scope.pageClass = 'page-authentication';
+
     //Première chose à faire, on supprime tout cookie pouvant correspondre à un utilisateur
     $cookies.remove('user');
 

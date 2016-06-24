@@ -1,55 +1,149 @@
-.view-animate-container {
-
-  /* position:relative;
-  display:inline-block;*/
- /* max-height:400px!important;
-  height:400px!important;*/
-  position:relative;
-  width:99%!important;
-  /*background-color: grey;*/
-
-
 /*
-  position:relative;
-  height:600px!important;
-  background:white;
-  
-  height:600px;
-  overflow:hidden;
+Sites utiles: 
+
+http://tympanus.net/Development/PageTransitions/
+http://tympanus.net/codrops/2013/05/07/a-collection-of-page-transitions/
+https://scotch.io/tutorials/animating-angularjs-apps-ngview
 */
-  /*border:1px solid black;*/
+
+/* QUELQUES ANIMATES EN PLUS
+============================================================================= */
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
 }
 
-.view-animate {
-/*
-  padding:10px;
-  */
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
 }
 
-.view-animate.ng-enter, .view-animate.ng-leave {
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
 
-  display:block;
-  width:100%;
-  /*border-left:1px solid black;*/
+/* ANIMATIONS APPLIQUEES AUX PAGES PERSONNALISEES
+============================================================================= */
 
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
+.ng-enter       { z-index: 8888; }
+.ng-leave       { z-index: 9999; }
+
+/* page specific animations ------------------------ */
+
+/* action ---------------------- */
+.page-action.ng-enter      { animation:slideInRight 0.5s both ease-in; }
+.page-action.ng-leave      { animation:slideOutLeft 0.5s both ease-in; }
+
+/* authentication ---------------------- */
+.page-authentication.ng-enter      { animation:slideInUp 0.5s both ease-in; }
+.page-authentication.ng-leave      { transform-origin: 50% 50%; animation: rotateOutNewspaper .5s both ease-in; }
+
+/* item ---------------------- */
+.page-item.ng-enter      { animation:slideInUp 0.5s both ease-in; }
+.page-item.ng-leave      { animation: rotateOutNewspaper .5s both ease-in; }
+
+/* manager -------------------------- */
+.page-manager.ng-enter         { animation:slideInRight 0.5s both ease-in; }
+.page-manager.ng-leave         { animation:slideOutLeft 0.5s both ease-in; }
+
+/* task ------------------------ */
+.page-task.ng-enter        { animation:rotateCubeBottomIn 0.5s both ease-in; }
+.page-task.ng-leave        { animation:rotateCubeBottomOut 0.5s both ease-in; }
 
 /*
-  padding:10px;
+A ajouter avec differentes valeurs dans certains leave si l'on souhaite : 
+transform-origin: 50% 50%; 
 */
-}
 
-.view-animate.ng-enter {
-  left:100%;
-}
-.view-animate.ng-enter.ng-enter-active {
-  left:0;
-}
-.view-animate.ng-leave.ng-leave-active {
-  left:-100%;
-}
+/*
+Récapitulatif des animations existantes : 
+
+@keyframes moveToLeft
+@keyframes moveFromLeft
+@keyframes moveToRight 
+@keyframes moveFromRight
+@keyframes moveToTop
+@keyframes moveFromTop
+@keyframes moveToBottom
+@keyframes moveFromBottom
+@keyframes fade
+@keyframes moveToLeftFade
+@keyframes moveFromLeftFade
+@keyframes moveToRightFade
+@keyframes moveFromRightFade
+@keyframes moveToTopFade
+@keyframes moveFromTopFade
+@keyframes moveToBottomFade
+@keyframes moveFromBottomFade
+@keyframes scaleDown
+@keyframes scaleUp
+@keyframes scaleUpDown
+@keyframes scaleDownUp
+@keyframes scaleDownCenter
+@keyframes scaleUpCenter
+@keyframes rotateRightSideFirst
+@keyframes rotateLeftSideFirst
+@keyframes rotateTopSideFirst
+@keyframes rotateBottomSideFirst
+@keyframes flipOutRight
+@keyframes flipInLeft
+@keyframes flipOutLeft
+@keyframes flipInRight
+@keyframes flipOutTop
+@keyframes flipInBottom
+@keyframes flipOutBottom
+@keyframes flipInTop
+@keyframes rotateFall
+@keyframes rotateOutNewspaper
+@keyframes rotateInNewspaper
+@keyframes rotatePushLeft
+@keyframes rotatePushRight
+@keyframes rotatePushTop
+@keyframes rotatePushBottom
+@keyframes rotatePullRight
+@keyframes rotatePullLeft
+@keyframes rotatePullTop
+@keyframes rotatePullBottom
+@keyframes rotateFoldRight
+@keyframes rotateFoldLeft
+@keyframes rotateFoldTop
+@keyframes rotateFoldBottom
+@keyframes rotateUnfoldLeft
+@keyframes rotateUnfoldRight
+@keyframes rotateUnfoldTop
+@keyframes rotateUnfoldBottom
+@keyframes rotateRoomLeftOut
+@keyframes rotateRoomLeftIn
+@keyframes rotateRoomRightOut
+@keyframes rotateRoomRightIn
+@keyframes rotateRoomTopOut
+@keyframes rotateRoomTopIn
+@keyframes rotateRoomBottomOut
+@keyframes rotateRoomBottomIn
+@keyframes rotateCubeLeftOut
+@keyframes rotateCubeLeftIn
+@keyframes rotateCubeRightOut
+@keyframes rotateCubeRightIn
+@keyframes rotateCubeTopOut
+@keyframes rotateCubeTopIn
+@keyframes rotateCubeBottomOut
+@keyframes rotateCubeBottomIn
+@keyframes rotateCarouselLeftOut
+@keyframes rotateCarouselLeftIn
+@keyframes rotateCarouselRightOut
+@keyframes rotateCarouselRightIn
+@keyframes rotateCarouselTopOut
+@keyframes rotateCarouselTopIn
+@keyframes rotateCarouselBottomOut
+@keyframes rotateCarouselBottomIn
+@keyframes rotateSidesOut
+@keyframes rotateSidesIn
+@keyframes rotateSlideOut
+@keyframes rotateSlideIn
+
+
+*/

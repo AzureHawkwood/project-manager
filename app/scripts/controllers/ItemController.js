@@ -3,6 +3,8 @@
 angular.module('projectManagerApp')
 	.controller('ItemController', function ($scope, $cookies, $routeParams, $location, AjaxFactory) {
 	
+	$scope.pageClass = 'page-item';
+
 	$scope.item_id = "";
 
 	if(typeof $routeParams.id !== "undefined") {
