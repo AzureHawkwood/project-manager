@@ -1,106 +1,105 @@
 
 
-<div id="managerContainer" >
-	<table id="managerContainerTable" class="table">
-		<thead>
-			<tr>
-				<th class="hiddenTd nosort"></th>
-				
-				<th ng-repeat="task in tasks track by task._id" data-task_id="{{task._id}}" class="move-horizontal-accept" wait-on-col-load="">
-					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
-					<span class="title" ng-click="go('/task/'+task._id)">{{task.name}}</span>
-				</th>
+	<div id="managerContainer" scrollable='wrapper' style="width:100%;display:inline-block;overflow-x: hidden;">
+		<table id="managerContainerTable" class="table">
+			<thead>
+				<tr>
+					<th class="hiddenTd nosort"></th>
+					
+					<th ng-repeat="task in tasks track by task._id" data-task_id="{{task._id}}" class="move-horizontal-accept" wait-on-col-load="">
+						<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
+						<span class="title" ng-click="go('/task/'+task._id)">{{task.name}}</span>
+					</th>
 
-				<th class="nosort cursorPointer" data-toggle="modal" data-target="#addTaskModal">
-					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="item in items track by item._id" wait-on-row-load="">
-				<th>
-					<span class="move-vertical glyphicon glyphicon-resize-vertical" data-item_id="{{item._id}}"></span>
-					<span class="title" ng-click="go('/item/'+item._id)">{{item.name}}</span>
-				</th>
-
-
-
-				<td ng-repeat="task in tasks track by task._id" class="{{actions[task._id][item._id]._fk_state_id.class_name?actions[task._id][item._id]._fk_state_id.class_name:'undefined' }}" ng-click="go('/action/'+task._id+'/'+item._id)">
-				{{actions[task._id][item._id].comment | cutLongString:true:maxLengthStringToDisplay}}
-				</td>
+					<th class="nosort cursorPointer" data-toggle="modal" data-target="#addTaskModal">
+						<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in items track by item._id" wait-on-row-load="">
+					<th>
+						<span class="move-vertical glyphicon glyphicon-resize-vertical" data-item_id="{{item._id}}"></span>
+						<span class="title" ng-click="go('/item/'+item._id)">{{item.name}}</span>
+					</th>
 
 
 
-				<td class="hiddenTd"></td>
-			</tr>
-			<tr>
-				<th class="cursorPointer" data-toggle="modal" data-target="#addItemModal">
-					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-				</th>
-
-				<td ng-repeat="task in tasks track by task._id" class="hiddenTd"></td>
-				
-				<td class="hiddenTd"></td>
-			</tr>
-		</tbody>
-	</table>
+					<td ng-repeat="task in tasks track by task._id" class="{{actions[task._id][item._id]._fk_state_id.class_name?actions[task._id][item._id]._fk_state_id.class_name:'undefined' }}" ng-click="go('/action/'+task._id+'/'+item._id)">
+					{{actions[task._id][item._id].comment | cutLongString:true:maxLengthStringToDisplay}}
+					</td>
 
 
 
+					<td class="hiddenTd"></td>
+				</tr>
+				<tr>
+					<th class="cursorPointer" data-toggle="modal" data-target="#addItemModal">
+						<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+					</th>
 
-<div id="addTaskModal" class="modal">
-	<form name="addTaskForm" class="form-signin" ng-submit="addTask(addTaskForm)" novalidate>
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				  <h4 class="modal-title">Ajouter une nouvelle tâche</h4>
+					<td ng-repeat="task in tasks track by task._id" class="hiddenTd"></td>
+					
+					<td class="hiddenTd"></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+		<div id="addTaskModal" class="modal">
+			<form name="addTaskForm" class="form-signin" ng-submit="addTask(addTaskForm)" novalidate>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						  <h4 class="modal-title">Ajouter une nouvelle tâche</h4>
+						</div>
+						<div class="modal-body">
+
+							<input type="text" name="newTaskName" value="" ng-model="newTaskName" style="width:100%;" placeholder="Nom de la tâche" ng-maxlength="100" ng-minlength="2" class="form-control" required=""/>
+							<div class="error-messages" ng-messages="addTaskForm.newTaskName.$error">
+					            <div ng-messages-include="views/form_error_messages.html"></div>
+					        </div>
+
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+						  <button type="submit" class="btn btn-primary">Ajouter</button>
+						</div>
+					</div>
 				</div>
-				<div class="modal-body">
-
-					<input type="text" name="newTaskName" value="" ng-model="newTaskName" style="width:100%;" placeholder="Nom de la tâche" ng-maxlength="100" ng-minlength="2" class="form-control" required=""/>
-					<div class="error-messages" ng-messages="addTaskForm.newTaskName.$error">
-			            <div ng-messages-include="views/form_error_messages.html"></div>
-			        </div>
-
-				</div>
-				<div class="modal-footer">
-				  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-				  <button type="submit" class="btn btn-primary">Ajouter</button>
-				</div>
-			</div>
+			</form>
 		</div>
-	</form>
-</div>
 
 
-<div id="addItemModal" class="modal">
-	<form name="addItemForm" class="form-signin" ng-submit="addItem(addItemForm)" novalidate>
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				  <h4 class="modal-title">Ajouter un nouveau morceau</h4>
+		<div id="addItemModal" class="modal">
+			<form name="addItemForm" class="form-signin" ng-submit="addItem(addItemForm)" novalidate>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						  <h4 class="modal-title">Ajouter un nouveau morceau</h4>
+						</div>
+						<div class="modal-body">
+
+							<input type="text" name="newItemName" value="" ng-model="newItemName" style="width:100%;" placeholder="Titre du morceau" ng-maxlength="100" ng-minlength="1" class="form-control" required=""/>
+							<div class="error-messages" ng-messages="addItemForm.newItemName.$error">
+					            <div ng-messages-include="views/form_error_messages.html"></div>
+					        </div>
+
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+						  <button type="submit" class="btn btn-primary">Ajouter</button>
+						</div>
+					</div>
 				</div>
-				<div class="modal-body">
-
-					<input type="text" name="newItemName" value="" ng-model="newItemName" style="width:100%;" placeholder="Titre du morceau" ng-maxlength="100" ng-minlength="1" class="form-control" required=""/>
-					<div class="error-messages" ng-messages="addItemForm.newItemName.$error">
-			            <div ng-messages-include="views/form_error_messages.html"></div>
-			        </div>
-
-				</div>
-				<div class="modal-footer">
-				  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-				  <button type="submit" class="btn btn-primary">Ajouter</button>
-				</div>
-			</div>
+			</form>
 		</div>
-	</form>
-</div>
 
+	</div>
 
-
-</div>
 
 

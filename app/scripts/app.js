@@ -27,35 +27,35 @@ angular
         templateUrl: 'views/manager.html',
         controller: 'ManagerController',
         controllerAs: 'ManagerCtrl',
-        animation: 'slide'
+        //animation: 'slide'
       })
       .when('/action/:task_id/:item_id', {
         name: 'actionView',
         templateUrl: 'views/action.html',
         controller: 'ActionController',
         controllerAs: 'ActionCtrl',
-        animation: 'slide'
+        //animation: 'slide'
       })
       .when('/item/:id', {
         name: 'itemView',
         templateUrl: 'views/item.html',
         controller: 'ItemController',
         controllerAs: 'ItemCtrl',
-        animation: 'slide'
+        //animation: 'slide'
       })
       .when('/task/:id', {
         name: 'taskView',
         templateUrl: 'views/task.html',
         controller: 'TaskController',
         controllerAs: 'TaskCtrl',
-        animation: 'slide'
+        //animation: 'slide'
       })
       .when('/404', {
         name: '404',
         templateUrl: 'views/404.html',
         controller: 'AuthenticationController',
         controllerAs: 'AuthenticationCtrl',
-        animation: 'slide'
+        //animation: 'slide'
       })
       .otherwise({
         redirectTo: '/'

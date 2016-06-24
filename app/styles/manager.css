@@ -1,8 +1,17 @@
 #managerContainer {
+/*
 	display: block;
 	width: 100%;
 
+
 	overflow-x: auto;
+*/
+
+width:99%;
+display:inline-block;
+overflow-x: hidden;
+
+
 }
 
 /**********************************
@@ -25,6 +34,7 @@
 #managerContainer table td {	
 	border: 1px solid #1c1e22;
 	background-color: #464c52;
+
 	
 }
 #managerContainer table th {
@@ -32,8 +42,12 @@
 	vertical-align: middle;
 	line-height: 28px;
 
+	/*
 	max-width:150px!important;
 	min-width:100px!important;
+	*/
+	
+	width:150px!important;
 
 	-moz-box-shadow: inset 0px 0px 20px 10px #353b41;
 	-webkit-box-shadow: inset 0px 0px 20px 10px #353b41;

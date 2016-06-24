@@ -17,87 +17,73 @@
     <link rel="stylesheet" href="styles/manager.css">
     <link rel="stylesheet" href="styles/action.css">
     <link rel="stylesheet" href="styles/dragtable_columns.css">
+    <link rel="stylesheet" href="styles/view_animation.css">
     <link rel="stylesheet" href="styles/main.css">
 
     
   <!-- endbuild -->
   </head>
-  <body ng-app="projectManagerApp">
+  <body ng-app="projectManagerApp" >
     <!--[if lte IE 8]>
       <p class="browsehappy">La version de votre navigateur internet <strong>n'est pas à jour</strong>. <a href="http://browsehappy.com/">Rechercher la mise à jour la plus récente</a>.</p>
     <![endif]-->
 
 
+    <!-- Barre horizontale de menu en haut -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
 
-   <!-- Barre horizontale de menu en haut -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
+        <!-- Navbar header avec button collapsed va permettre lorsque la fenetre est trop petite, de proposer
+        le menu sous forme de liste avec un bouton cliquable -->
+        <div class="navbar-header">
+            <!-- On décrit le bouton, et on fait référence à l'id nav_link_container qui contient tous les liens du menu -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_link_container" aria-expanded="false">
+              <!-- design du bouton, les icon-bar seront les traits horizontaux du bouton -->
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
 
-      <!-- Navbar header avec button collapsed va permettre lorsque la fenetre est trop petite, de proposer
-      le menu sous forme de liste avec un bouton cliquable -->
-      <div class="navbar-header">
-          <!-- On décrit le bouton, et on fait référence à l'id nav_link_container qui contient tous les liens du menu -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_link_container" aria-expanded="false">
-            <!-- design du bouton, les icon-bar seront les traits horizontaux du bouton -->
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+            <!-- Lien principal du menu contenant le nom de l'appli avec un href sur la page d'accueil du site -->
+            <a class="navbar-brand" href="#/">Project Manager</a>
+        </div>
 
-          <!-- Lien principal du menu contenant le nom de l'appli avec un href sur la page d'accueil du site -->
-          <a class="navbar-brand" href="#/">Project Manager</a>
+        <div class="collapse navbar-collapse" id="nav_link_container">
+          <!--
+          <ul class="nav navbar-nav">
+            <li><a href="#/login">login</a></li>
+            <li><a href="#/register">register</a></li>
+          </ul>
+          -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="glyphicon glyphicon-off" href="/logout" style="margin-top:-1px;"></a></li>
+          </ul>
+        </div>
+
       </div>
+    </nav>
 
-      <div class="collapse navbar-collapse" id="nav_link_container">
-        <!--
-        <ul class="nav navbar-nav">
-          <li><a href="#/login">login</a></li>
-          <li><a href="#/register">register</a></li>
-        </ul>
-        -->
-        <ul class="nav navbar-nav navbar-right">
-          <li><a class="glyphicon glyphicon-off" href="/logout" style="margin-top:-1px;"></a></li>
-        </ul>
+
+
+    <!-- Container principal, le ng-view sera remplacé par les différents templates selon la route demandée -->
+   <!-- <div ng-controller='scrollApp'>
+      <div class="view-animate-container" >
+        <div ng-view="" class="view-animate" scrollable='wrapper' style="height:100%;display:block;width:99%!important;border: blue thin solid!important;"></div>
       </div>
+    </div>  -->
 
+    <div class="container view-animate-container">
+      <div ng-view="" class="view-animate"></div>
     </div>
-  </nav>
-
-
-
-
-  <!-- Container principal, le ng-view sera remplacé par les différents templates selon la route demandée -->
-  <div class="container">
-    <div ng-view=""></div>
-  </div>
-
-
-
-
-<footer class="footer_custom">
 
     <!--
-      <p class="footer-links">
-        <a href="#">Home</a>
-        ·
-        <a href="#">Blog</a>
-        ·
-        <a href="#">Pricing</a>
-        ·
-        <a href="#">About</a>
-        ·
-        <a href="#">Faq</a>
-        ·
-        <a href="#">Contact</a>
-      </p>
-      -->
-      <p class="footer-company-name">Azure Hawkwood &copy; 2016</p>
-
-  </footer>
-
-
-
+      <footer class="footer_custom">
+        
+        <p class="footer-company-name">Azure Hawkwood &copy; 2016</p>
+        
+      </footer>
+    -->
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
@@ -115,6 +101,7 @@
 
     <script src="scripts/lib/rowsorter/RowSorter.js"></script>
     <script src="scripts/lib/dragtable-master/jquery.dragtable.js"></script>
+    <script src='scripts/lib/ftscroller.js'></script>
     <script src="scripts/lib/loading-bar/loading-bar.js"></script>
     
 
@@ -128,6 +115,7 @@
     <script src="scripts/controllers/ActionController.js"></script>
     <script src="scripts/controllers/TaskController.js"></script>
     <script src="scripts/controllers/ItemController.js"></script>
+    <script src="scripts/controllers/FtscrollerController.js"></script>
 
     <script src="scripts/filters/cutLongStringFilter.js"></script>
     <script src="scripts/filters/capitalizeFilter.js"></script>
@@ -136,6 +124,14 @@
     
     <script src="scripts/directives/ManagerDirective.js"></script>
     <script src="scripts/directives/RegisterDirective.js"></script>
+    <script src="scripts/directives/ScrollableDirective.js"></script>
+    <script src="scripts/directives/AutoResizeHeightDirective.js"></script>
+
+
+
+   
+  </script>
+
 
 
 
