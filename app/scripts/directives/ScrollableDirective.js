@@ -13,7 +13,7 @@ angular.module('projectManagerApp').directive('scrollable', function () {
             var ngiScroll_opts = {
                 snap: true,
                 momentum: true,
-                hScrollbar: true,
+                hScrollbar: false,
 
                 scrollbars: true,
                 scrollingX: true,
@@ -23,11 +23,7 @@ angular.module('projectManagerApp').directive('scrollable', function () {
                 //baseAlignments:  {x:0, y: 0}
             };
 
-          
-
-
-
-
+        
 
 /*
             var ngScrollerOptions = {
