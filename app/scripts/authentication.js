@@ -27,7 +27,6 @@ angular
         templateUrl: 'views/login.html',
         controller: 'AuthenticationController',
         controllerAs: 'AuthenticationCtrl',
-        animation: 'slide'
       })
       .when("/login", {
         name: 'login',
@@ -41,7 +40,6 @@ angular
         templateUrl: 'views/register.html',
         controller: 'AuthenticationController',
         controllerAs: 'AuthenticationCtrl',
-        animation: 'slide'
       })
       .when('/logout', {
         name: 'logout',
@@ -54,7 +52,6 @@ angular
         templateUrl: 'views/404.html',
         controller: 'AuthenticationController',
         controllerAs: 'AuthenticationCtrl',
-        animation: 'slide'
       })
       .otherwise({
         redirectTo: '/login'
