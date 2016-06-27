@@ -74,6 +74,11 @@ https://scotch.io/tutorials/animating-angularjs-apps-ngview
 .page-manager.ng-enter         { animation:scaleUp 1s both ease-in; }
 /*.page-manager.ng-leave         { animation:scaleDown 0.5s both ease-in; }*/
 
+/* reorder -------------------------- */
+.page-reorder.ng-enter         { animation:scaleUp 1s both ease-in; }
+/*.page-reorder.ng-leave         { animation:scaleDown 0.5s both ease-in; }*/
+
+
 /* task ------------------------ */
 .page-task.ng-enter        { animation:moveFromTop 0.3s both ease; }
 /*.page-task.ng-leave        { animation:rotateFall 1.5s both ease-in; }*/

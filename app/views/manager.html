@@ -6,10 +6,14 @@
 				<th class="squareTopLeft nosort">
 					<img src="images/hand_grab.png" /><br />
 					Click & Move
+					<br />
+					<span ng-click="go('/reorder')">Reorder</span>
 				</th>
 				
-				<th ng-repeat="task in tasks track by task._id" data-task_id="{{task._id}}" class="move-horizontal-accept" wait-on-col-load="">
+				<th ng-repeat="task in tasks track by task._id" data-task_id="{{task._id}}"  wait-on-col-load="">
+				<!--
 					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
+				-->
 					<span class="title" ng-click="go('/task/'+task._id)">{{task.name}}</span>
 				</th>
 

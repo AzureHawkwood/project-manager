@@ -28,6 +28,12 @@ angular
         controller: 'ManagerController',
         controllerAs: 'ManagerCtrl',
       })
+      .when('/reorder', {
+        name: 'reorder',
+        templateUrl: 'views/reorder.html',
+        controller: 'ReorderController',
+        controllerAs: 'ReorderCtrl',
+      })
       .when('/action/:task_id/:item_id', {
         name: 'actionView',
         templateUrl: 'views/action.html',
