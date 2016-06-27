@@ -5,6 +5,10 @@
 	overflow-x: auto;
 }
 
+#managerContainer:hover {
+	cursor: grab;
+}
+
 /**********************************
  Gestion du tableau et de ses colonnes 
  **********************************/
@@ -34,6 +38,12 @@
 
 	max-width:150px!important;
 	min-width:100px!important;
+	width:150px!important;
+
+	/* overflow-wrap est une super propriété mieux que 
+		word-break: break-all car elle ne va couper les mots que s'ils ne rentrent 
+		pas dans la case, sinon les retours à la ligne sont respectés etc... */
+	overflow-wrap: break-word !important;
 
 	-moz-box-shadow: inset 0px 0px 20px 10px #353b41;
 	-webkit-box-shadow: inset 0px 0px 20px 10px #353b41;
@@ -42,7 +52,10 @@
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#353b41, Direction=NaN, Strength=20);
 }
 #managerContainer table td {
-	word-break: break-all!important;
+	/* overflow-wrap est une super propriété mieux que 
+		word-break: break-all car elle ne va couper les mots que s'ils ne rentrent 
+		pas dans la case, sinon les retours à la ligne sont respectés etc... */
+	overflow-wrap: break-word !important;
 
 	text-align: left;
 	line-height:12px;
@@ -63,21 +76,56 @@
 /**********************************
  Gestion des classes ayant différents effets
  **********************************/
+/*
+* Premier carré se trouvant tout en haut à gauche
+* on y met un petit texte explicatif pour savoir
+* que l'on peut cliquer et bouger dans la tableau principal
+*/
+
+#managerContainer .squareTopLeft {
+	border-right: #1c1e22 thin solid!important;
+	border-bottom : #1c1e22 thin solid!important;
+	border-left : #272b30 thin solid!important;
+	border-top : #272b30 thin solid!important;
+
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+
+	background-color: #272b30!important;
+}
+#managerContainer .squareTopLeft img {
+	height: 26px;
+	width: 26px;
+	margin-top: -1px;
+}
 
  /*
  * hiddenTd pour masquer la toute première cellule ainsi que 
  * les cellules correspondantes à des ajouts de lignes ou colonnes
  */
-#managerContainer .hiddenTd{
+#managerContainer .hiddenTd {
+	/*
 	background-color: transparent!important;
 	border:none!important;
+	*/
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
+
+	
+	background-color: #272b30!important;
+	border:#272b30 thin solid!important;
+
 }
-#managerContainer .hiddenTd:hover{
-	cursor: default!important;
+#managerContainer .hiddenTd:hover {
+
+	/*cursor: default!important;*/
+	cursor: grab!important;
+
 }
+
+
 
 
  /*

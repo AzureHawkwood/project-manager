@@ -1,10 +1,13 @@
 
 
-<div id="managerContainer" >
+<div id="managerContainer" scrollable='wrapper' autoresizeheight="" >
 	<table id="managerContainerTable" class="table">
 		<thead>
 			<tr>
-				<th class="hiddenTd nosort"></th>
+				<th class="squareTopLeft nosort">
+					<img src="images/hand_grab.png" /><br />
+					Click & Move
+				</th>
 				
 				<th ng-repeat="task in tasks track by task._id" data-task_id="{{task._id}}" class="move-horizontal-accept" wait-on-col-load="">
 					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
@@ -44,6 +47,11 @@
 			</tr>
 		</tbody>
 	</table>
+
+
+</div>
+
+
 
 
 
@@ -98,9 +106,3 @@
 		</div>
 	</form>
 </div>
-
-
-
-</div>
-
-
