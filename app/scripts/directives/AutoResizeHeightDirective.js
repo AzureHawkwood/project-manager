@@ -8,10 +8,30 @@ angular.module('projectManagerApp').directive('autoresizeheight', function () {
         restrict: 'A',
         link: function (scope, element, attr)
         {
-            var w = angular.element($(window));
-            
+
+
+          /*
+            //Fonctionnel mais de redimensionne pas en temps réel la fenêtre
+            var w = angular.element($(window));            
             element.height(w.height() - 100);
-            //element.width(w.width()  - 100);
+          */
+
+          var elementWindow = angular.element($(window));
+
+          scope.getWindowDimensions = function () {
+            return { 'h': elementWindow.height() };
+          };
+
+          scope.$watch(scope.getWindowDimensions, function (newValue, oldValue) {
+              element.height(newValue.h - 100);
+          }, true);
+          
+          elementWindow.bind('resize', function () {
+            scope.$apply();
+          });
+
+
+
         }
   };
 });

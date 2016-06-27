@@ -167,7 +167,9 @@
 #managerContainer table th .move-horizontal:hover {
 	cursor: ew-resize!important;
 }
-
+#managerContainer table th .title:hover {
+	cursor: url("../images/pencil.cur") 10 26, pointer!important;
+}
 
  /*
  * state-X où X est l'id d'un état, sont utilisés pour le style

@@ -50,7 +50,8 @@ angular.module('projectManagerApp').directive("waitOnRowLoad", ['AjaxFactory', f
         scope:{},	//Important pour pouvoir récupérer le scope de l'élément dans la fonction link
         link: function(scope, element, attr){
         	//Si c'est le dernier élément du ng-repeat que l'on charge
-        	if (scope.$parent.$last) {               
+        	if (scope.$parent.$last) {
+
 				$("#managerContainerTable").rowSorter({
 					handler         : 'th .move-vertical',
 					stickTopRows    : 0,
@@ -72,6 +73,8 @@ angular.module('projectManagerApp').directive("waitOnRowLoad", ['AjaxFactory', f
 					  	});
 				    }
 				});
+
+
             }
         }
     };

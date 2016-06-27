@@ -59,7 +59,7 @@ https://scotch.io/tutorials/animating-angularjs-apps-ngview
 /* page specific animations ------------------------ */
 
 /* action ---------------------- */
-.page-action.ng-enter      { animation:scaleUp 0.2s both ease; }
+.page-action.ng-enter      { animation:scaleUp 0.3s both ease; }
 /*.page-action.ng-leave      { animation:slideOutLeft 0.5s both ease-in; }*/
 
 /* authentication ---------------------- */
@@ -67,7 +67,7 @@ https://scotch.io/tutorials/animating-angularjs-apps-ngview
 /*.page-authentication.ng-leave      { animation: rotateOutNewspaper .5s both ease-in; }*/
 
 /* item ---------------------- */
-.page-item.ng-enter      { animation:moveFromLeft 0.2s both ease; }
+.page-item.ng-enter      { animation:moveFromLeft 0.3s both ease; }
 /*.page-item.ng-leave      { animation: rotateOutNewspaper .5s both ease-in; }*/
 
 /* manager -------------------------- */
@@ -75,7 +75,7 @@ https://scotch.io/tutorials/animating-angularjs-apps-ngview
 /*.page-manager.ng-leave         { animation:scaleDown 0.5s both ease-in; }*/
 
 /* task ------------------------ */
-.page-task.ng-enter        { animation:moveFromTop 0.2s both ease; }
+.page-task.ng-enter        { animation:moveFromTop 0.3s both ease; }
 /*.page-task.ng-leave        { animation:rotateFall 1.5s both ease-in; }*/
 
 /*

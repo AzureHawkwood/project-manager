@@ -36,6 +36,8 @@ angular.module('projectManagerApp')
 	console.log(cookies);
 */
 
+	
+
 	$scope.go = function(path){
 		$location.path(path);
 	};
