@@ -1,20 +1,20 @@
 module.exports = {
 
 	NODE_PORT : process.env.OPENSHIFT_NODEJS_PORT || 8080,
-	NODE_HOST : process.env.OPENSHIFT_NODEJS_IP || "localhost",
+	NODE_HOST : process.env.OPENSHIFT_NODEJS_IP || "192.168.1.88",
 
-	MYSQL_DB_HOST : process.env.OPENSHIFT_MYSQL_DB_HOST || "localhost",
+	MYSQL_DB_HOST : process.env.OPENSHIFT_MYSQL_DB_HOST || "192.168.1.88",
 	MYSQL_DB_PORT : process.env.OPENSHIFT_MYSQL_DB_PORT || 3306,
 	MYSQL_DB_USER : process.env.OPENSHIFT_MYSQL_DB_USERNAME || "root",
 	MYSQL_DB_PASSWORD : process.env.OPENSHIFT_MYSQL_DB_PASSWORD || "",
 	MYSQL_DB_DATABASE : process.env.OPENSHIFT_APP_NAME || "project_manager",
 
-	MONGO_DB_HOST : process.env.OPENSHIFT_MONGODB_DB_HOST || "localhost",
+	MONGO_DB_HOST : process.env.OPENSHIFT_MONGODB_DB_HOST || "192.168.1.88",
 	MONGO_DB_PORT : process.env.OPENSHIFT_MONGODB_DB_PORT || 27017,
 	MONGO_DB_USER : process.env.OPENSHIFT_MONGODB_DB_USERNAME || "admin",
 	MONGO_DB_PASSWORD : process.env.OPENSHIFT_MONGODB_DB_PASSWORD || "admin",
 	MONGO_DB_DATABASE : process.env.OPENSHIFT_APP_NAME || "project_manager",
-	MONGO_DB_URL : process.env.OPENSHIFT_MONGODB_DB_URL || "mongodb://localhost:27017/project_manager",
+	MONGO_DB_URL : process.env.OPENSHIFT_MONGODB_DB_URL || "mongodb://192.168.1.88:27017/project_manager",
 
 	SECRET : "MonSecret**HuHu_25_HoHo"
 };
