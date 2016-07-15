@@ -130,11 +130,26 @@
 }
 
 
-
+/*
+* Style au survol et active de certaines cellules
+*/
 
 #managerContainer table th .title:hover {
 	cursor: url("../images/pencil.cur") 10 26, pointer!important;
+	color: #f1f1f1;
 }
+#managerContainer table th .title:active {
+	color:#dd2222;
+}
+#managerContainer table .addItem:hover,
+#managerContainer table .addTask:hover {
+	color:#f1f1f1;
+}
+#managerContainer table .addItem:active,
+#managerContainer table .addTask:active {
+	color:#dd2222;
+}
+
 
  /*
  * state-X où X est l'id d'un état, sont utilisés pour le style
@@ -229,19 +244,14 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#339933, Direction=NaN, St
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#353b41, Direction=NaN, Strength=20);
 }
 #managerContainer table .clickToReorder:hover {
+
+	color: #f1f1f1;
+
+/*
 	
-
-	border: 1px solid #771111;
-
-	color: #dd2222;
-
-	/*
 	background-color: #c8c8c8;
 
 	border: 1px solid #353b41;
-
-
-	color:black;
 
 	-moz-box-shadow: inset 0px 0px 20px 10px #a6a6a6;
 	-webkit-box-shadow: inset 0px 0px 20px 10px #a6a6a6;
@@ -249,4 +259,16 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#339933, Direction=NaN, St
 	box-shadow: inset 0px 0px 20px 10px #a6a6a6;
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#a6a6a6, Direction=NaN, Strength=20);
 */
+}
+#managerContainer table .clickToReorder:active {
+	background-color: #464c52;
+	border: 1px solid #661111;
+	color: #dd2222;
+
+	-moz-box-shadow: inset 0px 0px 20px 10px #353b41;
+	-webkit-box-shadow: inset 0px 0px 20px 10px #353b41;
+	-o-box-shadow: inset 0px 0px 20px 10px #353b41;
+	box-shadow: inset 0px 0px 20px 10px #353b41;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#353b41, Direction=NaN, Strength=20);
+
 }

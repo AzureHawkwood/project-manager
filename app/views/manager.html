@@ -9,10 +9,8 @@
 				
 					<br />
 
-					<img src="images/hand_grab.png" /><br />
-					Click & Move
-					
-
+						<img src="images/hand_grab.png" /><br />
+						Click & Move
 
 				</th>
 				
@@ -21,7 +19,7 @@
 					<span class="title" ng-click="go('/task/'+task._id)">{{task.name}}</span>
 				</th>
 
-				<th class="cursorPointer" data-toggle="modal" data-target="#addTaskModal">
+				<th class="cursorPointer addTask" data-toggle="modal" data-target="#addTaskModal">
 					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 				</th>
 			</tr>
@@ -41,7 +39,7 @@
 				<td class="hiddenTd"></td>
 			</tr>
 			<tr>
-				<th class="cursorPointer" data-toggle="modal" data-target="#addItemModal">
+				<th class="addItem cursorPointer" data-toggle="modal" data-target="#addItemModal">
 					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 				</th>
 
