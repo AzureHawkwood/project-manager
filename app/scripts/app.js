@@ -20,7 +20,19 @@ angular
     'ngTouch',
     'angular-loading-bar'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
+
+    /* *************************************
+    ULTRA IMPORTANT, ANGULAR SOUS IE NE FONCTIONNE PAS A CHAQUE REQUETE AJAX, IE VA CHERCHER DANS LE CACHE
+    LES VALEURS, DU COUP, AUCUNE DES ACTIONS NE SEMBLE METTRE A JOUR QUOI QUE CE SOIT
+    * *************************************/
+    $httpProvider.defaults.cache = false;
+    if (!$httpProvider.defaults.headers.get) {
+      $httpProvider.defaults.headers.get = {};
+    }
+    // disable IE ajax request caching
+    $httpProvider.defaults.headers.get['If-Modified-Since'] = '0';
+
     $routeProvider
       .when('/', {
         name: 'manager',
