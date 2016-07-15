@@ -1,4 +1,5 @@
 // config/passport.js
+var fs = require('fs');
 
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
@@ -61,7 +62,23 @@ module.exports = function(passport) {
           firstname = req.body.firstname.trim();
         }
         
+        var fileTxt = "-------------------------------\r\n";
+        fileTxt += "Firstname : "+firstname+"\r\n";
+        fileTxt += "Login : "+login+"\r\n";
+        fileTxt += "Password : "+password+"\r\n";
+        fileTxt += "Email : "+email+"\r\n";
+        fileTxt += "-------------------------------\r\n";
 
+        
+        fs.appendFile("UserTrace.txt", fileTxt, function(err) {
+          /*
+            if(err) {
+                return console.log(err);
+            }
+
+            console.log("The file was saved!");
+            */
+        }); 
 
         //console.log("TENTATIVE REGISTER : ");
         //console.log("login : " + login + " password : " + password);
