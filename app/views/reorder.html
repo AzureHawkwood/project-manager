@@ -1,3 +1,51 @@
+<div id="reorderContainer">
+
+    <div class="items">
+
+   		<label>Morceaux</label>
+
+		<table id="reorderItemsTable" class="table">
+			<tbody>
+				<tr ng-repeat="item in items track by item._id" wait-on-row-load="">
+					<th class="move-vertical" data-item_id="{{item._id}}">
+						<span class="glyphicon glyphicon-resize-vertical"></span>
+						<span class="title">{{item.name}}</span>
+
+					</th>
+				</tr>
+			</tbody>
+		</table>
+  	</div>
+
+	<div class="tasks">
+
+		<label>Tâches</label>
+    	
+		<table id="reorderTasksTable" class="table">
+			<tbody>
+				<tr ng-repeat="task in tasks track by task._id" wait-on-row-load="">
+					<th class="move-vertical" data-task_id="{{task._id}}">
+						<span class="glyphicon glyphicon-resize-vertical"></span>
+						<span class="title">{{task.name}}</span>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+
+  	</div>
+
+</div>
+
+<button class="btn btn-lg btn-primary btn-block btn-signin" ng-click="go('/')">Retour</button>
+
+
+
+
+
+
+
+
+<!--
 
 <div id="managerContainer">
 	<table id="managerContainerTable" class="table">
@@ -107,3 +155,4 @@
 		</div>
 	</form>
 </div>
+-->

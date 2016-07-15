@@ -41,3 +41,10 @@ body {
 .colorRed {
 	color: #dd3333;
 }
+
+.floatLeft {
+  float: left;
+}
+.floatRight {
+  float: right;
+}

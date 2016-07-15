@@ -36,9 +36,13 @@
 	vertical-align: middle;
 	line-height: 28px;
 
-	max-width:150px!important;
 	min-width:100px!important;
+	max-width:150px!important;
 	width:150px!important;
+
+	min-height:50px!important;
+	max-height:100px!important;
+	height:50px!important;
 
 	/* overflow-wrap est une super propriété mieux que 
 		word-break: break-all car elle ne va couper les mots que s'ils ne rentrent 
@@ -128,45 +132,6 @@
 
 
 
- /*
- * move-vertical et move-horizontal sont utilisés pour le style
- * des puces handler des événements drag drop des lignes et colonnes
- */
-#managerContainer table th .move-vertical, 
-#managerContainer table th .move-horizontal {
-	display:block;
-
-
-	/*
-	float:left;
-	*/
-	margin:auto;
-
-
-	width: 26px;
-	height: 26px;
-	font-size: 14px;
-	line-height: 26px;
-
-	border-radius: 50%;
-
-	text-align: center;
-
-	background: rgba(70,76,82,1);
-	background: -moz-radial-gradient(center, ellipse cover, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(70,76,82,1)), color-stop(39%, rgba(54,59,64,1)), color-stop(51%, rgba(97,103,110,1)), color-stop(62%, rgba(74,79,84,1)), color-stop(100%, rgba(70,76,82,1)));
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
-	background: -o-radial-gradient(center, ellipse cover, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
-	background: -ms-radial-gradient(center, ellipse cover, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
-	background: radial-gradient(ellipse at center, rgba(70,76,82,1) 0%, rgba(54,59,64,1) 39%, rgba(97,103,110,1) 51%, rgba(74,79,84,1) 62%, rgba(70,76,82,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#464c52', endColorstr='#464c52', GradientType=1 );
-}
-#managerContainer table th .move-vertical:hover {
-	cursor: ns-resize!important;
-}
-#managerContainer table th .move-horizontal:hover {
-	cursor: ew-resize!important;
-}
 #managerContainer table th .title:hover {
 	cursor: url("../images/pencil.cur") 10 26, pointer!important;
 }
@@ -240,4 +205,48 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#339933, Direction=NaN, St
 -o-box-shadow: inset 0px 0px 20px 10px #339933;
 box-shadow: inset 0px 0px 20px 10px #339933;
 filter:progid:DXImageTransform.Microsoft.Shadow(color=#339933, Direction=NaN, Strength=20);
+}
+
+
+
+
+#managerContainer table .clickToReorder {
+
+	border: 1px solid #454545;
+
+	background-color: #464c52;
+
+	padding: 3px;
+
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+
+	-moz-box-shadow: inset 0px 0px 20px 10px #353b41;
+	-webkit-box-shadow: inset 0px 0px 20px 10px #353b41;
+	-o-box-shadow: inset 0px 0px 20px 10px #353b41;
+	box-shadow: inset 0px 0px 20px 10px #353b41;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#353b41, Direction=NaN, Strength=20);
+}
+#managerContainer table .clickToReorder:hover {
+	
+
+	border: 1px solid #771111;
+
+	color: #dd2222;
+
+	/*
+	background-color: #c8c8c8;
+
+	border: 1px solid #353b41;
+
+
+	color:black;
+
+	-moz-box-shadow: inset 0px 0px 20px 10px #a6a6a6;
+	-webkit-box-shadow: inset 0px 0px 20px 10px #a6a6a6;
+	-o-box-shadow: inset 0px 0px 20px 10px #a6a6a6;
+	box-shadow: inset 0px 0px 20px 10px #a6a6a6;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#a6a6a6, Direction=NaN, Strength=20);
+*/
 }

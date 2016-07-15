@@ -3,38 +3,39 @@
 	<table id="managerContainerTable" class="table">
 		<thead>
 			<tr>
-				<th class="squareTopLeft nosort">
+				<th class="squareTopLeft">
+				
+					<span ng-click="go('/reorder')" class="floatLeft clickToReorder cursorPointer glyphicon glyphicon-wrench" title="Réordonner"></span>
+				
+					<br />
+
 					<img src="images/hand_grab.png" /><br />
 					Click & Move
-					<br />
-					<span ng-click="go('/reorder')">Reorder</span>
+					
+
+
 				</th>
 				
-				<th ng-repeat="task in tasks track by task._id" data-task_id="{{task._id}}"  wait-on-col-load="">
-				<!--
-					<span class="move-horizontal glyphicon glyphicon-resize-horizontal"></span>
-				-->
+				<th ng-repeat="task in tasks track by task._id" data-task_id="{{task._id}}">
+				
 					<span class="title" ng-click="go('/task/'+task._id)">{{task.name}}</span>
 				</th>
 
-				<th class="nosort cursorPointer" data-toggle="modal" data-target="#addTaskModal">
+				<th class="cursorPointer" data-toggle="modal" data-target="#addTaskModal">
 					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 				</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items track by item._id" wait-on-row-load="">
+			<tr ng-repeat="item in items track by item._id">
 				<th>
-					<span class="move-vertical glyphicon glyphicon-resize-vertical" data-item_id="{{item._id}}"></span>
 					<span class="title" ng-click="go('/item/'+item._id)">{{item.name}}</span>
 				</th>
-
 
 
 				<td ng-repeat="task in tasks track by task._id" class="{{actions[task._id][item._id]._fk_state_id.class_name?actions[task._id][item._id]._fk_state_id.class_name:'undefined' }}" ng-click="go('/action/'+task._id+'/'+item._id)">
 				{{actions[task._id][item._id].comment | cutLongString:true:maxLengthStringToDisplay}}
 				</td>
-
 
 
 				<td class="hiddenTd"></td>
